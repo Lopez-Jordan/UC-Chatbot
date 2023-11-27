@@ -1,0 +1,55 @@
+Admit Data (This is a snapshot of the admitted freshman class for fall 2023):
+
+UC Berkeley:
+Applicants: 125,910
+Admits: 14,566
+Admit Rate: 11.6%
+GPA of middle 25%-75% of students: 4.15 to 4.29
+
+UC Davis: 
+Applicants: 94,635
+Admits: 38,601
+Admite Rate: 41.8%
+GPA of middle 25%-75% of students: 4.03 to 4.27
+
+UC Irvine: 
+Applicants: 121,095
+Admits: 31,181
+Admite Rate: 25.7%
+GPA of middle 25%-75% of students: 4.07 to 4.28
+
+UC Los Angeles: 
+Applicants: 145,904
+Admits: 12,779
+Admite Rate: 8.8%
+GPA of middle 25%-75% of students: 4.20 to 4.31
+
+UC Merced: 
+Applicants: 27,184
+Admits: 24,016
+Admite Rate: 88.3%
+GPA of middle 25%-75% of students: 3.48-4.08
+
+UC Riverside: 
+Applicants: 56,938
+Admits: 40,054
+Admite Rate: 70.3%
+GPA of middle 25%-75% of students: 3.76-4.18
+
+UC San Diego: 
+Applicants: 130,841
+Admits: 32,314
+Admite Rate: 24.7%
+GPA of middle 25%-75% of students: 4.11-4.29
+
+UC Santa Barbara: 
+Applicants: 110,876
+Admits: 30,914
+Admite Rate: 27.9%
+GPA of middle 25%-75% of students: 4.13-4.29
+
+UC Santa Cruz: 
+Applicants: 68,821
+Admits: 43,159
+Admite Rate: 62.7%
+GPA of middle 25%-75% of students: 3.86-4.22

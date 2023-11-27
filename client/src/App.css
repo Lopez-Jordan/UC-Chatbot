@@ -1,0 +1,70 @@
+.page1 {
+    height: 100vh;
+    background: url('/bg.png') center/cover no-repeat fixed;
+    display: flex;
+}
+
+.half1 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+}
+
+.content1, .content2 {
+    padding: 5%;
+}
+.content1{
+    display: flex;
+    flex-direction: column;
+}
+#chatHeader{
+    float: right;
+    color: white;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+#message {
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    float: left;
+}
+
+
+#mainHeading {
+    color: white;
+    float: left;
+    clear: both;
+    font-size: 50px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+#emblem {
+    width: 350px;
+    height: auto;
+}
+
+.half1 {
+    justify-content: space-between;
+    align-items: center;
+}
+.half2{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center; 
+}
+
+.powered{
+    color: white;
+    margin-bottom: 5%;
+    float: left;
+    font-size: 16px;
+}
