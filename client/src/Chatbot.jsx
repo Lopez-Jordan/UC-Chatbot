@@ -6,7 +6,7 @@ const MAX_CHARACTERS = 200;
 
 export default function Chatbot() {
   const [userMessage, setUserMessage] = useState("");
-  const [fullChat, setFullChat] = useState([]);
+  const [fullChat, setFullChat] = useState([{ role: 'chatbot', content: "Hello, what can I help you with today?" }]);
   const [isChatbotThinking, setIsChatbotThinking] = useState(false);
 
   const handleInputChange = (e) => {
@@ -18,22 +18,22 @@ export default function Chatbot() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    let currMessage = userMessage;
+    setUserMessage("");
 
-    // Display user's message immediately
     setFullChat([
-      { role: 'user', content: userMessage },
+      { role: 'user', content: currMessage },
       ...fullChat,
     ]);
 
     setIsChatbotThinking(true);
 
     try {
-      const result = await getResponse(userMessage);
+      const result = await getResponse(currMessage);
 
-      // Replace the user's message with the chatbot's response
       setFullChat([
         { role: 'chatbot', content: result },
-        { role: 'user', content: userMessage },
+        { role: 'user', content: currMessage },
         ...fullChat,
       ]);
 
@@ -42,7 +42,6 @@ export default function Chatbot() {
     }
 
     setIsChatbotThinking(false);
-    setUserMessage("");
   };
 
   const charactersRemaining = MAX_CHARACTERS - userMessage.length;

@@ -1,88 +1,94 @@
 .main {
-    height: 70vh;
-    margin-top: 18%;
-    width: 80%;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    background-color: rgb(226, 226, 226);
-    box-shadow: 0px 0px 40px rgb(26, 26, 26);
-  }
-  
-  #chats {
-    flex: 1;
-    margin: 8px;
-    overflow-y: auto;
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: start;
-  }
-  
-  .message {
-    max-width: 70%;
-    margin: 8px;
-    padding: 16px;
-    border-radius: 10px;
-  }
-  
-  .user {
-    align-self: flex-end;
-    box-shadow: 0px 0px 10px rgb(0, 166, 255);
-    border: 1.5px solid rgb(0, 166, 255);
-    border-bottom-right-radius: 0px; 
-    line-height: 24px;
-  }
-  
-  .chatbot {
-    align-self: flex-start;
-    color: black;
-    box-shadow: 0px 0px 10px rgb(0, 255, 102);
-    border: 1.5px solid rgb(0, 255, 102);
-    border-bottom-left-radius: 0px; 
-    line-height: 24px;
-  }
-  
-  .input-container {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 10px;
-    margin: 0 8px 8px 8px;
-    height: 100px;
-    justify-content: space-around;
-  }
-  
-  #inputText {
-    flex: 1;
-    border: none;
-    resize: none;
-    outline: none;
-    height: 80px;
-    border-radius: 10px;
-    font-size: 16px;
-    letter-spacing: 0.5px;
-    line-height: 22px;
-    padding: 10px 0 10px 10px;
-  }
-  
-  #submitButton {
-    border: none;
-    outline: none;
-    background-color: #ffc402;
-    color: white;
-    padding: 6px;
-    border-radius: 10px;
-    cursor: pointer;
-    color: black;
-    margin: 0 8px;
+  height: 70vh;
+  margin-top: 18%;
+  width: 80%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: rgb(135, 135, 135);
+  box-shadow: 0px 0px 40px rgb(26, 26, 26);
+
+}
+
+#chats {
+  flex: 1;
+  margin: 8px;
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: start;
+}
+
+.message {
+  max-width: 80%;
+  margin: 8px;
+  padding: 10px;
+  border-radius: 10px;
+
+}
+
+.user {
+  align-self: flex-end;
+  box-shadow: 0px 0px 8px #1295D8;
+  border: 1.5px solid #1295D8;
+  border-bottom-right-radius: 0px;
+  line-height: 22px;
+  font-size: 15px;
+  color: rgb(60, 60, 60);
+}
+
+.chatbot {
+  align-self: flex-start;
+  color: black;
+  box-shadow: 0px 0px 8px #FFB551;
+  border: 1.5px solid #FFB551;
+  border-bottom-left-radius: 0px;
+  line-height: 22px;
+  font-size: 15px;
+  color: rgb(60, 60, 60);
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 8px 8px 8px;
+  height: 100px;
+  justify-content: space-around;
+}
+
+#inputText {
+  flex: 1;
+  border: none;
+  resize: none;
+  outline: none;
+  height: 80px;
+  border-radius: 10px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  line-height: 22px;
+  padding: 10px 0 10px 10px;
+}
+
+#submitButton {
+  border: none;
+  outline: none;
+  background-color: #FFB551;
+  color: white;
+  padding: 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: black;
+  margin: 0 8px;
 }
 
 #submitButton:hover {
-  background-color: #2980b9;
+  background-color: #1295D8;
   color: white;
 }
 
@@ -92,11 +98,14 @@
 
 .char-counter {
   font-size: 14px;
-  color: #555; /* Choose a color that suits your design */
+  color: #848484;
   margin-top: 5px;
   margin-bottom: 6px;
   margin-left: 2px;
 }
+
+
+/* LOADER ANIMATIONS */
 
 .thinking .loader {
   display: flex;
@@ -106,11 +115,11 @@
 }
 
 .thinking .loader div {
-  width: 8px;
-  height: 8px;
-  background-color: #3498db;
+  width: 6px;
+  height: 6px;
+  background-color: #848484;
   border-radius: 50%;
-  margin: 0 4px;
+  margin: 0 2px;
   animation: jump 1s infinite ease-in-out;
 }
 
@@ -132,10 +141,11 @@
   }
 
   40% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
 
   60% {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
   }
 }
+
