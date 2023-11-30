@@ -10,7 +10,8 @@
   "scripts": {
     "start": "cd client && npm start",
     "install": "cd client && npm i",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build",
+    "develop" : "cd client && npm run dev"
   },
   "keywords": [],
   "author": "",
