@@ -20,7 +20,7 @@ app.get('/api/response', async (req, res) => {
     if (botResponse) {
       res.status(200).json({ message: botResponse });
     } else {
-      console.log("Something went wrong :/");
+      console.log("Something went wrong ://");
       res.status(500).json({ error: "Something went wrong :/" });
     }
   } catch (error) {
