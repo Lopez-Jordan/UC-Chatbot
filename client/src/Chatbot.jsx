@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { getResponse } from './chatbot/LLM.jsx';
 import './Chatbot.css';
 
-const MAX_CHARACTERS = 200;
+const MAX_CHARACTERS = 200;     // CHHANGE
 
 export default function Chatbot() {
   const [userMessage, setUserMessage] = useState("");
@@ -43,17 +42,27 @@ export default function Chatbot() {
     setIsChatbotThinking(true);
 
     try {
-      const result = await getResponse(currMessage);
-
-      setFullChat([
-        { role: 'chatbot', content: result },
-        { role: 'user', content: currMessage },
-        ...fullChat,
-      ]);
-
+      let result = await fetch(`/api/response?message=${encodeURIComponent(currMessage)}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    
+      if (result.ok) {
+        let responseData = await result.json();
+        setFullChat([
+          { role: 'chatbot', content: responseData.message },
+          { role: 'user', content: currMessage },
+          ...fullChat,
+        ]);
+      } else {
+        alert('something went wrong :/');
+      }
     } catch (error) {
       console.error(error);
     }
+    
 
     setIsChatbotThinking(false);
   };
