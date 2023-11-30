@@ -6,18 +6,32 @@ const MAX_CHARACTERS = 200;
 
 export default function Chatbot() {
   const [userMessage, setUserMessage] = useState("");
-  const [fullChat, setFullChat] = useState([{ role: 'chatbot', content: "Hello, what can I help you with today?" }]);
+  const [fullChat, setFullChat] = useState([]);
   const [isChatbotThinking, setIsChatbotThinking] = useState(false);
 
-  const handleInputChange = (e) => {
-    const inputText = e.target.value;
-    if (inputText.length <= MAX_CHARACTERS) {
-      setUserMessage(inputText);
+  const handleInputChange = (e) => {    // CHECKING UNDER 200 CHARACTERS FUNCTION
+    if (e.target.value.length <= MAX_CHARACTERS) {
+      setUserMessage(e.target.value);
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {     // FORM SUBMIT FUNCTION
     e.preventDefault();
+    sendMessage();
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  };
+
+  const sendMessage = async () => {
+    if (userMessage.trim() === "") {
+      return;
+    }
+
     let currMessage = userMessage;
     setUserMessage("");
 
@@ -46,7 +60,8 @@ export default function Chatbot() {
 
   const charactersRemaining = MAX_CHARACTERS - userMessage.length;
 
-  return (
+
+  return (  // RETURN
     <div className='main'>
       <div id='chats'>
         {isChatbotThinking && (
@@ -56,6 +71,11 @@ export default function Chatbot() {
               <div></div>
               <div></div>
             </div>
+          </div>
+        )}
+        {(fullChat.length == 0) && (
+          <div className='message chatbot first'>
+            Hello, what can I help you with today?
           </div>
         )}
         {fullChat.map((chat, index) => (
@@ -68,6 +88,7 @@ export default function Chatbot() {
       <form onSubmit={handleSubmit} className="input-container">
         <textarea
           onChange={handleInputChange}
+          onKeyDown={handleKeyDown}
           placeholder='Message here'
           id="inputText"
           value={userMessage}
@@ -84,7 +105,6 @@ export default function Chatbot() {
               <path d="M7 11L12 6L17 11M12 18V7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
             </svg>
           </button>
-
         </div>
       </form>
     </div>

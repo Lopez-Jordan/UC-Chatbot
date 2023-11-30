@@ -15,10 +15,18 @@ const llm = new ChatOpenAI({
 
 const standaloneQuestionPrompt = PromptTemplate.fromTemplate('Given a question, convert it to a standalone question. question: {question} standalone question:');
 
-const answerPrompt = PromptTemplate.fromTemplate(`You are a helpful and enthusiastic support bot who can answer a given question about the University of California admission processes based on the context provided. Try to find the answer in the context and answer in a short and cohesive way. If you really don't know the answer, say "I'm sorry, I don't know the answer to that." And direct the questioner to email jordanlopezemail@gmail.com. Don't try to make up an answer. Always speak as if you were chatting to a friend.
-context: {context}
-question: {question}
-answer: `);
+const answerPrompt = PromptTemplate.fromTemplate(
+    
+    `You are a helpful and enthusiastic support bot who can answer a given question about
+    the University of California admission processes based on the context provided.
+    Try to find the answer in the context and answer in a short and cohesive way. If you really don't know the answer, say "I'm sorry, I don't know the answer to that." 
+    And direct the questioner to email help@example.com. Don't try to make up an answer. Always speak as if you were chatting to a friend.
+
+    context: {context}
+    question: {question}
+    answer: `
+
+);
 
 const standaloneQuestionChain = standaloneQuestionPrompt
     .pipe(llm)
@@ -47,7 +55,6 @@ const chain = RunnableSequence.from([
 ]);
 
 
-// this is what you need //DONT FORGET INPUT STRING AS A PARAMETER
 export function getResponse (inputStr) {
     const response = chain.invoke({
         question: inputStr
@@ -56,28 +63,6 @@ export function getResponse (inputStr) {
 
 
 }
-
-
-// end here
-
-
-
-
-
-
-
-
-
-
-
-
-// getResponse("What is the best UC school?")
-//     .then(result => {
-//         setResponse(result);
-//     })
-//     .catch(error => {
-//         console.error(error);
-//     });
 
 
 

@@ -28,8 +28,26 @@
   margin: 8px;
   padding: 10px;
   border-radius: 10px;
-
 }
+
+
+.first {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
 
 .user {
   align-self: flex-end;
@@ -51,6 +69,7 @@
   font-size: 15px;
   color: rgb(60, 60, 60);
 }
+
 
 .input-container {
   display: flex;
