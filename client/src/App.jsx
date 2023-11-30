@@ -18,7 +18,7 @@ export default function App() {
           </div>
           <img id="emblem" src="/emblem.png" alt="" />
           <div style={{height: '200px'}}></div>
-          <p className='powered'>*powered by Chat GPT 3.5-turbo</p>
+          <p className='powered'>*powered by Chat GPT 3.5-turbo*</p>
         </div>
         <div className="half2">
             <Chatbot />
