@@ -8,6 +8,7 @@ dotenv.config()
 export default defineConfig({
   plugins: [react()],
   server: {
-    open: false,
-  },
+  port: 3000,
+  open: true
+  }
 });
