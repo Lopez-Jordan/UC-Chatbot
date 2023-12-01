@@ -20,7 +20,8 @@
     "@supabase/supabase-js": "^2.33.2",
     "dotenv": "^16.3.1",
     "fs": "^0.0.1-security",
-    "langchain": "^0.0.151"
+    "langchain": "^0.0.151",
+    "react-router-dom": "^6.15.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",
