@@ -38,7 +38,7 @@ async function getJSONscore(essayPrompt, inputEssay) {
 
 }
 
-async function getJSONreview (essayPrompt, inputEssay, JSONreview){
+async function getJSONreview (essayPrompt, inputEssay, JSONscore){
 
   const JSONpromptTwo = await openai.chat.completions.create({
     messages: [
@@ -71,8 +71,6 @@ async function getJSONreview (essayPrompt, inputEssay, JSONreview){
 
   return JSONcomments;
 }
-
-getJSONreview();
 
 
 module.exports = {

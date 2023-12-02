@@ -1,5 +1,6 @@
 const express = require('express');
 const { getResponse } = require('./chatbot/LLM');
+const { getJSONscore, getJSONreview } = require('./esssayReviewer/main')
 const path = require('path');
 const cors = require('cors');
 
@@ -12,9 +13,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/api/response', async (req, res) => {
+app.post('/api/response', async (req, res) => {
   try {
-    let userInput = req.query.message;
+    let userInput = req.body.message;
     let botResponse = await getResponse(userInput);
 
     if (botResponse) {
@@ -25,33 +26,42 @@ app.get('/api/response', async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: error.message });
+    res.status(400).json({ error: error.message });
   }
 });
 
 
-app.get('/api/JSONscore', async (req, res) => {
+app.post('/api/JSONscore', async (req, res) => {
   try {
+    let currEssayPrompt = req.body.essayPrompt;
+    let currInputEssay = req.body.inputEssay;
 
+    let responseObj = await getJSONscore(currEssayPrompt, currInputEssay);
 
-
-
-
-
+    if (responseObj){
+      res.status(200).json({message: responseObj})
+    } else {
+      console.log("Something went wrong ://");
+      res.status(400).json({ error: "Something went wrong :/" });
+    }
   } catch (error) {
     console.error(error);
   }
 });
 
-app.get('/api/JSONreview', async (req, res) => {
+app.post('/api/JSONreview', async (req, res) => {
   try {
-    
+    let currEssayPrompt = req.body.essayPrompt;
+    let currInputEssay = req.body.inputEssay;
+    let currJSONscore = req.body.JSONscore;
 
-
-
-
-
-    
+    let comments = await getJSONscore(currEssayPrompt, currInputEssay, currJSONscore)
+  
+    if (comments){
+      res.status(200).json({message: comments});
+    } else {
+      res.status(400).json({ error: "Something went wrong :/" })
+    }
   } catch (error) {
     console.error(error);
   }

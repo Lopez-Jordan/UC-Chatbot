@@ -27,9 +27,7 @@ export default function Chatbot() {
   };
 
   const sendMessage = async () => {
-    if (userMessage.trim() === "") {
-      return;
-    }
+    if (userMessage.trim() === "") return;
 
     let currMessage = userMessage;
     setUserMessage("");
@@ -38,17 +36,15 @@ export default function Chatbot() {
       { role: 'user', content: currMessage },
       ...fullChat,
     ]);
-
     setIsChatbotThinking(true);
-
     try {
-      let result = await fetch(`/api/response?message=${encodeURIComponent(currMessage)}`, {
-        method: "GET",
+      let result = await fetch(`/api/response`, {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        body: JSON.stringify({message: currMessage})
       });
-    
       if (result.ok) {
         let responseData = await result.json();
         setFullChat([
@@ -62,15 +58,12 @@ export default function Chatbot() {
     } catch (error) {
       console.error(error);
     }
-    
-
     setIsChatbotThinking(false);
   };
 
   const charactersRemaining = MAX_CHARACTERS - userMessage.length;
 
-
-  return (  // RETURN
+  return ( 
     <div className='main'>
       <div id='chats'>
         {isChatbotThinking && (
