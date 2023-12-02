@@ -5,8 +5,6 @@ const { OpenAIEmbeddings } = require('langchain/embeddings/openai');
 const fs = require('fs').promises;
 const dotenv = require('dotenv');
 dotenv.config();
-const dotenv = require('dotenv');
-dotenv.config();
 
 const openAIApiKey = process.env.OPENAI_API_KEY;
 const sbApiKey = process.env.SB_API_KEY;

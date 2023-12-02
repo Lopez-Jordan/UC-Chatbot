@@ -1,7 +1,7 @@
 const { ChatOpenAI } = require("langchain/chat_models/openai");
 const { PromptTemplate } = require("langchain/prompts");
 const { StringOutputParser } = require('langchain/schema/output_parser');
-const { retriever } = require('./retriever.js');  // Assuming retriever is in retriever.js
+const { retriever } = require('./retriever.js');
 const { combineDocuments } = require('./combineDocuments.js');
 const { RunnablePassthrough, RunnableSequence } = require("langchain/schema/runnable");
 const dotenv = require('dotenv');
@@ -14,7 +14,7 @@ const openAIApiKey = process.env.OPENAI_API_KEY;
 const llm = new ChatOpenAI({ 
     openAIApiKey,
     temperature: 0,
-    model: "gpt-3.5-turbo",
+    model: "gpt-3.5-turbo-1106",
 });
 
 const standaloneQuestionPrompt = PromptTemplate.fromTemplate('Given a question, convert it to a standalone question. question: {question} standalone question:');
