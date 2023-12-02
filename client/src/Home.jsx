@@ -1,5 +1,6 @@
 import './Home.css';
 import Chatbot from './Chatbot';
+import Reviewer from './Reviewer.jsx';
 
 export default function Home() {
 
@@ -20,9 +21,10 @@ export default function Home() {
         <div className="half2">
             <Chatbot />
         </div>
-        
-
       </section>
+
+      <Reviewer />
+
     </>
   )
 }

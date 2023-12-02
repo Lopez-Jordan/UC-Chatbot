@@ -29,6 +29,34 @@ app.get('/api/response', async (req, res) => {
   }
 });
 
+
+app.get('/api/JSONscore', async (req, res) => {
+  try {
+
+
+
+
+
+
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+app.get('/api/JSONreview', async (req, res) => {
+  try {
+    
+
+
+
+
+
+    
+  } catch (error) {
+    console.error(error);
+  }
+}); 
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/dist')));
   app.get('*', (req, res) => {

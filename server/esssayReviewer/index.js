@@ -13,27 +13,32 @@ const openai = new OpenAI({
   apiKey: openAIAPIKey,
 });
 
-async function getJSONreview() {
+async function getJSONscore(essayPrompt, inputEssay) {
   const JSONprompt = await openai.chat.completions.create({
     messages: [{
         role: "system",
-        content: `You are a helpful essay reviewer designed to output JSON. Please score the following essay from 1-100 on this criteria (labeled: Impact, Self, Examples, Prompt, Grammar)
-                  1: Essay focuses on impact of individual on community/self through the unique experience/perspective of writer
-                  2: Written in first person POV (uses "I" and "my" words etc.)
-                  3: Provides MANY specific/tangible examples that focus on decision, action and impact of writer
-                  4: Effectively and directly answers prompt without use of figurative language, creative writing, similes or metaphors
-                  5: Writing Quality, grammar and punctuation
-                  
-                  Essay Prompt: ${essayPrompt}`,
+        content: ``,
       },
-      { role: "user", content: inputEssay },],
+      { role: "user", content: `You are a helpful essay reviewer designed to output JSON. Please score the following essay from 1-100 on this criteria (labeled: Impact, Self, Examples, Prompt, Grammar)
+      1: Essay focuses on impact of individual on community/self through the unique experience/perspective of writer
+      2: Written in first person POV (uses "I" and "my" words etc.)
+      3: Provides MANY specific/tangible examples that focus on decision, action and impact of writer
+      4: Effectively and directly answers prompt without use of figurative language, creative writing, similes or metaphors
+      5: Writing Quality, grammar and punctuation
+      
+      Essay Prompt: ${essayPrompt}
+      Essay: ${inputEssay}` 
+    
+    },],
     model: "gpt-3.5-turbo-1106",
     response_format: { type: "json_object" },
   });
   
-  let JSONreview = JSONprompt.choices[0].message.content
+  return JSONprompt.choices[0].message.content;
 
+}
 
+async function getJSONreview (essayPrompt, inputEssay, JSONreview){
 
   const JSONpromptTwo = await openai.chat.completions.create({
     messages: [
@@ -49,10 +54,13 @@ async function getJSONreview() {
           4: Effectively and directly answers prompt without use of figurative language, creative writing, similes or metaphors
           5: Writing Quality, grammar and punctuation
 
-          essay: ${inputEssay}
+          Essay Prompt: ${essayPrompt}
+          Essay: ${inputEssay}
           JSON Score: ${JSONreview}
 
-          return a JSON object of 100 word cohesive comments for each category based on the score it got from the JSON Score
+          return a JSON Object of minimum 100-word cohesive comments for each category based on the score it got from the JSON Score
+
+          JSON Object:
          ` },
 
     ],
@@ -61,12 +69,18 @@ async function getJSONreview() {
   });
   let JSONcomments = JSONpromptTwo.choices[0].message.content
 
-  console.log(JSONcomments);
-
-
+  return JSONcomments;
 }
 
 getJSONreview();
+
+
+module.exports = {
+  getJSONscore,
+  getJSONreview
+}
+
+
 
 
 // R E Q U I R M E N T S:
