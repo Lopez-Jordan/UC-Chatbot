@@ -19,17 +19,19 @@ async function getJSONscore(essayPrompt, inputEssay) {
         role: "system",
         content: ``,
       },
-      { role: "user", content: `You are a helpful essay reviewer designed to output JSON. Please score the following essay from 1-100 on this criteria (labeled: Impact, Self, Examples, Prompt, Grammar)
-      1: Essay focuses on impact of individual on community/self through the unique experience/perspective of writer
-      2: Written in first person POV (uses "I" and "my" words etc.)
-      3: Provides MANY specific/tangible examples that focus on decision, action and impact of writer
-      4: Effectively and directly answers prompt without use of figurative language, creative writing, similes or metaphors
-      5: Writing Quality, grammar and punctuation
+      { role: "user", content: `
       
+      You are a helpful essay grader designed to output JSON. As accurately as possible, grade the following essay from 1-100 on this criteria:
+      1: Impact: Essay focuses on impact of individual on community/self through the unique experience/perspective of writer
+      2: Self: Written in first person POV (uses "I" and "my" words etc.)
+      3: Examples: Provides MANY specific/tangible examples that focus on decision, action and impact of writer
+      4: Prompt: Effectively and directly answers prompt without use of figurative language, creative writing, similes or metaphors
+      5: Grammar: Writing Quality, grammar and punctuation
+
       Essay Prompt: ${essayPrompt}
-      Essay: ${inputEssay}` 
-    
-    },],
+      Essay: ${inputEssay}
+      
+      `},],
     model: "gpt-3.5-turbo-1106",
     response_format: { type: "json_object" },
   });
@@ -46,13 +48,13 @@ async function getJSONreview (essayPrompt, inputEssay, JSONscore){
         role: "system",
         content: `  `,
       },
-      { role: "user", content: `You are an essay reviewer, given an essay and a JSON object representing the score for the essay with multiple categories: (labeled: Impact, Self, Examples, Prompt, Grammar)
+      { role: "user", content: `You are an essay commenter given an essay and a JSON object representing the score for that essay from these categories:
         that are represented like this:
-          1: Essay focuses on impact of individual on community/self through the unique experience/perspective of writer
-          2: Written in first person POV (uses "I" and "my" words etc.)
-          3: Provides MANY specific/tangible examples that focus on decision, action and impact of writer
-          4: Effectively and directly answers prompt without use of figurative language, creative writing, similes or metaphors
-          5: Writing Quality, grammar and punctuation
+        1: Impact: Essay focuses on impact of individual on community/self through the unique experience/perspective of writer
+        2: Self: Written in first person POV (uses "I" and "my" words etc.)
+        3: Examples: Provides MANY specific/tangible examples that focus on decision, action and impact of writer
+        4: Prompt: Effectively and directly answers prompt without use of figurative language, creative writing, similes or metaphors
+        5: Grammar: Writing Quality, grammar and punctuation
 
           Essay Prompt: ${essayPrompt}
           Essay: ${inputEssay}

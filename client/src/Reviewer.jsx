@@ -1,25 +1,30 @@
 import React, { useState } from 'react';
 import './Reviewer.css';
+import { ObjToArr } from '../utils.js';
+
+
 
 export default function Reviewer() {
   const [inputEssay, setInputEssay] = useState("");
   const [prompt, setPrompt] = useState("");
-  const [JSONreview, setJSONreview] = useState({});
+  const [JSONscore, setJSONscore] = useState([]);
+  const [displayResults, setDisplayResults] = useState(false);
   
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
-    alert(`Selected Prompt: ${prompt}\nEssay: ${inputEssay}`);
-
-    const JSONscore = await fetch('/api/JSONscore', {
+    console.log(`Selected Prompt: ${prompt}\nEssay: ${inputEssay}`);
+    const JSONscoreContainer = await fetch('/api/JSONscore', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({essayPrompt: prompt, inputEssay: inputEssay})
     });
-    let respondedJSONscore = await JSONscore.json();
-    console.log(respondedJSONscore);
+    let JSONpromise = await JSONscoreContainer.json();  
+
+    setJSONscore(ObjToArr(JSON.parse(JSONpromise.message)));
+    
+    setDisplayResults(true);
     
     // 1: Make a fetch 'POST' to the /api/JSONscore (essayPrompt, inputEssay) and get the returned JSON object
     // 2: Use score JSON object to display scores in a visually appealing way
@@ -59,6 +64,15 @@ export default function Reviewer() {
           ></textarea>
           <button type='submit'>Submit</button>
         </form>
+        {displayResults &&
+          <>
+            <h4>Impact is {JSONscore[0]}</h4>
+            <h4>Self is {JSONscore[1]}</h4>
+            <h4>Examples is {JSONscore[2]}</h4>
+            <h4>Prompt is {JSONscore[3]}</h4>
+            <h4>Grammar is {JSONscore[4]}</h4>
+          </>
+        }
       </div>
     </div>
   );
