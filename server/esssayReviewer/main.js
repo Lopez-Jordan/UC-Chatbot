@@ -56,9 +56,9 @@ async function getCommentary (essayPrompt, inputEssay, JSONscore){
           Essay: ${inputEssay}
 
 
-          write me a nicely formatted 600 word cohesive and thorough commentary for each scored category
+          write me a nicely formatted, bullet pointed 600 word cohesive and thorough commentary for each scored category
 
-          only include commentary:
+          commentaries for each scored category:
          ` },
 
     ],
