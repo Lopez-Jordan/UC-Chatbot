@@ -46,19 +46,19 @@ async function getCommentary (essayPrompt, inputEssay, JSONscore){
       
       You are helpful and enthusiastic essay grader given an essay and its corresponding already scored categories:
 
-        1: Essay focuses on impact of individual on community/self through the unique experience/perspective of writer (score: ${JSONscore.Impact})
-        2: Essay is written in first person point of view and uses "I" and "my" words etc. (score: ${JSONscore.Self})
-        3: Essay provides many specific/tangible examples that focus on decision, action and impact of writer (score: ${JSONscore.Examples})
-        4: Essay effectively and directly answers prompt without use of figurative language, creative writing, similes or metaphors etc. (score: ${JSONscore.Prompt})
-        5: Essay has high writing quality, grammar and punctuation (score: ${JSONscore.Grammar})
+        1: Essay focuses on impact of individual on community/self through the unique experience/perspective of writer (score: ${JSONscore.Impact} / 100)
+        2: Essay is written in first person point of view and uses "I" and "my" words etc. (score: ${JSONscore.Self} / 100)
+        3: Essay provides many specific/tangible examples that focus on decision, action and impact of writer (score: ${JSONscore.Examples} / 100)
+        4: Essay effectively and directly answers prompt without use of figurative language, creative writing, similes or metaphors etc. (score: ${JSONscore.Prompt} / 100)
+        5: Essay has high writing quality, grammar and punctuation (score: ${JSONscore.Grammar} / 100)
 
           Essay Prompt: ${essayPrompt}
           Essay: ${inputEssay}
 
-          write me a 400 word cohesive and thorough commentary for each scored category
 
-          Commentary:
+          write me a nicely formatted 600 word cohesive and thorough commentary for each scored category
 
+          only include commentary:
          ` },
 
     ],
