@@ -51,27 +51,35 @@ export default function Reviewer() {
       <div className='halfLeft'>
         <div className='formContainer'>
           <form className='reviewForm' onSubmit={handleFormSubmit}>
-            <label htmlFor="prompt">Select your prompt:</label>
+            <div className='numContainer'><span className='numSpan'>1</span>
+              <h3>Select your prompt</h3>
+            </div>
             <select
               onChange={(e) => setPrompt(e.target.value)}
               value={prompt}
             >
-              <option value="1">1. Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.</option>
-              <option value="2">2. Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.</option>
-              <option value="3">3. What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?</option>
-              <option value="4">4. Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.</option>
-              <option value="5">5. Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement? </option>
-              <option value="6">6. Think about an academic subject that inspires you. Describe how you have furthered this interest inside and/or outside of the classroom. </option>
-              <option value="7">7. What have you done to make your school or your community a better place?</option>
-              <option value="8">8. Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admissions to the University of California?</option>
+              <option value="1">Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.</option>
+              <option value="2">Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.</option>
+              <option value="3">What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?</option>
+              <option value="4">Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.</option>
+              <option value="5">Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement? </option>
+              <option value="6">Think about an academic subject that inspires you. Describe how you have furthered this interest inside and/or outside of the classroom. </option>
+              <option value="7">What have you done to make your school or your community a better place?</option>
+              <option value="8">Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admissions to the University of California?</option>
             </select>
-            <label>Copy and paste your essay</label>
+            <div className='numContainer'><span className='numSpan'>2</span>
+              <h3>Copy and paste your essay</h3>
+            </div>
             <textarea
+              id='essay'
               onChange={(e) => setInputEssay(e.target.value)}
               value={inputEssay}
               placeholder="Paste your essay here (max 350 words)"
             ></textarea>
-            <button type='submit'>Get Feedback</button>
+            <div className='numContainer'><span className='numSpan'>3</span>
+              <h3>Get Customized Results</h3>
+            </div>
+            <button id="getFeedback" type='submit'>Go!</button>
           </form>
           {displayResults &&
             <>
@@ -86,14 +94,15 @@ export default function Reviewer() {
         </div>
       </div>
       <div className='halfRight'>
-        <h2>Perfect your UC essays</h2>
-        <p>Gain personalized metrics and insights into how YOUR essay is evaluated in the eyes of a UC Admission Officer</p>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <p>blah</p>
-          <p>blah</p>
-          <p>blah</p>
+        <div className='rightContent'>
+          <h1>Perfect your UC essays</h1>
+          <h3 className='metrics'>Gain personalized metrics and insights into how YOUR essay is evaluated in the eyes of a UC Admission Officer</h3>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <p>blah</p>
+            <p>blah</p>
+            <p>blah</p>
+          </div>
         </div>
-
       </div>
     </div>
   );
