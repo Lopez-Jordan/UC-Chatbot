@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import './Reviewer.css';
 import { ObjToArr } from '../utils.js';
 
-
-
 export default function Reviewer() {
+
   const [inputEssay, setInputEssay] = useState("");
   const [prompt, setPrompt] = useState("");
-  const [JSONscore, setJSONscore] = useState([]);
+  const [JSONscoreArr, setJSONscoreArr] = useState([]);
+  const [commentary, setCommentary] = useState("");
   const [displayResults, setDisplayResults] = useState(false);
   
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log(`Selected Prompt: ${prompt}\nEssay: ${inputEssay}`);
+
     const JSONscoreContainer = await fetch('/api/JSONscore', {
       method: "POST",
       headers: {
@@ -21,16 +21,27 @@ export default function Reviewer() {
       body: JSON.stringify({essayPrompt: prompt, inputEssay: inputEssay})
     });
     let JSONpromise = await JSONscoreContainer.json();  
+    let fullJSONscore = await JSON.parse(JSONpromise.message);
 
-    setJSONscore(ObjToArr(JSON.parse(JSONpromise.message)));
+    await setJSONscoreArr(ObjToArr(JSON.parse(JSONpromise.message)));
     
-    setDisplayResults(true);
-    
+    console.log(fullJSONscore);
     // 1: Make a fetch 'POST' to the /api/JSONscore (essayPrompt, inputEssay) and get the returned JSON object
     // 2: Use score JSON object to display scores in a visually appealing way
     // 3: Make a fetch 'POST' to /api/JSON/review (essayPrompt, inputEssay, JSONscore)
     // 4: Show the results
 
+    const commentaryContainer = await fetch('/api/commentary', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({essayPrompt: prompt, inputEssay: inputEssay, JSONscore: fullJSONscore})
+    })
+    let commentaryResponse = await commentaryContainer.text();
+    setCommentary(commentaryResponse);
+    
+    setDisplayResults(true);
     setInputEssay("");
     setPrompt(""); // Reset the prompt after submission
   };
@@ -66,11 +77,12 @@ export default function Reviewer() {
         </form>
         {displayResults &&
           <>
-            <h4>Impact is {JSONscore[0]}</h4>
-            <h4>Self is {JSONscore[1]}</h4>
-            <h4>Examples is {JSONscore[2]}</h4>
-            <h4>Prompt is {JSONscore[3]}</h4>
-            <h4>Grammar is {JSONscore[4]}</h4>
+            <h4>Impact: {JSONscoreArr[0]}</h4>
+            <h4>Self: {JSONscoreArr[1]}</h4>
+            <h4>Examples: {JSONscoreArr[2]}</h4>
+            <h4>Prompt: {JSONscoreArr[3]}</h4>
+            <h4>Grammar: {JSONscoreArr[4]}</h4>
+            {commentary}
           </>
         }
       </div>

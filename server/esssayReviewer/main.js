@@ -1,13 +1,8 @@
 const { OpenAI } = require('openai');
-
 const dotenv = require('dotenv');
 dotenv.config();
 
-
 const openAIAPIKey = process.env.OPEN_AI_KEY_REVIEWER;
-
-const inputEssay = `During my tenure as the president of our high school's environmental club, I immersed myself in fostering a sense of community and driving positive change. From the outset, my leadership was defined by a hands-on approach, focusing not just on organizational tasks but on inspiring collective action and sustainable impact. In the realm of dispute resolution, I encountered a challenge when two members disagreed on the theme for our Earth Day event. Instead of dismissing the issue, I facilitated a structured dialogue where each perspective was heard. Drawing on effective communication and empathy, I guided the group towards a consensus that integrated both viewpoints, resulting in a richer and more inclusive event. One of the pivotal decisions I made involved spearheading a community cleanup initiative. Recognizing the tangible impact we could have, I mobilized the team to collaborate with local residents and businesses. We meticulously planned the logistics, communicated with stakeholders, and ensured everyone felt a sense of ownership in the project. The cleanup not only transformed neglected areas but also strengthened community bonds and instilled a lasting commitment to environmental stewardship. In the broader context of leadership, my actions spoke louder than words. I initiated a recycling program in our school, partnering with local recycling facilities and raising awareness about sustainable practices. This endeavor not only reduced our ecological footprint but also cultivated a culture of responsibility among students. Addressing the prompt, these experiences illuminate how I positively influenced others, resolved disputes, and contributed to group efforts. The narrative is grounded in specific examples, from navigating interpersonal conflicts to organizing impactful events. Each decision and action is meticulously detailed to underscore the tangible outcomes achieved under my leadership. This essay mirrors a real-time interview response, eschewing academic formalities for a conversational tone. It reflects a genuine passion for community and environmental causes, showcasing my ability to lead with authenticity and foster positive change.`;
-const essayPrompt = `Describe an example of leadership experience in which you positively influenced others, helped resolve disputes, or contributed to group efforts over time `;
 
 const openai = new OpenAI({
   apiKey: openAIAPIKey,
@@ -23,7 +18,7 @@ async function getJSONscore(essayPrompt, inputEssay) {
       
       You are a helpful essay grader designed to output JSON. As accurately as possible, grade the following essay from 1-100 on this criteria:
       1: Impact: Essay focuses on impact of individual on community/self through the unique experience/perspective of writer
-      2: Self: Written in first person POV (uses "I" and "my" words etc.)
+      2: Self: Essay is written in first person point of view (uses "I" and "my" words etc.)
       3: Examples: Provides MANY specific/tangible examples that focus on decision, action and impact of writer
       4: Prompt: Effectively and directly answers prompt without use of figurative language, creative writing, similes or metaphors
       5: Grammar: Writing Quality, grammar and punctuation
@@ -37,10 +32,9 @@ async function getJSONscore(essayPrompt, inputEssay) {
   });
   
   return JSONprompt.choices[0].message.content;
-
 }
 
-async function getJSONreview (essayPrompt, inputEssay, JSONscore){
+async function getCommentary (essayPrompt, inputEssay, JSONscore){
 
   const JSONpromptTwo = await openai.chat.completions.create({
     messages: [
@@ -48,36 +42,36 @@ async function getJSONreview (essayPrompt, inputEssay, JSONscore){
         role: "system",
         content: `  `,
       },
-      { role: "user", content: `You are an essay commenter given an essay and a JSON object representing the score for that essay from these categories:
-        that are represented like this:
-        1: Impact: Essay focuses on impact of individual on community/self through the unique experience/perspective of writer
-        2: Self: Written in first person POV (uses "I" and "my" words etc.)
-        3: Examples: Provides MANY specific/tangible examples that focus on decision, action and impact of writer
-        4: Prompt: Effectively and directly answers prompt without use of figurative language, creative writing, similes or metaphors
-        5: Grammar: Writing Quality, grammar and punctuation
+      { role: "user", content: `
+      
+      You are helpful and enthusiastic essay grader given an essay and its corresponding already scored categories:
+
+        1: Essay focuses on impact of individual on community/self through the unique experience/perspective of writer (score: ${JSONscore.Impact})
+        2: Essay is written in first person point of view and uses "I" and "my" words etc. (score: ${JSONscore.Self})
+        3: Essay provides many specific/tangible examples that focus on decision, action and impact of writer (score: ${JSONscore.Examples})
+        4: Essay effectively and directly answers prompt without use of figurative language, creative writing, similes or metaphors etc. (score: ${JSONscore.Prompt})
+        5: Essay has high writing quality, grammar and punctuation (score: ${JSONscore.Grammar})
 
           Essay Prompt: ${essayPrompt}
           Essay: ${inputEssay}
-          JSON Score: ${JSONreview}
 
-          return a JSON Object of minimum 100-word cohesive comments for each category based on the score it got from the JSON Score
+          write me a 400 word cohesive and thorough commentary for each scored category
 
-          JSON Object:
+          Commentary:
+
          ` },
 
     ],
     model: "gpt-3.5-turbo-1106",
-    response_format: { type: "json_object" },
   });
-  let JSONcomments = JSONpromptTwo.choices[0].message.content
-
+  let JSONcomments = JSONpromptTwo.choices[0].message.content  
   return JSONcomments;
 }
 
 
 module.exports = {
   getJSONscore,
-  getJSONreview
+  getCommentary,
 }
 
 

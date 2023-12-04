@@ -1,6 +1,6 @@
 const express = require('express');
 const { getResponse } = require('./chatbot/LLM');
-const { getJSONscore, getJSONreview } = require('./esssayReviewer/main')
+const { getJSONscore, getCommentary } = require('./esssayReviewer/main')
 const path = require('path');
 const cors = require('cors');
 
@@ -49,16 +49,16 @@ app.post('/api/JSONscore', async (req, res) => {
   }
 });
 
-app.post('/api/JSONreview', async (req, res) => {
+app.post('/api/commentary', async (req, res) => {
   try {
     let currEssayPrompt = req.body.essayPrompt;
     let currInputEssay = req.body.inputEssay;
     let currJSONscore = req.body.JSONscore;
 
-    let comments = await getJSONscore(currEssayPrompt, currInputEssay, currJSONscore)
+    let comments = await getCommentary(currEssayPrompt, currInputEssay, currJSONscore)
   
     if (comments){
-      res.status(200).json({message: comments});
+      res.status(200).send(comments);
     } else {
       res.status(400).json({ error: "Something went wrong :/" })
     }
