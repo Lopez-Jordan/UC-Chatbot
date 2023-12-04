@@ -1,0 +1,25 @@
+.main2{
+    height: 80vh;
+    background: linear-gradient(to left, rgb(255, 199, 229), rgb(179, 179, 255));
+    display: flex;
+}
+.halfLeft, .halfRight{
+    width: 50%;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+}
+.formContainer{
+    background-color: white;
+    border-radius: 10px;
+}
+.reviewForm{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+
+select{
+    width: 30%;
+}
