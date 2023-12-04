@@ -1,6 +1,6 @@
 .page1 {
     height: 100vh;
-    background: url('/bg.png') center/cover no-repeat fixed;
+    background: #fffbec;
     display: flex;
 }
 
@@ -19,31 +19,30 @@
     flex-direction: column;
 }
 #chatHeader{
-    float: right;
-    color: white;
+    float: end;
     margin-top: 20px;
     font-size: 16px;
     font-weight: lighter;
 }
 
 #message {
-    color: white;
     margin-bottom: 20px;
     font-weight: 400;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: bolder;
     letter-spacing: 1px;
     float: left;
 }
 
-
 #mainHeading {
-    color: white;
     float: left;
     clear: both;
     font-size: 60px;
-    font-weight: 600;
+    font-weight: bolder;
     letter-spacing: 1.5px;
+    background: linear-gradient(to bottom right, rgb(24, 0, 181), rgb(193, 0, 113));
+    -webkit-background-clip: text;
+    color: transparent;
 }
 #emblem {
     width: 350px;
@@ -63,7 +62,7 @@
 }
 
 .powered{
-    color: white;
+    color: black;
     margin-bottom: 5%;
     float: left;
     font-size: 14px;

@@ -6,10 +6,10 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background-color: rgb(225, 225, 225);
-  box-shadow: 0px 0px 40px rgb(26, 26, 26);
-
+  background-color: rgb(0, 0, 0);
+  box-shadow: 16px 16px 0 rgb(179, 179, 255)
 }
+
 
 #chats {
   flex: 1;
@@ -57,17 +57,19 @@
   line-height: 22px;
   font-size: 15px;
   color: rgb(60, 60, 60);
+
 }
 
 .chatbot {
   align-self: flex-start;
   color: black;
-  box-shadow: 0px 0px 8px #FFB551;
-  border: 1.5px solid #FFB551;
+  box-shadow: 0px 0px 8px #ffbb63;
+  border: 1.5px solid #ffbb63;
   border-bottom-left-radius: 0px;
   line-height: 22px;
   font-size: 15px;
   color: rgb(60, 60, 60);
+
 }
 
 
@@ -97,7 +99,7 @@
 #submitButton {
   border: none;
   outline: none;
-  background-color: #ff64b4;
+  background-color: #ffb7dc;
   color: white;
   padding: 6px;
   border-radius: 10px;
