@@ -1,6 +1,6 @@
 .page1 {
     height: 100vh;
-    background: #fffbec;
+    /* background: #fffbec; */
     display: flex;
 }
 
@@ -22,7 +22,7 @@
     float: end;
     margin-top: 20px;
     font-size: 16px;
-    font-weight: lighter;
+    font-weight: 500;
 }
 
 #message {
@@ -37,7 +37,7 @@
 #mainHeading {
     float: left;
     clear: both;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: bolder;
     letter-spacing: 1.5px;
     background: linear-gradient(to bottom right, rgb(24, 0, 181), rgb(193, 0, 113));
@@ -66,4 +66,5 @@
     margin-bottom: 5%;
     float: left;
     font-size: 14px;
+    font-weight: 500;
 }

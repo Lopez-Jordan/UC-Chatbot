@@ -1,6 +1,6 @@
 .main2{
     height: 80vh;
-    background: linear-gradient(to left, rgb(255, 211, 235), rgb(198, 198, 255));
+    background: linear-gradient(to top right, rgb(255, 215, 237), rgb(114, 114, 255));
     padding: 70px;
     display: flex;
 }
@@ -12,15 +12,25 @@
     display: flex;
     flex-direction: column;
 }
+
 .formContainer{
     background-color: white;
     border-radius: 10px;
-    box-shadow: 10px 10px 0px black;
+    box-shadow: 16px 16px 0px rgb(255, 255, 255);
 }
+.rightContent{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .reviewForm{
     display: flex;
     flex-direction: column;
     padding: 30px;
+    background-color: rgb(237, 237, 237);
+    border: 5px solid white;
 }
 
 .numContainer{
@@ -33,16 +43,35 @@
     margin-top: 6px;
     letter-spacing: 0.5px;
     font-size: 24px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
 }
 .numSpan{
-    padding: 0px 12px;
-    width: fit-content;
-    font-size: 30px;
+    display: inline-block;
+    width: 40px; /* Adjust the width */
+    height: 40px; /* Adjust the height */
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px; /* Should match the height for vertical centering */
+    color: black;
+    font-weight: 600; /* Adjust the font-weight */
+    font-size: 26px; /* Adjust the font-size */
+    margin-right: 16px;
+    box-shadow: 0 0 20px white;
+}
+#perfect{
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
 }
 .metrics{
-    margin: 10px 0 30px 0;
-    color: rgb(101, 101, 101);
+    margin: 16px 0 30px 0;
+    color: white;
     line-height: 24px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 28px;
 }
 #essay{
     height: 160px;
@@ -51,17 +80,6 @@
     padding: 10px;
     margin: 10px 0px 20px 0px;
 
-}
-
-
-.rightContent{
-    background-color: white;
-    background-color: white;
-    border-radius: 10px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 10px 10px 0 black;
 }
 
 select{
@@ -74,20 +92,15 @@ select{
 #getFeedback{
     font-size: 18px;
     margin: 10px 0px 0px 0px;
-
     width: fit-content;
     padding: 8px 30px;
     color: black;
-    background-color: rgb(253, 194, 227);
+    background-color: rgb(255, 197, 230);
     border: none;
     cursor: pointer;
     box-shadow: 4px 4px 0px black;
+    font-weight: 600;
 }
 #getFeedback:hover{
     box-shadow: none
-}
-.break{
-    width: 95%;
-    border: 0.75px solid rgb(163, 163, 163);
-    margin-bottom: 60px;
 }
