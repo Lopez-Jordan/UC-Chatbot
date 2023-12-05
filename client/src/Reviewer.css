@@ -31,6 +31,8 @@
 }
 .numContainer > h3{
     margin-top: 6px;
+    letter-spacing: 0.5px;
+    font-size: 24px;
 }
 .numSpan{
     padding: 0px 12px;
@@ -40,13 +42,15 @@
 .metrics{
     margin: 10px 0 30px 0;
     color: rgb(101, 101, 101);
+    line-height: 24px;
 }
 #essay{
-    margin-bottom: 10px;
     height: 160px;
     width: 80%;
-    border: 1.75px solid black;
+    border: 1.75px solid rgb(110, 110, 110);
     padding: 10px;
+    margin: 10px 0px 20px 0px;
+
 }
 
 
@@ -62,14 +66,15 @@
 
 select{
     width: 84%;
-    margin: 10px 0px;
-    border: 1.75px solid black;
+    margin: 10px 0px 20px 0px;
+    border: 1.75px solid rgb(159, 159, 159);
     padding: 5px;
-    color: grey;
+    color: black;
 }
 #getFeedback{
     font-size: 18px;
-    margin: 10px 0px;
+    margin: 10px 0px 0px 0px;
+
     width: fit-content;
     padding: 8px 30px;
     color: black;
@@ -80,5 +85,9 @@ select{
 }
 #getFeedback:hover{
     box-shadow: none
-    
+}
+.break{
+    width: 95%;
+    border: 0.75px solid rgb(163, 163, 163);
+    margin-bottom: 60px;
 }
