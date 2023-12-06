@@ -1,6 +1,6 @@
 .main2{
     height: 80vh;
-background-color: white;
+    background-color: rgb(234, 234, 234);
     padding: 70px;
     display: flex;
 }
@@ -16,7 +16,6 @@ background-color: white;
 .formContainer{
     background-color: black;
     border-radius: 10px;
-    box-shadow: 16px 16px 0px rgb(255, 255, 255);
 }
 .rightContent{
     border-radius: 10px;
@@ -24,13 +23,18 @@ background-color: white;
     flex-direction: column;
     align-items: center;
 }
+#perfects{
+    font-style: italic;
+}
 
 .reviewForm{
     display: flex;
     flex-direction: column;
     padding: 30px;
-    background-color: rgb(237, 237, 237);
-    border: 2px solid black;
+    background-color: white;
+    box-shadow: 0 0 10px rgb(154, 153, 153);
+    border-radius: 10px;
+    
 }
 
 .numContainer{
@@ -44,7 +48,7 @@ background-color: white;
     letter-spacing: 0.5px;
     font-size: 24px;
     color: rgb(0, 0, 0);
-    font-weight: 600;
+    font-weight: 400;
 }
 .numSpan{
     display: inline-block;
@@ -54,11 +58,12 @@ background-color: white;
     border-radius: 50%;
     text-align: center;
     line-height: 40px; /* Should match the height for vertical centering */
-    color: black;
+    background: linear-gradient(to bottom right,#0032bb, #ff12e7); 
+    -webkit-background-clip: text;
+    color: transparent;
     font-weight: 600; /* Adjust the font-weight */
-    font-size: 26px; /* Adjust the font-size */
-    margin-right: 16px;
-    box-shadow: 0 0 20px black;
+    font-size: 36px; /* Adjust the font-size */
+    margin-right: 10px;
 }
 #perfect{
     color: black;
@@ -66,7 +71,7 @@ background-color: white;
     font-weight: 600;
 }
 #perfect > span{
-    background: linear-gradient(to bottom right, rgb(24, 0, 181), rgb(193, 0, 113));
+    background: linear-gradient(to bottom right,#0032bb, #ff12e7); 
     -webkit-background-clip: text;
     color: transparent;
     font-style: italic;
@@ -78,7 +83,7 @@ background-color: white;
     line-height: 24px;
     text-align: center;
     font-weight: 600;
-    line-height: 28px;
+    line-height: 30px;
 }
 #essay{
     height: 160px;
@@ -86,7 +91,6 @@ background-color: white;
     border: 1.75px solid rgb(110, 110, 110);
     padding: 10px;
     margin: 10px 0px 20px 0px;
-
 }
 
 select{
@@ -101,13 +105,13 @@ select{
     margin: 10px 0px 0px 0px;
     width: fit-content;
     padding: 8px 30px;
-    color: black;
-    background-color: rgb(255, 197, 230);
+    color: white;
+    background-color: rgb(0, 210, 0);
     border: none;
+    border-radius: 10px;
     cursor: pointer;
-    box-shadow: 4px 4px 0px black;
-    font-weight: 600;
+    font-weight: 400;
 }
 #getFeedback:hover{
-    box-shadow: none
+    background-color: rgb(0, 195, 0);
 }

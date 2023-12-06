@@ -70,7 +70,7 @@ export default function Reviewer() {
               </select>
             </div>
             <div className='numContainer'><span className='numSpan'>2</span>
-              <h3>Copy and paste your essay</h3>
+              <h3>Paste your essay</h3>
             </div>
             <div style={{display: "Flex", justifyContent: "center"}}>
               <textarea
@@ -84,7 +84,7 @@ export default function Reviewer() {
               <h3>Get Customized Results</h3>
             </div>
             <div style={{display: "Flex", justifyContent: "center"}}>
-              <button id="getFeedback" type='submit'>Go!</button>
+              <button id="getFeedback" type='submit'>Get Feedback</button>
             </div>
           </form>
           {displayResults &&
@@ -101,8 +101,8 @@ export default function Reviewer() {
       </div>
       <div className='halfRight'>
         <div className='rightContent'>
-          <h1 id='perfect'><span>Perfect</span> your UC essays</h1>
-          <h2 className='metrics'>Gain personalized metrics and insights into how YOUR essay is evaluated through the eyes of a UC Admission Officer</h2>
+          <h1 id='perfect'><span >Perfect</span> your UC essays</h1>
+          <h2 className='metrics'>Gain personalized metrics and insights into how <span id="perfects">YOUR</span> essay is evaluated through the eyes of a UC Admission Officer</h2>
           <div style={{display: "Flex", justifyContent: "center"}}>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
