@@ -7,7 +7,7 @@
   flex-direction: column;
   overflow: hidden;
   background-color: rgb(0, 0, 0);
-  box-shadow: 16px 16px 0 rgb(179, 179, 255);
+  box-shadow: 0 0 60px rgb(111, 111, 111);
 }
 
 
@@ -15,12 +15,18 @@
   flex: 1;
   margin: 8px;
   overflow-y: auto;
-  background-color: white;
   border-radius: 10px;
   padding: 20px;
   display: flex;
   flex-direction: column-reverse;
   align-items: start;
+  background-color: white;
+  position: relative;
+}
+#emblem{
+  position: absolute;
+  top: 15%;
+  right: 20%;
 }
 
 .message {
@@ -57,7 +63,7 @@
   line-height: 22px;
   font-size: 15px;
   color: rgb(60, 60, 60);
-
+  background-color: white;
 }
 
 .chatbot {
@@ -69,7 +75,7 @@
   line-height: 22px;
   font-size: 15px;
   color: rgb(60, 60, 60);
-
+  background-color: white;
 }
 
 

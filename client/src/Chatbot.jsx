@@ -66,6 +66,7 @@ export default function Chatbot() {
   return ( 
     <div className='main'>
       <div id='chats'>
+        <img id='emblem' src='/seal-history-unofficial.jpg'></img>
         {isChatbotThinking && (
           <div className="message chatbot thinking">
             <div className="loader">

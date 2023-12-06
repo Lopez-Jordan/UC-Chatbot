@@ -1,7 +1,11 @@
 .page1 {
     height: 100vh;
-    /* background: #fffbec; */
     display: flex;
+    background-color: white;
+    background: linear-gradient(to bottom right, #0032bb, #ff8ef4bd); 
+    background-size: cover; /* Adjust as needed */
+    background-position: center center; /* Adjust as needed */
+    background-repeat: no-repeat; /* Adjust as needed */
 }
 
 .half1 {
@@ -23,6 +27,7 @@
     margin-top: 20px;
     font-size: 16px;
     font-weight: 500;
+    color: white;
 }
 
 #message {
@@ -32,6 +37,7 @@
     font-weight: bolder;
     letter-spacing: 1px;
     float: left;
+    color: white;
 }
 
 #mainHeading {
@@ -40,9 +46,7 @@
     font-size: 50px;
     font-weight: bolder;
     letter-spacing: 1.5px;
-    background: linear-gradient(to bottom right, rgb(24, 0, 181), rgb(193, 0, 113));
-    -webkit-background-clip: text;
-    color: transparent;
+    color: white;
 }
 #emblem {
     width: 350px;
@@ -63,8 +67,8 @@
 
 .powered{
     color: black;
-    margin-bottom: 5%;
-    float: left;
+    position: relative;
+    top: 6%;
     font-size: 14px;
     font-weight: 500;
 }
