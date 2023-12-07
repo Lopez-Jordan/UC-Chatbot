@@ -48,13 +48,19 @@ export default function Reviewer() {
 
   return (
     <div className='main2'>
-      <div className='halfLeft'>
+      <div className='topHalf'>
+          <h1 id='perfect'><span >Perfect</span> your UC essays</h1>
+          <h2 className='metrics'>Gain personalized metrics and insights into how <span id="perfects">YOUR</span> essay is evaluated through the eyes of a UC Admission Officer</h2>
+          <div style={{ display: "Flex", justifyContent: "center" }}>
+        </div>
+      </div>
+      <div className='bottomHalf'>
         <div className='formContainer'>
           <form className='reviewForm' onSubmit={handleFormSubmit}>
             <div className='numContainer'><span className='numSpan'>1</span>
               <h3>Select your prompt</h3>
             </div>
-            <div style={{display: "Flex", justifyContent: "center"}}>
+            <div style={{ display: "Flex", justifyContent: "center" }}>
               <select
                 onChange={(e) => setPrompt(e.target.value)}
                 value={prompt}
@@ -81,10 +87,10 @@ export default function Reviewer() {
               ></textarea>
             </div>
             <div className='numContainer'><span className='numSpan'>3</span>
-              <h3>Get Customized Results</h3>
+              <h3>Recieve custom feedback</h3>
             </div>
             <div style={{display: "Flex", justifyContent: "center"}}>
-              <button id="getFeedback" type='submit'>Get Feedback</button>
+              <button id="getFeedback" type='submit'>Evaluate</button>
             </div>
           </form>
           {displayResults &&
@@ -98,18 +104,11 @@ export default function Reviewer() {
             </>
           }
         </div>
-      </div>
-      <div className='halfRight'>
-        <div className='rightContent'>
-          <h1 id='perfect'><span >Perfect</span> your UC essays</h1>
-          <h2 className='metrics'>Gain personalized metrics and insights into how <span id="perfects">YOUR</span> essay is evaluated through the eyes of a UC Admission Officer</h2>
-          <div style={{display: "Flex", justifyContent: "center"}}>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <p>blah</p>
-            <p>blah</p>
-            <p>blah</p>
-          </div>
+        <div className='reasons'>
+          <div>blah</div>
+          <div>blah</div>
+          <div>blah</div>
+          <div>blah</div>
         </div>
       </div>
     </div>
