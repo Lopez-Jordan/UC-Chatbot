@@ -99,7 +99,7 @@ select{
 
 
 #getFeedback{
-    font-size: 12px;
+    font-size: 14px;
     margin: 10px 0px 0px 0px;
     width: fit-content;
     padding: 8px 30px;
@@ -112,6 +112,7 @@ select{
     border: 2px solid rgb(85, 254, 85);
     box-shadow: 0 0 8px rgba(85, 254, 85, 0.616);
     font-weight: 500;
+    letter-spacing: 1px;
 }
 #getFeedback:hover{
     box-shadow: none;

@@ -1,6 +1,6 @@
 import './Home.css';
-import Chatbot from './Chatbot';
-import Reviewer from './Reviewer.jsx';
+import Chatbot from './Chatbot/Chatbot.jsx';
+import Reviewer from './Reviewer/Reviewer.jsx'
 
 export default function Home() {
 

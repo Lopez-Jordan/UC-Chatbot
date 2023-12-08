@@ -8,7 +8,7 @@ export default function Chatbot() {
   const [fullChat, setFullChat] = useState([]);
   const [isChatbotThinking, setIsChatbotThinking] = useState(false);
 
-  const handleInputChange = (e) => {    // CHECKING UNDER 200 CHARACTERS FUNCTION
+  const handleInputChange = (e) => {
     if (e.target.value.length <= MAX_CHARACTERS) {
       setUserMessage(e.target.value);
     }

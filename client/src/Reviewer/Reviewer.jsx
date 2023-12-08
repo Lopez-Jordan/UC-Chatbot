@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Reviewer.css';
-import { ObjToArr, formatNicely } from '../utils.js';
+import { ObjToArr, formatNicely } from '../../utils.js';
+import Modal from './Modal.jsx';
 
 export default function Reviewer() {
 
@@ -9,6 +10,8 @@ export default function Reviewer() {
   const [JSONscoreArr, setJSONscoreArr] = useState([]);
   const [commentary, setCommentary] = useState("");
   const [displayResults, setDisplayResults] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -42,6 +45,7 @@ export default function Reviewer() {
     setCommentary(formatNicely(commentaryResponse));
 
     setDisplayResults(true);
+    setIsModalOpen(true);
     setInputEssay("");
     setPrompt(""); // Reset the prompt after submission
   };
@@ -93,15 +97,8 @@ export default function Reviewer() {
               <button id="getFeedback" type='submit'>Submit</button>
             </div>
           </form>
-          {displayResults &&
-            <>
-              <h4>Impact: {JSONscoreArr[0]}</h4>
-              <h4>Self: {JSONscoreArr[1]}</h4>
-              <h4>Examples: {JSONscoreArr[2]}</h4>
-              <h4>Prompt: {JSONscoreArr[3]}</h4>
-              <h4>Grammar: {JSONscoreArr[4]}</h4>
-              {commentary}
-            </>
+          {(displayResults && isModalOpen) &&
+             <Modal setIsModalOpen={setIsModalOpen} commentary={commentary} JSONscoreArr={JSONscoreArr}/>
           }
         </div>
         <div className='reasons'>
@@ -111,7 +108,7 @@ export default function Reviewer() {
           </div>
           <div style={{display: "flex", alignItems: "center"}}>
             <img className="check" src="/check.png" alt="" />
-            <p className='checkPara'>Draw insights into what UC admission officers do and don't like</p>
+            <p className='checkPara'>Find out what UC admission officers do and don't like</p>
           </div>
           <div style={{display: "flex", alignItems: "center"}}>
             <img className="check" src="/check.png" alt="" />
