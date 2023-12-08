@@ -1,7 +1,7 @@
 .main2{
-    height: 100vh;
-    background-color: white;
-    padding: 70px;
+    height: 90vh;
+    background-color: rgb(255, 255, 255);
+    padding: 40px 110px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,27 +15,18 @@
 }
 .bottomHalf {
     display: flex;
-    margin-top: 2%;
 }
 
 .formContainer {
     background-color: black;
     border-radius: 10px;
-    width: 50%;
-}
-.reasons{
-    list-style: none;
-    margin-left: 20%;
-}
-
-#perfects{
-    font-style: italic;
+    width: 40%;
 }
 
 .reviewForm{
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    padding: 20px;
     background-color: white;
     box-shadow: 0 0 20px rgb(155, 155, 155);
     border-radius: 10px;   
@@ -50,44 +41,44 @@
 .numContainer > h3{
     margin-top: 6px;
     letter-spacing: 0.5px;
-    font-size: 24px;
+    font-size: 18px;
     color: rgb(0, 0, 0);
     font-weight: 400;
 }
 .numSpan{
     display: inline-block;
-    width: 40px; /* Adjust the width */
-    height: 40px; /* Adjust the height */
+    width: 26px; /* Adjust the width */
+    height: 26px; /* Adjust the height */
     background-color: white;
     border-radius: 50%;
     text-align: center;
-    line-height: 40px; /* Should match the height for vertical centering */
+    line-height: 26px; /* Should match the height for vertical centering */
     background: linear-gradient(to bottom right,#0032bb, #ff12e7); 
     -webkit-background-clip: text;
     color: transparent;
     font-weight: 600; /* Adjust the font-weight */
-    font-size: 36px; /* Adjust the font-size */
+    font-size: 26px; /* Adjust the font-size */
     margin-right: 10px;
+    position: relative;
+    top: 2px;
 }
 #perfect{
-    color: black;
-    font-size: 40px;
-    font-weight: 600;
-}
-#perfect > span{
     background: linear-gradient(to bottom right,#0032bb, #ff12e7); 
     -webkit-background-clip: text;
     color: transparent;
+    font-size: 36px;
+}
+
+#perfect > span{
     font-style: italic;
-    font-size: 46px;
 }
 .metrics{
     margin: 16px 0 30px 0;
     color: black;
-    line-height: 24px;
     text-align: center;
     font-weight: 600;
-    line-height: 30px;
+    line-height: 28px;
+    font-size: 22px;
 }
 #essay{
     height: 160px;
@@ -105,18 +96,40 @@ select{
     padding: 5px;
     color: black;
 }
+
+
 #getFeedback{
-    font-size: 18px;
+    font-size: 12px;
     margin: 10px 0px 0px 0px;
     width: fit-content;
     padding: 8px 30px;
-    color: white;
-    background-color: rgb(0, 210, 0);
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-weight: 400;
+    background-color: white;
+    color: rgb(0, 210, 0);
+    border: 2px solid rgb(85, 254, 85);
+    box-shadow: 0 0 8px rgba(85, 254, 85, 0.616);
+    font-weight: 500;
 }
 #getFeedback:hover{
-    background-color: rgb(0, 195, 0);
+    box-shadow: none;
+    color: rgb(85, 254, 85);
 }
+
+.reasons{
+    margin-left: 10%;
+    width: 40%;
+}
+.check{
+    width: 80px;
+    height: 80px;
+}
+.checkPara{
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: rgb(66, 66, 66);
+}
+

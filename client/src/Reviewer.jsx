@@ -49,7 +49,7 @@ export default function Reviewer() {
   return (
     <div className='main2'>
       <div className='topHalf'>
-          <h1 id='perfect'><span >Perfect</span> your UC essays</h1>
+          <h1 id='perfect'>Perfect <span>your </span>UC essays</h1>
           <h2 className='metrics'>Gain personalized metrics and insights into how <span id="perfects">YOUR</span> essay is evaluated through the eyes of a UC Admission Officer</h2>
           <div style={{ display: "Flex", justifyContent: "center" }}>
         </div>
@@ -90,7 +90,7 @@ export default function Reviewer() {
               <h3>Recieve custom feedback</h3>
             </div>
             <div style={{display: "Flex", justifyContent: "center"}}>
-              <button id="getFeedback" type='submit'>Evaluate</button>
+              <button id="getFeedback" type='submit'>Submit</button>
             </div>
           </form>
           {displayResults &&
@@ -105,10 +105,18 @@ export default function Reviewer() {
           }
         </div>
         <div className='reasons'>
-          <div>blah</div>
-          <div>blah</div>
-          <div>blah</div>
-          <div>blah</div>
+          <div style={{display: "flex", alignItems: "center", marginTop: "14%"}}>
+            <img className="check" src="/check.png" alt="" />
+            <p className='checkPara'>Get scored on different UC-specific criteria</p>
+          </div>
+          <div style={{display: "flex", alignItems: "center"}}>
+            <img className="check" src="/check.png" alt="" />
+            <p className='checkPara'>Draw insights into what UC admission officers do and don't like</p>
+          </div>
+          <div style={{display: "flex", alignItems: "center"}}>
+            <img className="check" src="/check.png" alt="" />
+            <p className='checkPara'>Recieve specific suggestions on where to improve</p>
+          </div>
         </div>
       </div>
     </div>
