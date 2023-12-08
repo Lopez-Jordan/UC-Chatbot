@@ -22,6 +22,7 @@ async function getJSONscore(essayPrompt, inputEssay) {
       3: Examples: Provides MANY specific/tangible examples that focus on decision, action and impact of writer
       4: Prompt: Effectively and directly answers prompt without use of figurative language, creative writing, similes or metaphors
       5: Grammar: Writing Quality, grammar and punctuation
+      6: Overall: Total Score (out of 100)
 
       Essay Prompt: ${essayPrompt}
       Essay: ${inputEssay}
