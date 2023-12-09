@@ -15,7 +15,7 @@
 }
 .bottomHalf {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .formContainer {
@@ -110,7 +110,7 @@ select{
     font-weight: 400;
     background-color: white;
     color: rgb(0, 199, 0);
-    border: 3px solid rgb(0, 199, 0);
+    border: 2px solid rgb(0, 199, 0);
     box-shadow: 0 0 8px rgba(0, 169, 0, 0.607);
     font-weight: 500;
     letter-spacing: 1px;
@@ -121,7 +121,7 @@ select{
 
 
 .reasons{
-    width: 400px;
+    width: 500px;
     margin-left: 20px;
 }
 .check{

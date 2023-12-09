@@ -52,7 +52,7 @@
   padding: 8px;
   border-radius: 50%;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
 }
 .red{
   background-color: red;
@@ -70,7 +70,7 @@
 }
 
 .red, .yellow, .green{
-  padding: 4px;
+  padding: 3px;
   border-radius: 50%;
 
 }
