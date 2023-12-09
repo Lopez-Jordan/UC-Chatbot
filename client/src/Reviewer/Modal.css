@@ -34,10 +34,17 @@
 .scores{
   margin-bottom: 26px;
   text-align: center;
+  padding-bottom:3px;
+  border-bottom: 2px solid black;
+  letter-spacing: 0.5px;
 }
 
 .commentary{
   margin-bottom: 16px;
+  padding-bottom:3px;
+  border-bottom: 2px solid black;
+  width: fit-content;
+  letter-spacing: 0.5px;
 }
 
 .innerCircle{
@@ -87,4 +94,32 @@
 .grade > span{
   font-size: 22px;
   color: black;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-text {
+  font-weight: 400;
+  visibility: hidden;
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 110%; /* Adjusted left property */
+  margin-top: -20px; /* Adjusted to center vertically */
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }

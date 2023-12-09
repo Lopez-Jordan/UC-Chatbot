@@ -20,7 +20,7 @@ export default function Modal({ setIsModalOpen, commentary, JSONscoreArr }) {
           <div className='LeftScore'>
             <h2 className='scores'>Scores</h2>
             <div className='flexNew'>
-                <h4>Impact</h4>
+                <h4 className='tooltip'>Impact<span class="tooltip-text">Essay focuses on impact of individual on community/self through the unique experience/perspective of writer</span></h4>
                 <div className={getScoreColorClass(JSONscoreArr[0])}>
                     <div className='innerCircle'>
                         <p>{JSONscoreArr[0]}</p>
@@ -28,7 +28,7 @@ export default function Modal({ setIsModalOpen, commentary, JSONscoreArr }) {
                 </div>
             </div>
             <div className='flexNew'>
-                <h4>Self</h4>
+                <h4 className='tooltip'>Self<span class="tooltip-text">Essay is written in first person point of view (uses "I" and "my" words etc.)</span></h4>
                 <div className={getScoreColorClass(JSONscoreArr[1])}>
                     <div className='innerCircle'>
                         <p>{JSONscoreArr[1]}</p>
@@ -36,7 +36,7 @@ export default function Modal({ setIsModalOpen, commentary, JSONscoreArr }) {
                 </div>
             </div>
             <div className='flexNew'>
-                <h4>Examples</h4>
+                <h4 className='tooltip'>Examples<span class="tooltip-text">Provides MANY specific/tangible examples that focus on decision, action and impact of writer</span></h4>
                 <div className={getScoreColorClass(JSONscoreArr[2])}>
                     <div className='innerCircle'>
                         <p>{JSONscoreArr[2]}</p>
@@ -44,7 +44,7 @@ export default function Modal({ setIsModalOpen, commentary, JSONscoreArr }) {
                 </div>
             </div>
             <div className='flexNew'>
-                <h4>Prompt</h4>
+                <h4 className='tooltip'>Prompt<span class="tooltip-text">Effectively and directly answers prompt without use of figurative language, creative writing, similes or metaphors</span></h4>
                 <div className={getScoreColorClass(JSONscoreArr[3])}>
                     <div className='innerCircle'>
                         <p>{JSONscoreArr[3]}</p>
@@ -52,7 +52,7 @@ export default function Modal({ setIsModalOpen, commentary, JSONscoreArr }) {
                 </div>
             </div>
             <div className='flexNew'>
-                <h4>Grammar</h4>
+                <h4 className='tooltip'>Grammar<span class="tooltip-text">Writing Quality, grammar and punctuation</span></h4>
                 <div className={getScoreColorClass(JSONscoreArr[4])}>
                     <div className='innerCircle'>
                         <p>{JSONscoreArr[4]}</p>
