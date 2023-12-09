@@ -108,11 +108,11 @@ export default function Reviewer() {
           </div>
           <div style={{display: "flex", alignItems: "center"}}>
             <img className="check" src="/check.png" alt="" />
-            <p className='checkPara'>Find out what UC admission officers do and don't like</p>
+            <p className='checkPara'>Find out what UC admission officers are and aren't looking for</p>
           </div>
           <div style={{display: "flex", alignItems: "center"}}>
             <img className="check" src="/check.png" alt="" />
-            <p className='checkPara'>Recieve specific suggestions on where to improve</p>
+            <p className='checkPara'>Recieve meaningful suggestions on what to improve</p>
           </div>
         </div>
       </div>

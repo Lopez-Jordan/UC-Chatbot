@@ -15,12 +15,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@supabase/supabase-js": "^2.33.2",
+    "apexcharts": "^3.44.2",
     "dotenv": "^16.3.1",
     "fs": "^0.0.1-security",
     "langchain": "^0.0.151",
+    "react": "^18.2.0",
+    "react-apexcharts": "^1.4.1",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0"
   },
   "devDependencies": {

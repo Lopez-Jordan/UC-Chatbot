@@ -15,42 +15,46 @@ export function formatNicely(text) {
 }
 
 export function convertToGrade (score){
-    // score out of 500
-    let percent = Math.floor((score / 500) * 100);
-    if (percent >= 97){
+    if (score >= 97){
         return "A+";
     }
-    else if (percent >= 93 && percent <= 96){
+    else if (score >= 93 && score <= 96){
         return "A";
     }
-    else if (percent >= 90 && percent <= 92){
+    else if (score >= 90 && score <= 92){
         return "A-";
     }
-    else if (percent >= 87 && percent <= 89){
+    else if (score >= 87 && score <= 89){
         return "B+";
     }
-    else if (percent >= 83 && percent <= 86){
+    else if (score >= 83 && score <= 86){
         return "B";
     }
-    else if (percent >= 80 && percent <= 82){
+    else if (score >= 80 && score <= 82){
         return "B-";
     }
-    else if (percent >= 77 && percent <= 79){
+    else if (score >= 77 && score <= 79){
         return "C+";
     }
-    else if (percent >= 73 && percent <= 76){
+    else if (score >= 73 && score <= 76){
         return "C";
     }
-    else if (percent >= 70 && percent <= 72){
+    else if (score >= 70 && score <= 72){
         return "C-";
     }
-    else if (percent >= 67 && percent <= 69){
+    else if (score >= 67 && score <= 69){
         return "D+";
     }
-    else if (percent >= 65 && percent <= 66){
+    else if (score >= 65 && score <= 66){
         return "D";
     }
     else{
         return "F";
     }
 }
+
+export function addLineBreaks(text) {
+    // Use regular expression to add a newline after each number
+    const newText = text.replace(/(\d:)/g, '$1\n');
+    return newText;
+  }

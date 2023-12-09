@@ -108,16 +108,16 @@ select{
     cursor: pointer;
     font-weight: 400;
     background-color: white;
-    color: rgb(0, 210, 0);
-    border: 2px solid rgb(85, 254, 85);
-    box-shadow: 0 0 8px rgba(85, 254, 85, 0.616);
+    color: rgb(0, 199, 0);
+    border: 3px solid rgb(0, 199, 0);
+    box-shadow: 0 0 8px rgb(0, 169, 0);
     font-weight: 500;
     letter-spacing: 1px;
 }
 #getFeedback:hover{
     box-shadow: none;
-    color: rgb(85, 254, 85);
 }
+
 
 .reasons{
     margin-left: 10%;
@@ -130,7 +130,6 @@ select{
 .checkPara{
     font-size: 18px;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     color: rgb(66, 66, 66);
 }
-
