@@ -19,7 +19,7 @@ export default function Modal({ setIsModalOpen, commentary, JSONscoreArr }) {
         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
           <div className='LeftScore'>
             <h2 className='scores'>Scores</h2>
-            <div className='flexNew'>
+            <div style={{marginTop: "5%"}} className='flexNew'>
                 <h4 className='tooltip'>Impact<span class="tooltip-text">Essay focuses on impact of individual on community/self through the unique experience/perspective of writer</span></h4>
                 <div className={getScoreColorClass(JSONscoreArr[0])}>
                     <div className='innerCircle'>
@@ -28,7 +28,7 @@ export default function Modal({ setIsModalOpen, commentary, JSONscoreArr }) {
                 </div>
             </div>
             <div className='flexNew'>
-                <h4 className='tooltip'>Self<span class="tooltip-text">Essay is written in first person point of view (uses "I" and "my" words etc.)</span></h4>
+                <h4 className='tooltip'>Self<span className="tooltip-text">Essay is written in first person point of view (uses "I" and "my" words etc.)</span></h4>
                 <div className={getScoreColorClass(JSONscoreArr[1])}>
                     <div className='innerCircle'>
                         <p>{JSONscoreArr[1]}</p>

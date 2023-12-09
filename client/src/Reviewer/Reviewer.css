@@ -45,6 +45,9 @@
     font-size: 16px;
     color: rgb(0, 0, 0);
     font-weight: 600;
+    background-color: #ffbef9;
+    padding: 5px;
+    border-radius: 5px;
 }
 .numSpan{
     display: inline-block;
@@ -62,6 +65,7 @@
     margin-right: 10px;
     position: relative;
     top: 2px;
+
 }
 #perfect{
     background: linear-gradient(to bottom right,#0032bb, #ff12e7); 
@@ -87,6 +91,7 @@
     border: 1.75px solid rgb(110, 110, 110);
     padding: 10px;
     margin: 10px 0px 20px 0px;
+    border-radius: 10px;
 }
 
 
@@ -96,21 +101,22 @@ select{
     border: 1.75px solid rgb(159, 159, 159);
     padding: 5px;
     color: black;
+    border-radius: 10px;
 }
 
 
 #getFeedback{
-    font-size: 14px;
+    font-size: 12px;
     margin: 10px 0px 0px 0px;
     width: fit-content;
-    padding: 8px 30px;
+    padding: 8px 24px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-weight: 400;
     background-color: white;
     color: rgb(0, 199, 0);
-    border: 2px solid rgb(0, 199, 0);
+    border: 2px solid rgb(0, 221, 0);
     box-shadow: 0 0 8px rgba(0, 169, 0, 0.607);
     font-weight: 500;
     letter-spacing: 1px;
@@ -138,3 +144,32 @@ select{
     color: black;
     font-size: 19px;
 }
+
+/* Add this to your existing CSS file */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Make sure it's above other elements */
+  }
+  
+  .loading-spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

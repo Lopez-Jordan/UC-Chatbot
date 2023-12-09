@@ -89,11 +89,13 @@
 .grade{
   color: rgb(86, 86, 86);
   margin-top: 5%;
+  margin-right: 5%;
   font-size: 12px;
 }
 .grade > span{
   font-size: 22px;
   color: black;
+  margin-left: 8px;
 }
 
 .tooltip {

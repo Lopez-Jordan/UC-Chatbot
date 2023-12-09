@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './Reviewer.css';
 import { ObjToArr, formatNicely } from '../../utils.js';
 import Modal from './Modal.jsx';
@@ -9,12 +9,14 @@ export default function Reviewer() {
   const [prompt, setPrompt] = useState("");
   const [JSONscoreArr, setJSONscoreArr] = useState([]);
   const [commentary, setCommentary] = useState("");
-  const [displayResults, setDisplayResults] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+
+    setLoading(true);
 
     const JSONscoreContainer = await fetch('/api/JSONscore', {
       method: "POST",
@@ -44,11 +46,14 @@ export default function Reviewer() {
     let commentaryResponse = await commentaryContainer.text();
     setCommentary(formatNicely(commentaryResponse));
 
-    setDisplayResults(true);
     setIsModalOpen(true);
     setInputEssay("");
-    setPrompt(""); // Reset the prompt after submission
+    setPrompt("");
   };
+
+  useContext(() => {
+    setLoading(!loading);
+  }, [isModalOpen])
 
   return (
     <div className='main2'>
@@ -97,7 +102,7 @@ export default function Reviewer() {
               <button id="getFeedback" type='submit'>Submit</button>
             </div>
           </form>
-          {(displayResults && isModalOpen) &&
+          {(isModalOpen) &&
              <Modal setIsModalOpen={setIsModalOpen} commentary={commentary} JSONscoreArr={JSONscoreArr}/>
           }
         </div>
@@ -116,6 +121,11 @@ export default function Reviewer() {
           </div>
         </div>
       </div>
+      {(loading && (commentary.length == 0)) && (
+      <div className="loading-screen">
+        <div className="loading-spinner"></div>
+      </div>
+    )}
     </div>
   );
 }
