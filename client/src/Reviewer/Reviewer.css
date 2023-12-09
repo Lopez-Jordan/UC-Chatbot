@@ -7,7 +7,7 @@
     align-items: center;
 }
 .topHalf{
-    width: 50%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,6 +15,7 @@
 }
 .bottomHalf {
     display: flex;
+    justify-content: space-between;
 }
 
 .formContainer {
@@ -41,9 +42,9 @@
 .numContainer > h3{
     margin-top: 6px;
     letter-spacing: 0.5px;
-    font-size: 18px;
+    font-size: 16px;
     color: rgb(0, 0, 0);
-    font-weight: 400;
+    font-weight: 600;
 }
 .numSpan{
     display: inline-block;
@@ -110,7 +111,7 @@ select{
     background-color: white;
     color: rgb(0, 199, 0);
     border: 3px solid rgb(0, 199, 0);
-    box-shadow: 0 0 8px rgb(0, 169, 0);
+    box-shadow: 0 0 8px rgba(0, 169, 0, 0.607);
     font-weight: 500;
     letter-spacing: 1px;
 }
@@ -120,8 +121,8 @@ select{
 
 
 .reasons{
-    margin-left: 10%;
-    width: 40%;
+    width: 400px;
+    margin-left: 20px;
 }
 .check{
     width: 80px;
@@ -129,7 +130,11 @@ select{
 }
 .checkPara{
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.5px;
-    color: rgb(66, 66, 66);
+    color: rgb(87, 87, 87);
+}
+.bold{
+    color: black;
+    font-size: 19px;
 }

@@ -104,15 +104,15 @@ export default function Reviewer() {
         <div className='reasons'>
           <div style={{display: "flex", alignItems: "center", marginTop: "14%"}}>
             <img className="check" src="/check.png" alt="" />
-            <p className='checkPara'>Get scored on different UC-specific criteria</p>
+            <p className='checkPara'>Get scored on different <span className='bold'>UC-specific</span> criteria</p>
           </div>
           <div style={{display: "flex", alignItems: "center"}}>
             <img className="check" src="/check.png" alt="" />
-            <p className='checkPara'>Find out what UC admission officers are and aren't looking for</p>
+            <p className='checkPara'>Find out what UC admission officers <span className='bold'>are</span> and <span className='bold'>aren't</span> looking for</p>
           </div>
           <div style={{display: "flex", alignItems: "center"}}>
             <img className="check" src="/check.png" alt="" />
-            <p className='checkPara'>Recieve meaningful suggestions on what to improve</p>
+            <p className='checkPara'>Recieve <span className='bold'>meaningful suggestions</span> on what to improve</p>
           </div>
         </div>
       </div>

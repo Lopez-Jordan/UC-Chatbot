@@ -20,7 +20,7 @@ export default function Modal({ setIsModalOpen, commentary, JSONscoreArr }) {
           <div className='LeftScore'>
             <h2 className='scores'>Scores</h2>
             <div className='flexNew'>
-                <h4>- Impact</h4>
+                <h4>Impact</h4>
                 <div className={getScoreColorClass(JSONscoreArr[0])}>
                     <div className='innerCircle'>
                         <p>{JSONscoreArr[0]}</p>
@@ -28,7 +28,7 @@ export default function Modal({ setIsModalOpen, commentary, JSONscoreArr }) {
                 </div>
             </div>
             <div className='flexNew'>
-                <h4>- Self</h4>
+                <h4>Self</h4>
                 <div className={getScoreColorClass(JSONscoreArr[1])}>
                     <div className='innerCircle'>
                         <p>{JSONscoreArr[1]}</p>
@@ -36,7 +36,7 @@ export default function Modal({ setIsModalOpen, commentary, JSONscoreArr }) {
                 </div>
             </div>
             <div className='flexNew'>
-                <h4>- Examples</h4>
+                <h4>Examples</h4>
                 <div className={getScoreColorClass(JSONscoreArr[2])}>
                     <div className='innerCircle'>
                         <p>{JSONscoreArr[2]}</p>
@@ -44,7 +44,7 @@ export default function Modal({ setIsModalOpen, commentary, JSONscoreArr }) {
                 </div>
             </div>
             <div className='flexNew'>
-                <h4>- Prompt</h4>
+                <h4>Prompt</h4>
                 <div className={getScoreColorClass(JSONscoreArr[3])}>
                     <div className='innerCircle'>
                         <p>{JSONscoreArr[3]}</p>
@@ -52,7 +52,7 @@ export default function Modal({ setIsModalOpen, commentary, JSONscoreArr }) {
                 </div>
             </div>
             <div className='flexNew'>
-                <h4>- Grammar</h4>
+                <h4>Grammar</h4>
                 <div className={getScoreColorClass(JSONscoreArr[4])}>
                     <div className='innerCircle'>
                         <p>{JSONscoreArr[4]}</p>
