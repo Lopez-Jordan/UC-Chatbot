@@ -135,14 +135,14 @@ select{
     height: 80px;
 }
 .checkPara{
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 400;
     letter-spacing: 0.5px;
     color: rgb(87, 87, 87);
 }
 .bold{
     color: black;
-    font-size: 19px;
+    font-size: 21px;
 }
 
 /* Add this to your existing CSS file */
