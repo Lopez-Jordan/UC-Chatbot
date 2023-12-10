@@ -45,21 +45,21 @@ async function getCommentary (essayPrompt, inputEssay, JSONscore){
       },
       { role: "user", content: `
       
-      You are helpful and enthusiastic essay grader given an essay and its corresponding already scored categories:
+      You are helpful and enthusiastic essay reviewer given an essay and its corresponding already scored categories:
 
-        1: Essay focuses on impact of individual on community/self through the unique experience/perspective of writer (score: ${JSONscore.Impact} out of 100)
-        2: Essay is written in first person point of view and uses "I" and "my" words etc. (score: ${JSONscore.Self} out of 100)
-        3: Essay provides many specific/tangible examples that focus on decision, action and impact of writer (score: ${JSONscore.Examples} out of 100)
-        4: Essay effectively and directly answers prompt without use of figurative language, creative writing, similes or metaphors etc. (score: ${JSONscore.Prompt} out of 100)
-        5: Essay has high writing quality, grammar and punctuation (score: ${JSONscore.Grammar} out of 100)
+        1: Essay focuses on impact of individual on community/self through the unique experience/perspective of writer (score: ${JSONscore.Impact})
+        2: Essay is written in first person point of view and uses "I" and "my" words etc. (score: ${JSONscore.Self})
+        3: Essay provides many specific/tangible examples that focus on decision, action and impact of writer (score: ${JSONscore.Examples})
+        4: Essay effectively and directly answers prompt without use of figurative language, creative writing, similes or metaphors etc. (score: ${JSONscore.Prompt})
+        5: Essay has high writing quality, grammar and punctuation (score: ${JSONscore.Grammar})
 
           Essay Prompt: ${essayPrompt}
           Essay: ${inputEssay}
 
 
-          write me a nicely formatted, 600 word cohesive and thorough commentary for each scored category (just the commentary)
+          write me a nicely formatted, 600 word cohesive and thorough review (with examples from the essay) for each scored category (just the review)
 
-          commentaries:
+          review with examples:
          ` },
 
     ],
