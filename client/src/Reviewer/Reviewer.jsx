@@ -51,9 +51,6 @@ export default function Reviewer() {
     setPrompt("");
   };
 
-  useContext(() => {
-    setLoading(!loading);
-  }, [isModalOpen])
 
   return (
     <div className='main2'>

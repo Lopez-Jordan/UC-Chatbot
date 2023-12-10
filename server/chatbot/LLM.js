@@ -17,16 +17,23 @@ const llm = new ChatOpenAI({
     model: "gpt-3.5-turbo-1106",
 });
 
-const standaloneQuestionPrompt = PromptTemplate.fromTemplate('Given a question, convert it to a standalone question. question: {question} standalone question:');
+const standaloneQuestionPrompt = PromptTemplate.fromTemplate(
+    `Given some conversation history (if any) and a question, convert the question to a standalone question. 
+        conversation history: {conv_history}
+        question: {question} 
+        standalone question:`
+);
 
 const answerPrompt = PromptTemplate.fromTemplate(
     
     `You are a helpful and enthusiastic support bot who can answer a given question about
     the University of California admission processes based on the context provided.
-    Try to find the answer in the context and answer in a short and cohesive way. If you really don't know the answer, say "I'm sorry, I don't know the answer to that." 
+    Try to find the answer in the context and answer in a short and cohesive way. If the answer is not given in the context, find the answer in the conversation history if possible.
+    If you really don't know the answer, say "I'm sorry, I don't know the answer to that." 
     And direct the questioner to email help@example.com. Don't try to make up an answer. Always speak as if you were chatting to a friend.
 
     context: {context}
+    conversation history: {conv_history}
     question: {question}
     answer: `
 
@@ -53,14 +60,17 @@ const chain = RunnableSequence.from([
     },
     {
         context: retrieverChain,
-        question: ({ original_input }) => original_input.question
+        question: ({ original_input }) => original_input.question,
+        conv_history: ({ original_input }) => original_input.conv_history
+
     },
     answerChain
 ]);
 
-function getResponse(inputStr) {
+function getResponse(inputStr, convHistory) {
     const response = chain.invoke({
-        question: inputStr
+        question: inputStr,
+        conv_history: convHistory
     });
     return response;
 }

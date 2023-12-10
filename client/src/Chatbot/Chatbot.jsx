@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Chatbot.css';
+import { formatConvHistory } from '../../utils.js';
 
 const MAX_CHARACTERS = 200;     // CHHANGE
 
 export default function Chatbot() {
+
   const [userMessage, setUserMessage] = useState("");
   const [fullChat, setFullChat] = useState([]);
   const [isChatbotThinking, setIsChatbotThinking] = useState(false);
+
 
   const handleInputChange = (e) => {
     if (e.target.value.length <= MAX_CHARACTERS) {
@@ -27,8 +30,19 @@ export default function Chatbot() {
   };
 
   const sendMessage = async () => {
-    if (userMessage.trim() === "") return;
 
+    let history = JSON.parse(localStorage.getItem("History")) || [];
+    let temp = [...history];
+    
+    if (temp && temp.length < 5) {
+      temp.push(userMessage);
+      localStorage.setItem("History", JSON.stringify(temp));
+    } else {
+      temp.shift();
+      temp.push(userMessage);
+      localStorage.setItem("History", JSON.stringify(temp));
+    }
+    
     let currMessage = userMessage;
     setUserMessage("");
 
@@ -43,7 +57,7 @@ export default function Chatbot() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({message: currMessage})
+        body: JSON.stringify({message: currMessage, convHistory: formatConvHistory(history)})
       });
       if (result.ok) {
         let responseData = await result.json();
@@ -52,6 +66,14 @@ export default function Chatbot() {
           { role: 'user', content: currMessage },
           ...fullChat,
         ]);
+
+        let currHistory = JSON.parse(localStorage.getItem("History"));
+        let tempBot = [...currHistory];
+      
+        tempBot.push(responseData.message);
+        localStorage.setItem("History", JSON.stringify(tempBot));
+
+
       } else {
         alert('something went wrong :/');
       }
@@ -62,6 +84,7 @@ export default function Chatbot() {
   };
 
   const charactersRemaining = MAX_CHARACTERS - userMessage.length;
+
 
   return ( 
     <div className='main'>
@@ -78,7 +101,7 @@ export default function Chatbot() {
         )}
         {(fullChat.length == 0) && (
           <div className='message chatbot first'>
-            Hello, what can I help you with today?
+            What can I help you with today?
           </div>
         )}
         {fullChat.map((chat, index) => (
@@ -113,3 +136,10 @@ export default function Chatbot() {
     </div>
   );
 }
+
+
+
+// 1: get history from local storage (array of strings)
+// 2: keep track of 6 most recent user inputs
+// 2: everytime the user messages bot (add most recent one) to array
+// 3: put array into a string right before message

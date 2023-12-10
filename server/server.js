@@ -16,7 +16,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.post('/api/response', async (req, res) => {
   try {
     let userInput = req.body.message;
-    let botResponse = await getResponse(userInput);
+    let convHistory = req.body.convHistory
+    let botResponse = await getResponse(userInput, convHistory);
 
     if (botResponse) {
       res.status(200).json({ message: botResponse });

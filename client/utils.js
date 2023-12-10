@@ -57,4 +57,14 @@ export function addLineBreaks(text) {
     // Use regular expression to add a newline after each number
     const newText = text.replace(/(\d:)/g, '$1\n');
     return newText;
-  }
+}
+
+export function formatConvHistory (messages) {
+    return messages.map((message, i) => {
+        if (i % 2 === 0){
+            return `Human: ${message}`
+        } else {
+            return `AI: ${message}`
+        }
+    }).join('\n')
+} 
