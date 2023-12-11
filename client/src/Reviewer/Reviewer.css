@@ -1,6 +1,8 @@
 .main2{
     height: 90vh;
-    background-color: rgb(255, 255, 255);
+    background-image: url('/white.png');
+    background-repeat: no-repeat; /* Optional: Specify how the background image should repeat */
+    background-size: cover; 
     padding: 40px 110px;
     display: flex;
     flex-direction: column;
@@ -131,8 +133,10 @@ select{
     margin-left: 20px;
 }
 .check{
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
+    color: green;
+    margin-right: 5%;
 }
 .checkPara{
     font-size: 20px;
@@ -142,7 +146,10 @@ select{
 }
 .bold{
     color: black;
-    font-size: 21px;
+    font-size: 19px;
+    font-weight: 600;
+    padding-bottom: 3px;
+    border-bottom: 2px solid  #ff00b7; 
 }
 
 /* Add this to your existing CSS file */

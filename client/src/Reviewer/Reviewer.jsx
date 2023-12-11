@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import './Reviewer.css';
 import { ObjToArr, formatNicely } from '../../utils.js';
 import Modal from './Modal.jsx';
+import { FaCheck } from "react-icons/fa";
 
 export default function Reviewer() {
 
@@ -62,7 +63,7 @@ export default function Reviewer() {
       </div>
       <div className='bottomHalf'>
         <div className='formContainer'>
-          <form className='reviewForm' onSubmit={handleFormSubmit}>
+          <form name='reviewForm' className='reviewForm' onSubmit={handleFormSubmit}>
             <div className='numContainer'><span className='numSpan'>1</span>
               <h3>Select your prompt</h3>
             </div>
@@ -100,27 +101,27 @@ export default function Reviewer() {
             </div>
           </form>
           {(isModalOpen) &&
-             <Modal setIsModalOpen={setIsModalOpen} commentary={commentary} JSONscoreArr={JSONscoreArr}/>
+            <Modal setIsModalOpen={setIsModalOpen} commentary={commentary} JSONscoreArr={JSONscoreArr} />
           }
         </div>
         <div className='reasons'>
-          <div style={{display: "flex", alignItems: "center", marginTop: "14%"}}>
-            <img className="check" src="/check.png" alt="" />
-            <p className='checkPara'>Get scored on different <span className='bold'>UC-specific</span> criteria</p>
+          <div style={{ display: "flex", alignItems: "center", marginTop: "14%" }}>
+            <FaCheck className='check'/>
+            <p className='checkPara'>Get scored on different <span className='bold'>UC-specific criteria</span></p>
           </div>
-          <div style={{display: "flex", alignItems: "center"}}>
-            <img className="check" src="/check.png" alt="" />
-            <p className='checkPara'>Find out what UC admission officers <span className='bold'>are</span> and <span className='bold'>aren't</span> looking for</p>
+          <div style={{ display: "flex", alignItems: "center", marginTop: "4%" }}>
+            <FaCheck className='check'/>
+            <p className='checkPara'>Find out what UC admission officers <span className='bold'>are and aren't looking for</span></p>
           </div>
-          <div style={{display: "flex", alignItems: "center"}}>
-            <img className="check" src="/check.png" alt="" />
+          <div style={{ display: "flex", alignItems: "center", marginTop: "4%" }}>
+            <FaCheck className='check' />
             <p className='checkPara'>Recieve <span className='bold'>meaningful suggestions</span> on what to improve</p>
           </div>
         </div>
       </div>
       {(loading && (commentary.length == 0)) && (
-      <div className="loading-screen">
-        <div className="loading-spinner"></div>
+        <div className="loading-screen">
+          <div className="loading-spinner"></div>
       </div>
     )}
     </div>

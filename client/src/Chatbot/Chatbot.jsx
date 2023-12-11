@@ -17,19 +17,19 @@ export default function Chatbot() {
     }
   };
 
-  const handleSubmit = async (e) => {     // FORM SUBMIT FUNCTION
+  const handleSubmit = async (e) => {     // User can either submit via `Submit` button
     e.preventDefault();
     sendMessage();
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+  const handleSubmitKeyDown = (e) => {    // or through pressing 'Enter'
+    if (e.key === 'Enter' && !e.shiftKey && !isChatbotThinking) {
       e.preventDefault();
       sendMessage();
     }
   };
 
-  const sendMessage = async () => {
+  const sendMessage = async () => {   
 
     let history = JSON.parse(localStorage.getItem("History")) || [];
     let temp = [...history];
@@ -83,9 +83,6 @@ export default function Chatbot() {
     setIsChatbotThinking(false);
   };
 
-  const charactersRemaining = MAX_CHARACTERS - userMessage.length;
-
-
   return ( 
     <div className='main'>
       <div id='chats'>
@@ -114,13 +111,13 @@ export default function Chatbot() {
       <form onSubmit={handleSubmit} className="input-container">
         <textarea
           onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
+          onKeyDown={handleSubmitKeyDown}
           placeholder='Message here'
           id="inputText"
           value={userMessage}
         />
         <div style={{ height: '100%' }}>
-          <div className="char-counter">{charactersRemaining}</div>
+          <div className="char-counter">{MAX_CHARACTERS - userMessage.length}</div>
           <button
             disabled={!userMessage.length || isChatbotThinking}
             type="submit"
@@ -136,10 +133,3 @@ export default function Chatbot() {
     </div>
   );
 }
-
-
-
-// 1: get history from local storage (array of strings)
-// 2: keep track of 6 most recent user inputs
-// 2: everytime the user messages bot (add most recent one) to array
-// 3: put array into a string right before message
