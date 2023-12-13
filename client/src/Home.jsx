@@ -12,7 +12,7 @@ export default function Home() {
           <div className="content1">
             <h2 id='message'>ask anything to a...</h2>
             <h1 id='mainHeading'>UC Admission Officer</h1>
-            <h2 id="chatHeader">(ai chatbot)</h2>
+            <p id='chatHeader'>Save time researching how to get into your dream University of California school by asking our ai chatbot</p>
           </div>
           <div style={{height: '200px'}}></div>
         </div>

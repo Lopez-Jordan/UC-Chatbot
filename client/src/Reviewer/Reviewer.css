@@ -31,7 +31,7 @@
     flex-direction: column;
     padding: 20px;
     background-color: white;
-    box-shadow: 0 0 20px rgb(155, 155, 155);
+    box-shadow: 0 0 16px rgb(0, 0, 0);
     border-radius: 10px;   
 }
 
@@ -47,7 +47,7 @@
     font-size: 16px;
     color: rgb(0, 0, 0);
     font-weight: 600;
-    background-color: #ffbef9;
+    background-color: #c4c4ff;
     padding: 5px;
     border-radius: 5px;
 }
@@ -80,7 +80,7 @@
     font-style: italic;
 }
 .metrics{
-    margin: 16px 0 30px 0;
+    margin: 16px 0 50px 0;
     color: black;
     text-align: center;
     font-weight: 600;
@@ -126,24 +126,32 @@ select{
 #getFeedback:hover{
     box-shadow: none;
 }
-
-
 .reasons{
     width: 500px;
     margin-left: 20px;
 }
-.check{
-    width: 40px;
-    height: 40px;
-    color: green;
-    margin-right: 5%;
+.reasonsCheck{
+    display: flex;
+    margin-top: 5%;
+    align-items: center;
+    margin-top: 8%;
 }
+.check{
+    width: 50px;
+    height: 50px;
+    color: green;
+    margin-right: 20px;
+}
+
 .checkPara{
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 0.5px;
     color: rgb(87, 87, 87);
+    width: 500px;
+    line-height: 28px;
 }
+
 .bold{
     color: black;
     font-size: 19px;
