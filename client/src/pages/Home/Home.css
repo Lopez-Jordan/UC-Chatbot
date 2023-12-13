@@ -29,6 +29,8 @@
     color: white;
     font-size: 20px;
     letter-spacing: 0.5px;
+    width: 70%;
+    line-height: 26px;
 }
 
 #message {

@@ -98,7 +98,7 @@ export default function Chatbot() {
         )}
         {(fullChat.length == 0) && (
           <div className='message chatbot first'>
-            What can I help you with today?
+            Hello, what can I help you with today?
           </div>
         )}
         {fullChat.map((chat, index) => (

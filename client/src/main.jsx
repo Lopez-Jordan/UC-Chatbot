@@ -5,6 +5,8 @@ import './index.css';
 import Home from './pages/Home/Home.jsx';
 import App from './App.jsx'
 import Success from "./pages/success/Success";
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
 
 const router = createBrowserRouter([
   {
@@ -24,5 +26,9 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
+  <>
+    <GoogleOAuthProvider clientId="749377791474-b9gm636883982rqjpq1lfv80gi6ql2h7.apps.googleusercontent.com">
+      <RouterProvider router={router} />
+    </GoogleOAuthProvider>
+  </>
 )
