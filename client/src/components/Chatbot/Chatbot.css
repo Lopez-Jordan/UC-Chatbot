@@ -28,6 +28,8 @@
   top: 15%;
   right: 20%;
   z-index: 0;
+  height: 300px;
+  width: 300px;
 }
 
 .message {

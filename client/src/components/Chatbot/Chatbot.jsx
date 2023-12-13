@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './Chatbot.css';
-import { formatConvHistory } from '../../utils.js';
+import { formatConvHistory } from '../../../utils.js';
 
 const MAX_CHARACTERS = 200;     // CHHANGE
 

@@ -95,8 +95,8 @@ app.post('/api/create-checkout-session', async (req, res) => {
           quantity: item.quantity
         }
       }),
-      success_url: `/success`,  // still need to put this in
-      cancel_url: `/cancel`  // and this
+      success_url: `/success`,
+      cancel_url: `/`
 
     })
     res.json({ url : session.url });
@@ -105,13 +105,6 @@ app.post('/api/create-checkout-session', async (req, res) => {
   }
 });
 ///////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/dist')));

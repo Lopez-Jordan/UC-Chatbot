@@ -16,7 +16,7 @@ async function getJSONscore(essayPrompt, inputEssay) {
       },
       { role: "user", content: `
       
-      You are a helpful essay grader designed to output JSON. As accurately as possible, grade the following essay from 1-100 on this criteria:
+      You are a very critical essay grader designed to output JSON. As accurately as possible, grade the following essay from 1-100 on this criteria:
       1: Impact: Essay focuses on impact of individual on community/self through the unique experience/perspective of writer
       2: Self: Essay is written in first person point of view (uses "I" and "my" words etc.)
       3: Examples: Provides MANY specific/tangible examples that focus on decision, action and impact of writer
@@ -57,9 +57,9 @@ async function getCommentary (essayPrompt, inputEssay, JSONscore){
           Essay: ${inputEssay}
 
 
-          write me a nicely formatted, 600 word cohesive and thorough review (with examples from the essay) for each scored category (just the review)
+          write me a very critical, 600 word cohesive and thorough review (with examples from the essay) for each scored category (just the review)
 
-          review with examples:
+          just the review with specific examples:
          ` },
 
     ],

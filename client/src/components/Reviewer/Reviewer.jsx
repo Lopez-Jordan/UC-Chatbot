@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import './Reviewer.css';
-import { ObjToArr, formatNicely } from '../../utils.js';
+import { ObjToArr, formatNicely } from '../../../utils.js';
 import Modal from './Modal.jsx';
 import { FaCheck } from "react-icons/fa";
 

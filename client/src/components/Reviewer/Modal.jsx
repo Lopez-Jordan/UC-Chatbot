@@ -1,6 +1,6 @@
 import React from 'react';
 import './Modal.css';
-import { convertToGrade, addLineBreaks } from '../../utils.js';
+import { convertToGrade, addLineBreaks } from '../../../utils.js';
 
 export default function Modal({ setIsModalOpen, commentary, JSONscoreArr }) {
   const getScoreColorClass = (score) => {
