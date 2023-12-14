@@ -16,7 +16,6 @@ export default function Reviewer() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
     setLoading(true);
 
     const JSONscoreContainer = await fetch('/api/JSONscore', {
@@ -32,10 +31,6 @@ export default function Reviewer() {
     await setJSONscoreArr(ObjToArr(JSON.parse(JSONpromise.message)));
 
     console.log(fullJSONscore);
-    // 1: Make a fetch 'POST' to the /api/JSONscore (essayPrompt, inputEssay) and get the returned JSON object
-    // 2: Use score JSON object to display scores in a visually appealing way
-    // 3: Make a fetch 'POST' to /api/JSON/review (essayPrompt, inputEssay, JSONscore)
-    // 4: Show the results
 
     const commentaryContainer = await fetch('/api/commentary', {
       method: "POST",

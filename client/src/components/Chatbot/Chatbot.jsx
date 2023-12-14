@@ -2,14 +2,12 @@ import { useState, useEffect } from 'react';
 import './Chatbot.css';
 import { formatConvHistory } from '../../../utils.js';
 
-const MAX_CHARACTERS = 200;     // CHHANGE
+const MAX_CHARACTERS = 200; // CHANGED
 
 export default function Chatbot() {
-
   const [userMessage, setUserMessage] = useState("");
   const [fullChat, setFullChat] = useState([]);
   const [isChatbotThinking, setIsChatbotThinking] = useState(false);
-
 
   const handleInputChange = (e) => {
     if (e.target.value.length <= MAX_CHARACTERS) {
@@ -17,24 +15,23 @@ export default function Chatbot() {
     }
   };
 
-  const handleSubmit = async (e) => {     // User can either submit via `Submit` button
+  const handleSubmit = async (e) => {
     e.preventDefault();
     sendMessage();
   };
 
-  const handleSubmitKeyDown = (e) => {    // or through pressing 'Enter'
+  const handleSubmitKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey && !isChatbotThinking) {
       e.preventDefault();
       sendMessage();
     }
   };
 
-  const sendMessage = async () => {   
-
+  const sendMessage = async () => {
     let history = JSON.parse(localStorage.getItem("History")) || [];
     let temp = [...history];
-    
-    if (temp && temp.length < 5) {
+
+    if (temp && temp.length < 6) { // CHANGED
       temp.push(userMessage);
       localStorage.setItem("History", JSON.stringify(temp));
     } else {
@@ -42,7 +39,7 @@ export default function Chatbot() {
       temp.push(userMessage);
       localStorage.setItem("History", JSON.stringify(temp));
     }
-    
+
     let currMessage = userMessage;
     setUserMessage("");
 
@@ -51,14 +48,16 @@ export default function Chatbot() {
       ...fullChat,
     ]);
     setIsChatbotThinking(true);
+
     try {
       let result = await fetch(`/api/response`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({message: currMessage, convHistory: formatConvHistory(history)})
+        body: JSON.stringify({ message: currMessage, convHistory: formatConvHistory(history) }),
       });
+
       if (result.ok) {
         let responseData = await result.json();
         setFullChat([
@@ -69,11 +68,9 @@ export default function Chatbot() {
 
         let currHistory = JSON.parse(localStorage.getItem("History"));
         let tempBot = [...currHistory];
-      
+
         tempBot.push(responseData.message);
         localStorage.setItem("History", JSON.stringify(tempBot));
-
-
       } else {
         alert('something went wrong :/');
       }
@@ -83,10 +80,10 @@ export default function Chatbot() {
     setIsChatbotThinking(false);
   };
 
-  return ( 
+  return (
     <div className='main'>
       <div id='chats'>
-        <img id='emblem' src='/seal-history-unofficial.jpg'></img>
+        <img id='emblem' src='/seal-history-unofficial.jpg' alt="emblem"></img>
         {isChatbotThinking && (
           <div className="message chatbot thinking">
             <div className="loader">
@@ -96,7 +93,7 @@ export default function Chatbot() {
             </div>
           </div>
         )}
-        {(fullChat.length == 0) && (
+        {(fullChat.length === 0) && (
           <div className='message chatbot first'>
             Hello, what can I help you with today?
           </div>

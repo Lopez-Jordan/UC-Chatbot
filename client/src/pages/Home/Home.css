@@ -24,12 +24,12 @@
 }
 #chatHeader{
     float: end;
-    margin-top: 20px;
+    margin-top: 16px;
     font-weight: 500;
     color: white;
     font-size: 20px;
     letter-spacing: 0.5px;
-    width: 70%;
+    width: 90%;
     line-height: 26px;
 }
 
