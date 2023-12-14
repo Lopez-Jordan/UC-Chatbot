@@ -30,13 +30,13 @@
 .profile {
     display: flex;
     align-items: center;
-    margin-right: 6%;
     border-radius: 10px;
     background-color: black;
     color: rgb(255, 255, 255);
     justify-content: end;
     width: fit-content;
     padding: 10px;
+    margin-right: 40px;
 }
 
 .profile:hover{
@@ -66,7 +66,7 @@
     width: 174px;
     height: 30px;
     top: 80px;
-    right: 8%;
+    margin-right: -10px;
     background-color: black;
     border-radius: 8px;
     z-index: 11;
@@ -83,7 +83,7 @@
     background-color: black;
     border: none;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 14px;
     color: #F87171;
     width: 100%;
     text-align: left;

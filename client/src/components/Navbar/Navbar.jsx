@@ -60,8 +60,6 @@ export default function () {
     }
     return null;
   };
-
-
     return (
         <>
             <div className="navbar">
