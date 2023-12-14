@@ -31,8 +31,9 @@
     flex-direction: column;
     padding: 20px;
     background-color: white;
-    box-shadow: 0 0 16px rgb(0, 0, 0);
-    border-radius: 10px;   
+    box-shadow: 0 0 14px rgb(79, 79, 79);
+    border-radius: 10px; 
+    border: 2.5px solid black;  
 }
 
 .numContainer{
@@ -144,8 +145,8 @@ select{
 }
 
 .checkPara{
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 21px;
+    font-weight: 500;
     letter-spacing: 0.5px;
     color: rgb(0, 0, 0);
     width: 500px;
@@ -154,7 +155,7 @@ select{
 
 .bold{
     color: black;
-    font-size: 19px;
+    font-size: 20px;
     font-weight: 600;
     padding-bottom: 3px;
     border-bottom: 2px solid  #ff00b7; 

@@ -110,7 +110,7 @@ export default function Reviewer() {
           </div>
           <div className='reasonsCheck'>
             <FaCheck className='check' />
-            <p className='checkPara'>Recieve <span className='bold'>meaningful suggestions</span> on what to improve</p>
+            <p className='checkPara'>Recieve <span className='bold'>meaningful suggestions</span> on what to improve based on our UC admission insights</p>
           </div>
         </div>
       </div>

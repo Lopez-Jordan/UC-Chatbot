@@ -25,7 +25,7 @@
 #chatHeader{
     float: end;
     margin-top: 16px;
-    font-weight: 500;
+    font-weight: 600;
     color: white;
     font-size: 20px;
     letter-spacing: 0.5px;
@@ -36,7 +36,7 @@
 #message {
     margin-bottom: 20px;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
     letter-spacing: 1px;
     float: left;

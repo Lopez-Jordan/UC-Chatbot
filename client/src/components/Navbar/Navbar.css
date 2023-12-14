@@ -7,6 +7,7 @@
     display: flex;
     justify-content: end;
 }
+
 .signIn{
     margin-right: 8%;
     padding: 12px;
@@ -19,11 +20,13 @@
     color: rgb(255, 255, 255);
     box-shadow: 0 0 10px rgb(106, 106, 106)
 }
+
 .signIn:hover{
     background-color: rgb(66, 66, 66);
     cursor: pointer;
     box-shadow: none;
 }
+
 .profile {
     display: flex;
     align-items: center;
@@ -31,15 +34,14 @@
     border-radius: 10px;
     background-color: black;
     color: rgb(255, 255, 255);
-    box-shadow: 0 0 10px rgb(106, 106, 106);
     justify-content: end;
     width: fit-content;
     padding: 10px;
 }
+
 .profile:hover{
-    background-color: rgb(43, 43, 43);
+    background-color: rgb(60, 60, 60);
     cursor: pointer;
-    box-shadow: none;
 }
 
 #profileImage {
@@ -48,10 +50,12 @@
     border-radius: 50%;
     margin-right: 10px;
 }
+
 .infoContainer{
     text-align: left;
 
 }
+
 .smallText{
     font-size: 10px;
     color: rgb(196, 196, 196);
