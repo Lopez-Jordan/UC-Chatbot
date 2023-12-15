@@ -51,7 +51,7 @@ export default function Reviewer() {
   return (
     <div className='main2'>
       <div className='topHalf'>
-          <h1 id='perfect'>Elevate <span>your </span>UC essays</h1>
+          <h1 id='perfect'>Elevate your UC essays</h1>
           <h2 className='metrics'>Gain personalized metrics and insights into how <span id="perfects">YOUR</span> essay is evaluated through the eyes of a UC Admission Officer</h2>
           <div style={{ display: "Flex", justifyContent: "center" }}>
         </div>
@@ -92,7 +92,7 @@ export default function Reviewer() {
               <h3>Recieve custom feedback</h3>
             </div>
             <div style={{display: "Flex", justifyContent: "center"}}>
-              <button id="getFeedback" type='submit'>Submit</button>
+              <button id="getFeedback" type='submit'>Critique</button>
             </div>
           </form>
           {(isModalOpen) &&

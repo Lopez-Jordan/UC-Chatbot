@@ -45,7 +45,7 @@ async function getCommentary (essayPrompt, inputEssay, JSONscore){
       },
       { role: "user", content: `
       
-      You are helpful and enthusiastic essay reviewer given an essay and its corresponding already scored categories:
+      You are helpful and very essay reviewer given an essay and its corresponding already scored categories:
 
         1: Essay focuses on impact of individual on community/self through the unique experience/perspective of writer (score: ${JSONscore.Impact})
         2: Essay is written in first person point of view and uses "I" and "my" words etc. (score: ${JSONscore.Self})

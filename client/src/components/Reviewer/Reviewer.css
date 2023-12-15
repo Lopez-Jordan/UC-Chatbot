@@ -150,14 +150,14 @@ select{
     letter-spacing: 0.5px;
     color: rgb(0, 0, 0);
     width: 500px;
-    line-height: 28px;
+    line-height: 30px;
 }
 
 .bold{
     color: black;
     font-size: 20px;
     font-weight: 600;
-    padding-bottom: 3px;
+    padding-bottom: 1px;
     border-bottom: 2px solid  #ff00b7; 
 }
 

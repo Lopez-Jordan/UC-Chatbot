@@ -18,12 +18,26 @@ export default function () {
         if (res.ok) {
           const resUserData = await res.json();
 
-          setUserLoggedIn({
-            loggedIn: true,
-            name: `${resUserData.name}`,
-            pic: `${resUserData.picture}`,
+          const currUserRes = await fetch('/api/login', {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              email: resUserData.email,
+            })
           });
 
+          const currUser = await currUserRes.json();
+
+          if (currUser){
+            setUserLoggedIn({
+              loggedIn: true,
+              name: `${resUserData.name}`,
+              pic: `${resUserData.picture}`,
+              credits: currUser.credits
+            });
+          } else {
+            alert(`can't find curr User ://`);
+          }
           console.log('User Information:', resUserData);
         } else {
           console.error('Error fetching user information:', res.status, res.statusText);
@@ -42,6 +56,7 @@ export default function () {
       loggedIn: false,
       name: '',
       pic: '',
+      credit: 0
     });
     setPopupVisible(false);
   };

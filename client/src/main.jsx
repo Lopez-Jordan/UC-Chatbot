@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css';
 import Home from './pages/Home/Home.jsx';
 import App from './App.jsx'
-import Success from "./pages/success/Success";
+import Success from "./pages/success/Success.jsx";
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 

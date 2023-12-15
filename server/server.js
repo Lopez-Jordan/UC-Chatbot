@@ -1,6 +1,8 @@
 const express = require('express');
 const { getResponse } = require('./chatbot/LLM');
-const { getJSONscore, getCommentary } = require('./esssayReviewer/main')
+const { getJSONscore, getCommentary } = require('./esssayReviewer/main');
+const sequelize = require('./config/connection');
+const User = require('./model/User');
 const path = require('path');
 const cors = require('cors');
 const stripe = require('stripe')(process.env.STRIPE_KEY);
@@ -110,6 +112,52 @@ app.post('/api/create-checkout-session', async (req, res) => {
 });
 ///////////////////////////////////////////////////////////////////////////////////////
 
+app.post('/api/login', async (req, res) => {
+  try {
+    const existingUser = await User.findOne({
+      where : {
+        email : req.body.email
+      }
+    })
+    if (!existingUser){
+      const newUser = await User.create({
+        email: req.body.email,
+        credits: 1
+      });
+      res.status(200).json(newUser);
+    } else {
+      res.status(200).json(existingUser);
+    }
+
+  } catch (error) {
+    res.status(500).json({error: error});
+  }
+});
+
+app.put('/api/addCredits', async (req, res) => {
+  try {
+    const existingUser = await User.findOne({
+      where : {
+        email: req.body.email
+      }
+    });
+
+    if (!existingUser){
+      res.status(400).json({message : "no user found with that email! :/"});
+      return;
+    }
+    
+    await existingUser.increment('credits', { by: req.body.credits });
+
+    res.status(200).json({message: "successful update!"});
+    
+  } catch (error) {
+    console.error('Error updating credits:', error);
+  }
+});
+
+
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/dist')));
   app.get('*', (req, res) => {
@@ -117,5 +165,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-app.listen(PORT, () => console.log(`NOW Listening http://localhost:${PORT}`));
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log(`NOW Listening http://localhost:${PORT}`));
+});
 

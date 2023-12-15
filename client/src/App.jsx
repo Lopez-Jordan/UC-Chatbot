@@ -20,7 +20,8 @@ export default function App() {
       setUserLoggedIn({
         loggedIn: false,
         name: "",
-        pic: ""
+        pic: "",
+        credits: 0
       });
     }
   }, []);
