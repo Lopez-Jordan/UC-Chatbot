@@ -33,6 +33,7 @@ export default function () {
               loggedIn: true,
               name: `${resUserData.name}`,
               pic: `${resUserData.picture}`,
+              email: `${resUserData.email}`,
               credits: currUser.credits
             });
           } else {
@@ -50,13 +51,19 @@ export default function () {
       console.log('Login Failed');
     },
   });
+  // loggedIn: false,
+  // name: "",
+  // pic: "",
+  // email: "",
+  // credits: 0
 
   const handleSignOut = () => {
     setUserLoggedIn({
       loggedIn: false,
-      name: '',
-      pic: '',
-      credit: 0
+      name: "",
+      pic: "",
+      email: "",
+      credits: 0
     });
     setPopupVisible(false);
   };

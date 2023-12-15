@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Reviewer() {
 
-  const [userLoggedIn, setUserLoggedIn] = useContext(LogInContext); // user data here
+  const [userLoggedIn, setUserLoggedIn] = useContext(LogInContext); 
 
   const [inputEssay, setInputEssay] = useState("");
   const [prompt, setPrompt] = useState("");
@@ -30,10 +30,27 @@ export default function Reviewer() {
 
     if (userLoggedIn.credits < 1){
       alert('sorry you dont have enough credits :/');
-      navigate('/success');
+      navigate('/purchase');
+    } else {
+      const subtractCredits = await fetch('/api/addCredits', {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email: userLoggedIn.email, credits: -1 })
+      });
+      if (subtractCredits.ok){
+        setUserLoggedIn({
+          loggedIn: true,
+          name: userLoggedIn.name,
+          pic: userLoggedIn.pic,
+          email: userLoggedIn.email,
+          credits: userLoggedIn.credits - 1
+        });
+      } else {
+        alert('something went wrong subtracting credits');
+      }
     }
-
-    //update the user's credits HERE!
 
     setLoading(true);
 

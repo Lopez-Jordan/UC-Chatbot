@@ -9,7 +9,9 @@ export default function App() {
   const [userLoggedIn, setUserLoggedIn] = useState({
     loggedIn: false,
     name: "",
-    pic: ""
+    pic: "",
+    email: "",
+    credits: 0
   });
 
   useEffect(() => {
@@ -21,6 +23,7 @@ export default function App() {
         loggedIn: false,
         name: "",
         pic: "",
+        email: "",
         credits: 0
       });
     }
