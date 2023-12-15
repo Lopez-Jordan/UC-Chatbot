@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Reviewer.css';
-import { ObjToArr, formatNicely } from '../../../utils.js';
+import { ObjToArr } from '../../../utils.js';
 import Modal from './Modal.jsx';
 import { FaCheck } from "react-icons/fa";
 
@@ -16,6 +16,7 @@ export default function Reviewer() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+
     setLoading(true);
 
     const JSONscoreContainer = await fetch('/api/JSONscore', {
@@ -40,13 +41,15 @@ export default function Reviewer() {
       body: JSON.stringify({ essayPrompt: prompt, inputEssay: inputEssay, JSONscore: fullJSONscore })
     })
     let commentaryResponse = await commentaryContainer.text();
-    setCommentary(formatNicely(commentaryResponse));
+    setCommentary(commentaryResponse);
 
     setIsModalOpen(true);
+    setLoading(false);
     setInputEssay("");
     setPrompt("");
   };
 
+  
 
   return (
     <div className='main2'>
@@ -91,12 +94,19 @@ export default function Reviewer() {
             <div className='numContainer'><span className='numSpan'>3</span>
               <h3>Recieve custom feedback</h3>
             </div>
-            <div style={{display: "Flex", justifyContent: "center"}}>
-              <button id="getFeedback" type='submit'>Critique</button>
+            <div style={{ display: "Flex", justifyContent: "center" }}>
+
+              {(loading && (commentary.length == 0)) ? (
+                <div className="loading-spinner"></div>
+              ) : (
+                <button id="getFeedback" type='submit'>Critique</button>
+              )}
+
+
             </div>
           </form>
           {(isModalOpen) &&
-            <Modal setIsModalOpen={setIsModalOpen} commentary={commentary} JSONscoreArr={JSONscoreArr} />
+            <Modal setIsModalOpen={setIsModalOpen} setCommentary={setCommentary} commentary={commentary} JSONscoreArr={JSONscoreArr} />
           }
         </div>
         <div className='reasons'>
@@ -114,11 +124,6 @@ export default function Reviewer() {
           </div>
         </div>
       </div>
-      {(loading && (commentary.length == 0)) && (
-        <div className="loading-screen">
-          <div className="loading-spinner"></div>
-      </div>
-    )}
     </div>
   );
 }

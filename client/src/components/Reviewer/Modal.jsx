@@ -2,7 +2,7 @@ import React from 'react';
 import './Modal.css';
 import { convertToGrade } from '../../../utils.js';
 
-export default function Modal({ setIsModalOpen, commentary, JSONscoreArr }) {
+export default function Modal({ setIsModalOpen, setCommentary, commentary, JSONscoreArr }) {
   const getScoreColorClass = (score) => {
     if (score >= 0 && score < 79) {
       return 'red';
@@ -13,9 +13,14 @@ export default function Modal({ setIsModalOpen, commentary, JSONscoreArr }) {
     }
   };
 
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setCommentary("");
+  }
+
   return (
     <>
-      <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
+      <div className="modal-overlay" onClick={handleModalClose}>
         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
           <div className='LeftScore'>
             <h2 className='scores'>Scores</h2>
