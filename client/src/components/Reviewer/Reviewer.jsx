@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import './Reviewer.css';
 import { ObjToArr } from '../../../utils.js';
 import Modal from './Modal.jsx';
 import { FaCheck } from "react-icons/fa";
+import { LogInContext } from '../../App.jsx';
+import { useNavigate } from 'react-router-dom';
 
 export default function Reviewer() {
+
+  const [userLoggedIn, setUserLoggedIn] = useContext(LogInContext); // user data here
 
   const [inputEssay, setInputEssay] = useState("");
   const [prompt, setPrompt] = useState("");
@@ -13,9 +17,23 @@ export default function Reviewer() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const navigate = useNavigate();
+
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+
+    if (!userLoggedIn.loggedIn){
+      alert('sorry you must be logged in to use this feature :/')
+      return;
+    }
+
+    if (userLoggedIn.credits < 1){
+      alert('sorry you dont have enough credits :/');
+      navigate('/success');
+    }
+
+    //update the user's credits HERE!
 
     setLoading(true);
 

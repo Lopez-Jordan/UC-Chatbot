@@ -1,7 +1,7 @@
 import './Navbar.css';
 import { LogInContext } from '../../App';
 import { useGoogleLogin } from '@react-oauth/google';
-import { useContext, useState, useRef } from 'react';
+import { useContext, useState } from 'react';
 
 export default function () {
   const [userLoggedIn, setUserLoggedIn] = useContext(LogInContext);

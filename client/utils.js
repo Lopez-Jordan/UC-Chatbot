@@ -15,6 +15,7 @@ export function formatNicely(text) {
 }
 
 export function convertToGrade (score){
+    score = (score / 500) * 100;
     if (score >= 97){
         return "A+";
     }
