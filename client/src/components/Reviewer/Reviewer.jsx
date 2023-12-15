@@ -134,7 +134,8 @@ export default function Reviewer() {
               {(loading && (commentary.length == 0)) ? (
                 <div className="loading-spinner"></div>
               ) : (
-                <button id="getFeedback" type='submit'>Critique</button>
+                
+                <button disabled={!inputEssay.length || loading} style={{ opacity: !inputEssay.length || loading ? 0.5 : 1 }} id="getFeedback" type='submit'>Submit</button>
               )}
 
 
