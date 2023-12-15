@@ -101,8 +101,8 @@ app.post('/api/create-checkout-session', async (req, res) => {
           quantity: item.quantity
         }
       }),
-      success_url: `/success`,
-      cancel_url: `/`
+      success_url: `/successfulPurchase`,
+      cancel_url: `/purchase`
 
     })
     res.json({ url : session.url });
@@ -146,7 +146,7 @@ app.put('/api/addCredits', async (req, res) => {
       res.status(400).json({message : "no user found with that email! :/"});
       return;
     }
-    
+
     await existingUser.increment('credits', { by: req.body.credits });
 
     res.status(200).json({message: "successful update!"});
