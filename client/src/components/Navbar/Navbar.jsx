@@ -116,7 +116,7 @@ export default function () {
             <div></div>
             <button className="signIn" onClick={() => login()}>
               <img id="google" src='/google.png' alt="Google Logo"></img>
-              sign in
+              Sign In
             </button>
           </>
         )}

@@ -37,10 +37,6 @@
 }
 
 
-
-
-
-
 .signIn{
     margin-right: 8%;
     padding: 8px 12px;
@@ -64,10 +60,8 @@
     width: 26px;
     height: 26px;
     margin-right: 10px;
-    background-color: rgb(38, 38, 38);
     border-radius: 50%;
     padding: 1px;
-    box-shadow: 0 0 20px rgb(38, 38, 38);
 }
 
 .profile {
