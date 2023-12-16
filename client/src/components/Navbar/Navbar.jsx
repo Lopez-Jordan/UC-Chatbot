@@ -3,7 +3,10 @@ import { LogInContext } from '../../App';
 import { useGoogleLogin } from '@react-oauth/google';
 import { useContext, useState } from 'react';
 
+import { FaGoogle } from "react-icons/fa";
+
 export default function () {
+
   const [userLoggedIn, setUserLoggedIn] = useContext(LogInContext);
   const [isPopupVisible, setPopupVisible] = useState(false);
 
@@ -51,11 +54,6 @@ export default function () {
       console.log('Login Failed');
     },
   });
-  // loggedIn: false,
-  // name: "",
-  // pic: "",
-  // email: "",
-  // credits: 0
 
   const handleSignOut = () => {
     setUserLoggedIn({
@@ -82,24 +80,32 @@ export default function () {
     }
     return null;
   };
-    return (
-        <>
-            <div className="navbar">
-                {userLoggedIn.loggedIn ? (
-                    <div className="profile" onClick={togglePopup}>
-                        <img id="profileImage" src={userLoggedIn.pic} alt="" />
-                        <div className="infoContainer">
-                            <p className="smallText">signed in as</p>
-                            <h4>{userLoggedIn.name}</h4>
-                        </div>
-                        {renderProfilePopup()}
-                    </div>
-                ) : (
-                    <button className="signIn" onClick={() => login()}>
-                        SIGN IN
-                    </button>
-                )}
+  return (
+    <>
+      <div className="navbar">
+        {userLoggedIn.loggedIn &&
+          <div className='credits'>
+            <p><span id="number">0</span> credits</p>
+          </div>}
+
+        {userLoggedIn.loggedIn ? (
+          <div className="profile" onClick={togglePopup}>
+            <img id="profileImage" src={userLoggedIn.pic} alt="" />
+            <div className="infoContainer">
+              <p className="smallText">signed in as</p>
+              <h4>{userLoggedIn.name}</h4>
             </div>
-        </>
-    );
+            {renderProfilePopup()}
+          </div>
+        ) : (
+          <>
+            <div></div>
+            <button className="signIn" onClick={() => login()}>
+              <img id="google" src='/google.png'></img>sign in
+            </button>
+          </>
+        )}
+      </div>
+    </>
+  );
 }
