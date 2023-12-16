@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './Chatbot.css';
 import { formatConvHistory } from '../../../utils.js';
 
-const MAX_CHARACTERS = 200; // CHANGED
+const MAX_CHARACTERS = 200;
 
 export default function Chatbot() {
   const [userMessage, setUserMessage] = useState("");

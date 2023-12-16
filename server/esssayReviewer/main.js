@@ -56,8 +56,7 @@ async function getCommentary (essayPrompt, inputEssay, JSONscore){
           Essay Prompt: ${essayPrompt}
           Essay: ${inputEssay}
 
-
-          write me a very critical, 600 word cohesive and thorough review (with examples from the essay) for each scored category (just the review)
+          write me a very critical, 600 word cohesive review (with examples from the essay) for each scored category. Also provide examples on where to improve if necessary.
 
           just the review with specific examples:
          ` },
@@ -74,34 +73,3 @@ module.exports = {
   getJSONscore,
   getCommentary,
 }
-
-
-
-
-// R E Q U I R M E N T S:
-
-// PROS:
-// - Focuses on impact of writer and/or impact on others  (unique experience from their perspective) (Impact)
-// - centers self in response  (Uses "I" and "my" throughout essay)     (Self)
-// - provides specific, tangible examples in response (focus on decision, action and impact of student) (Examples) 
-// - answers prompt direct and to the point - (no figurative language, creative writing, metaphors/similes) (Prompt)
-// - more of an interview (not an essay)  (Interview)
-
-// CONS:
-// - Does not provide much context about writer's personal experience
-// - focuses more on structure rather than content (explaining too much about the story's setting and scene rather than how the story impacted themself)
-// - Centers others' narratives rather than their own
-// - Writes about hardship to get sympathy rather than to show growth 
-
-
-
-
-
-// - Make front page responsive
-
-// - update .txt files with more info (and links)
-// - fix secondary UC prompt
-// - add memory to the chatbot
-// - optimize chatbot (prompts, chunk size, etc. combine document size)
-// - make a really good readme with all the diagrams and shit
-// - build 2nd page functionality (essay reviewer

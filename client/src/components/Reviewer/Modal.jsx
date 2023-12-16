@@ -64,7 +64,7 @@ export default function Modal({ setIsModalOpen, setCommentary, commentary, JSONs
                     </div>
                 </div>
             </div>
-            <h4 className='grade'>Grade: <span>{JSONscoreArr[5]}</span></h4>
+            <h4 className='grade'>Grade: <span>{convertToGrade(JSONscoreArr[5])}</span></h4>
 
           </div>
           <div className='RightScore'>

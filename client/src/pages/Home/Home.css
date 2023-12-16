@@ -25,18 +25,19 @@
 #chatHeader{
     float: end;
     margin-top: 16px;
-    font-weight: 600;
     color: white;
-    font-size: 18px;
     letter-spacing: 0.5px;
     width: 90%;
-    line-height: 26px;
+
+    font-weight: 6a00;
+    line-height: 28px;
+    font-size: large;
 }
 
 #message {
     margin-bottom: 20px;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
     letter-spacing: 1px;
     float: left;

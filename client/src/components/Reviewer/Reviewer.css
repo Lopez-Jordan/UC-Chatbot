@@ -1,6 +1,6 @@
 .main2{
     height: 90vh;
-    background-image: url('/white.png');
+    background-color: #2a303c;
     background-repeat: no-repeat; /* Optional: Specify how the background image should repeat */
     background-size: cover; 
     padding: 40px 110px;
@@ -30,10 +30,8 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 14px rgb(79, 79, 79);
+    background-color: rgb(70, 78, 94);
     border-radius: 10px; 
-    border: 2.5px solid black;  
 }
 
 .numContainer{
@@ -45,25 +43,22 @@
 .numContainer > h3{
     margin-top: 6px;
     letter-spacing: 0.5px;
-    font-size: 16px;
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    background-color: #ffb3e9; 
+    font-size: 20px;
+    color: white;
+    font-weight: 400;
     padding: 5px;
     border-radius: 5px;
 }
 .numSpan{
     display: inline-block;
-    width: 26px; /* Adjust the width */
-    height: 26px; /* Adjust the height */
-    background-color: white;
+    width: 24px; /* Adjust the width */
+    height: 24px; /* Adjust the height */
+    color: white;
     border-radius: 50%;
     text-align: center;
     line-height: 26px; /* Should match the height for vertical centering */
-    background: linear-gradient(to bottom right,#0032bb, #ff12e7); 
-    -webkit-background-clip: text;
-    color: transparent;
-    font-weight: 600; /* Adjust the font-weight */
+    background-color: transparent;
+    font-weight: 400; /* Adjust the font-weight */
     font-size: 26px; /* Adjust the font-size */
     margin-right: 10px;
     position: relative;
@@ -71,45 +66,48 @@
 
 }
 #perfect{
-    background: linear-gradient(to bottom right,#0032bb, #ff12e7); 
-    -webkit-background-clip: text;
-    color: transparent;
+    color: white;
     font-size: 36px;
 }
 
-#perfect > span{
-    font-style: italic;
-}
 .metrics{
     margin: 16px 0 50px 0;
-    color: black;
+    color: white;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 28px;
-    font-size: 22px;
+    font-size: 20px;
 }
 #essay{
     height: 160px;
     width: 80%;
-    border: 1.75px solid rgb(110, 110, 110);
     padding: 10px;
     margin: 10px 0px 20px 0px;
     border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid rgb(255, 255, 255);
+    color: rgb(224, 224, 224);
 }
+#essay::placeholder{
+    color: rgb(218, 218, 218);
+}
+
 
 
 select{
     width: 84%;
     margin: 10px 0px 20px 0px;
-    border: 1.75px solid rgb(159, 159, 159);
+    border: 1px solid rgb(224, 224, 224);
     padding: 5px;
     color: black;
     border-radius: 10px;
+    background-color: transparent;
+    color: rgb(218, 218, 218);
 }
 
 
 #getFeedback{
-    font-size: 12px;
+    font-size: 16px;
     margin: 10px 0px 0px 0px;
     width: fit-content;
     padding: 8px 24px;
@@ -117,7 +115,7 @@ select{
     border-radius: 10px;
     cursor: pointer;
     font-weight: 400;
-    background-color: white;
+    background-color: transparent;
     color: rgb(0, 199, 0);
     border: 2px solid rgb(0, 221, 0);
     box-shadow: 0 0 8px rgba(0, 169, 0, 0.607);
@@ -148,13 +146,13 @@ select{
     font-size: 21px;
     font-weight: 500;
     letter-spacing: 0.5px;
-    color: rgb(0, 0, 0);
+    color: rgb(220, 220, 220);
     width: 500px;
     line-height: 30px;
 }
 
 .bold{
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 20px;
     font-weight: 600;
     padding-bottom: 1px;

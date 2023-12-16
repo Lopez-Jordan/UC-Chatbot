@@ -8,47 +8,47 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Reviewer() {
 
-  const [userLoggedIn, setUserLoggedIn] = useContext(LogInContext); 
-
+  const [userLoggedIn, setUserLoggedIn] = useContext(LogInContext);
   const [inputEssay, setInputEssay] = useState("");
   const [prompt, setPrompt] = useState("");
   const [JSONscoreArr, setJSONscoreArr] = useState([]);
   const [commentary, setCommentary] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-
   const navigate = useNavigate();
-
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
-    if (!userLoggedIn.loggedIn){
+    if (!userLoggedIn.loggedIn) {
       alert('sorry you must be logged in to use this feature :/')
       return;
     }
 
-    if (userLoggedIn.credits < 1){
+    if (userLoggedIn.credits < 1) {
       alert('sorry you dont have enough credits :/');
       navigate('/purchase');
     } else {
-      const subtractCredits = await fetch('/api/addCredits', {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ email: userLoggedIn.email, credits: -1 })
-      });
-      if (subtractCredits.ok){
-        setUserLoggedIn({
-          loggedIn: true,
-          name: userLoggedIn.name,
-          pic: userLoggedIn.pic,
-          email: userLoggedIn.email,
-          credits: userLoggedIn.credits - 1
+      if (confirm("Are you sure you want to spend 1 credit?")) {
+        const subtractCredits = await fetch('/api/addCredits', {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ email: userLoggedIn.email, credits: -1 })
         });
+        if (subtractCredits.ok) {
+          setUserLoggedIn({
+            loggedIn: true,
+            name: userLoggedIn.name,
+            pic: userLoggedIn.pic,
+            email: userLoggedIn.email,
+            credits: userLoggedIn.credits - 1
+          });
+        } else {
+          alert('something went wrong subtracting credits');
+        }
       } else {
-        alert('something went wrong subtracting credits');
+        return;
       }
     }
 
@@ -84,14 +84,12 @@ export default function Reviewer() {
     setPrompt("");
   };
 
-  
-
   return (
     <div className='main2'>
       <div className='topHalf'>
-          <h1 id='perfect'>Elevate your UC essays</h1>
-          <h2 className='metrics'>Gain personalized metrics and insights into how <span id="perfects">YOUR</span> essay is evaluated through the eyes of a UC Admission Officer</h2>
-          <div style={{ display: "Flex", justifyContent: "center" }}>
+        <h1 id='perfect'>Elevate your UC essays</h1>
+        <p className='metrics'>Gain personalized metrics and insights into how YOUR essay is evaluated through the eyes of a UC Admission Officer</p>
+        <div style={{ display: "Flex", justifyContent: "center" }}>
         </div>
       </div>
       <div className='bottomHalf'>
@@ -118,7 +116,7 @@ export default function Reviewer() {
             <div className='numContainer'><span className='numSpan'>2</span>
               <h3>Paste your essay</h3>
             </div>
-            <div style={{display: "Flex", justifyContent: "center"}}>
+            <div style={{ display: "Flex", justifyContent: "center" }}>
               <textarea
                 id='essay'
                 onChange={(e) => setInputEssay(e.target.value)}
@@ -130,15 +128,11 @@ export default function Reviewer() {
               <h3>Recieve custom feedback</h3>
             </div>
             <div style={{ display: "Flex", justifyContent: "center" }}>
-
               {(loading && (commentary.length == 0)) ? (
                 <div className="loading-spinner"></div>
               ) : (
-                
                 <button disabled={!inputEssay.length || loading} style={{ opacity: !inputEssay.length || loading ? 0.5 : 1 }} id="getFeedback" type='submit'>Submit</button>
               )}
-
-
             </div>
           </form>
           {(isModalOpen) &&
@@ -146,12 +140,12 @@ export default function Reviewer() {
           }
         </div>
         <div className='reasons'>
-          <div style={{marginTop: "20%"}} className='reasonsCheck'>
-            <FaCheck className='check'/>
+          <div style={{ marginTop: "20%" }} className='reasonsCheck'>
+            <FaCheck className='check' />
             <p className='checkPara'>Get scored on different <span className='bold'>UC-specific criteria</span></p>
           </div>
           <div className='reasonsCheck'>
-            <FaCheck className='check'/>
+            <FaCheck className='check' />
             <p className='checkPara'>Find out what UC admission officers <span className='bold'>are and aren't looking for</span></p>
           </div>
           <div className='reasonsCheck'>

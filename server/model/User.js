@@ -12,6 +12,7 @@ User.init(
         },
         credits: {
             type: DataTypes.INTEGER,
+            defaultValue: 1
         }
     },
     {
