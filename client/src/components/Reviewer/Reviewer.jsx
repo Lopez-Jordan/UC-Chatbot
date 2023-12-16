@@ -142,7 +142,7 @@ export default function Reviewer() {
         <div className='reasons'>
           <div style={{ marginTop: "20%" }} className='reasonsCheck'>
             <FaCheck className='check' />
-            <p className='checkPara'>Get scored on different <span className='bold'>UC-specific criteria</span></p>
+            <p className='checkPara'>Scored on range of <span className='bold'>criteria that is specific to UC's</span></p>
           </div>
           <div className='reasonsCheck'>
             <FaCheck className='check' />
