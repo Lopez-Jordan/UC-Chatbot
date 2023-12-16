@@ -2,13 +2,14 @@ import './Navbar.css';
 import { LogInContext } from '../../App';
 import { useGoogleLogin } from '@react-oauth/google';
 import { useContext, useState } from 'react';
-
-import { FaGoogle } from "react-icons/fa";
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function () {
 
   const [userLoggedIn, setUserLoggedIn] = useContext(LogInContext);
   const [isPopupVisible, setPopupVisible] = useState(false);
+  const currPage = useLocation().pathname;
+  const navigate = useNavigate();
 
   const login = useGoogleLogin({
     onSuccess: async (response) => {
@@ -80,14 +81,27 @@ export default function () {
     }
     return null;
   };
+
+  const handleBuyMore = () => {
+    navigate('/purchase');
+  }
+
   return (
     <>
       <div className="navbar">
-        {userLoggedIn.loggedIn &&
+        {userLoggedIn.loggedIn && currPage !== '/purchase' ? (
           <div className='credits'>
-            <p><span id="number">0</span> credits</p>
-          </div>}
-
+            <p>
+              <span id="number">{userLoggedIn.credits}</span>
+              {userLoggedIn.credits === 1 ? ' credit' : ' credits'}
+            </p>
+            <button onClick={handleBuyMore} id='buyMore' href="/purchase">
+            Buy More
+            </button>
+          </div>
+        ) : (
+          <div></div>
+        )}
         {userLoggedIn.loggedIn ? (
           <div className="profile" onClick={togglePopup}>
             <img id="profileImage" src={userLoggedIn.pic} alt="" />
@@ -101,11 +115,13 @@ export default function () {
           <>
             <div></div>
             <button className="signIn" onClick={() => login()}>
-              <img id="google" src='/google.png'></img>sign in
+              <img id="google" src='/google.png' alt="Google Logo"></img>
+              sign in
             </button>
           </>
         )}
       </div>
     </>
   );
+  
 }
