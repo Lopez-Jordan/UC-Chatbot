@@ -2,7 +2,7 @@
     height: 100vh;
     display: flex;
     background-color: white;
-    background: linear-gradient(to bottom right, #0032bb, #ff8ef4bd); 
+    background: linear-gradient(to bottom right, #042c9b, #d675cd); 
     background-size: cover; /* Adjust as needed */
     background-position: center center; /* Adjust as needed */
     background-repeat: no-repeat; /* Adjust as needed */
@@ -26,12 +26,11 @@
     float: end;
     margin-top: 16px;
     color: white;
-    letter-spacing: 0.5px;
     width: 90%;
-
-    font-weight: 6a00;
+    color: white;
+    font-weight: 500;
     line-height: 28px;
-    font-size: large;
+    font-size: 20px;
 }
 
 #message {

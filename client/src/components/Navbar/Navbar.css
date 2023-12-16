@@ -130,3 +130,23 @@
 .profile-popup button:hover {
     background-color: rgb(67, 67, 67);
 }
+
+#goBack{
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 0px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+#leftArrow{
+    margin-right: 10px;
+}
+#goBack:hover{
+    cursor: pointer;
+    background-color: #2a303c;
+}

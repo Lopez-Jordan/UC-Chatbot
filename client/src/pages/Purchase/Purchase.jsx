@@ -1,5 +1,5 @@
 import './Purchase.css';
-import { FaExclamationTriangle, FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { FaExclamationCircle, FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 export default function Purchase() {
 
@@ -28,7 +28,7 @@ export default function Purchase() {
                     </div>
                 </div>
                 <div className='alert'>
-                    <FaExclamationTriangle id="dangerCircle"/>
+                    <FaExclamationCircle id="dangerCircle"/>
                     We do not issue refunds at this time
                 </div>
             </div>

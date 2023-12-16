@@ -3,6 +3,7 @@ import { LogInContext } from '../../App';
 import { useGoogleLogin } from '@react-oauth/google';
 import { useContext, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function () {
 
@@ -100,7 +101,10 @@ export default function () {
             </button>
           </div>
         ) : (
-          <div></div>
+            <div id="goBack" onClick={() => navigate('/')}>
+              <FaArrowLeft id="leftArrow" />
+              <p>go back</p>
+            </div>
         )}
         {userLoggedIn.loggedIn ? (
           <div className="profile" onClick={togglePopup}>
