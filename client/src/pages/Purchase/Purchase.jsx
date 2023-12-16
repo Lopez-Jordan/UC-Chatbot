@@ -1,5 +1,5 @@
 import './Purchase.css';
-import { FaExclamationTriangle } from "react-icons/fa";
+import { FaExclamationTriangle, FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 export default function Purchase() {
 
@@ -8,8 +8,9 @@ export default function Purchase() {
             <div className='mainPurchase'>
                 <h1 className='buyCredits'>Buy Credits!</h1>
                 <p className='quote'>
-                    "Investing in yourself is the best investment you will ever make.
-                    It will not only improve your life, it will improve the life of all those around you"    - Jim Rohn
+                    <FaQuoteLeft className='quoteIcon'/>
+                    Investing in yourself is the best investment you will ever make.
+                    It will not only improve your life, it will improve the life of all those around you <FaQuoteRight className='quoteIcon' />   - Jim Rohn
                 </p>
                 <div className='cards'>
                     <div id="card1">
