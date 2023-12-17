@@ -75,7 +75,7 @@ export default function Navbar() {
   return (
     <>
       <div className="navbar">
-        {userLoggedIn.loggedIn && currPage !== '/purchase' ? (
+        {userLoggedIn.loggedIn && currPage !== '/purchase' && currPage !== '/terms' ? (
           <div className='credits'>
             <p>
               <span id="number">{userLoggedIn.credits}</span>
@@ -87,12 +87,13 @@ export default function Navbar() {
           </div>
         ) : (
           <>
-            {currPage !== '/home' && (
+            {(currPage == '/purchase' || currPage == '/terms')  && (
               <div id="goBack" onClick={() => navigate('/')}>
                 <FaArrowLeft id="leftArrow" />
-                <p>go back</p>
+                <p>back</p>
               </div>
             )}
+            <div></div>
           </>
         )}
         {userLoggedIn.loggedIn ? (

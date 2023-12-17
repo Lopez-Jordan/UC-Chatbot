@@ -9,8 +9,11 @@
     -webkit-background-clip: text;
     color: transparent;
 }
+.bolder{
+    font-weight: 600;
+    font-style: 20px;
 
-
+}
 
 
 .spaceBelow{
