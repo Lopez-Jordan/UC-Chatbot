@@ -79,13 +79,29 @@
 }
 
 .alert{
-    width: 50%;
+    width: 55%;
     background-color: #FBBD23;
     color: black;
     border-radius: 10px;
     padding: 10px;
     margin-top: 90px;
+    font-size: 14px;
 }
 #dangerCircle{
     margin-right: 10px;
+}
+.alert > button{
+    color: rgb(10, 14, 255);
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    border-bottom: 1.5px solid rgb(10, 14, 255);
+    font-weight: bold;
+}
+
+.alert > button:hover{
+    cursor: pointer;
+    color: black;
+    border-bottom: none;
+
 }

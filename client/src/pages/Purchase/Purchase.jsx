@@ -1,7 +1,12 @@
 import './Purchase.css';
 import { FaExclamationCircle, FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Purchase() {
+
+  const navigate = useNavigate();
+
 
     return (
         <>
@@ -27,7 +32,7 @@ export default function Purchase() {
                 </div>
                 <div className='alert'>
                     <FaExclamationCircle id="dangerCircle"/>
-                    We do not issue refunds at this time
+                    We do not issue refunds at this time. Please review our <button onClick={() => navigate('/terms')}>Terms and Conditions</button> before buying credits.
                 </div>
             </div>
         </>
