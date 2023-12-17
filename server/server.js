@@ -74,8 +74,8 @@ app.post('/api/commentary', async (req, res) => {
 
 
 const storeItems = new Map([
-  [1, { priceInCents: 500, name : "Tester Bundle" }],
-  [2, { priceInCents: 1000, name : "Professional Bundle" } ]
+  [1, { priceInCents: 500, name : "Basic" }],
+  [2, { priceInCents: 1000, name : "Professional" } ]
 ]);
 
 ///////////////////////////////////////////////////////////////////////////////////////
