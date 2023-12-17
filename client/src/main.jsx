@@ -25,7 +25,7 @@ const router = createBrowserRouter([
         element: <Purchase />
       },
       {
-        path: '/successfulPurchase/:credits',
+        path: '/successfulPurchase/:credits/4235632',
         element: <Success />
       }, 
       {

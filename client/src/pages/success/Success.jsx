@@ -16,7 +16,8 @@ export default function Success () {
     return (
         <>
             <section className='successMain'>
-                <h1>Success Page {credits}</h1>
+                <h1>Success!</h1>
+                <p>{ credits } credits have been added to your account</p>
             </section>
         </>
     );

@@ -1,0 +1,9 @@
+.successMain{
+    height: 100vh;
+    color: white;
+    padding: 60px;
+    background-color: #2a303c;;
+}
+.successMain > p{
+    margin-top: 20px;
+}

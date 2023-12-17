@@ -100,7 +100,7 @@ app.post("/api/create-checkout-session", async (req, res) => {
           quantity: item.quantity,
         }
       }),
-      success_url: `http://localhost:3003/successfulPurchase/${credits}`,
+      success_url: `http://localhost:3003/successfulPurchase/${credits}/4235632`,
       cancel_url: `http://localhost:3003/purchase`,
     })
     res.json({ url: session.url })
