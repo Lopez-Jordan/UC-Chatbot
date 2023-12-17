@@ -7,7 +7,7 @@
   flex-direction: column;
   overflow: hidden;
   background-color: rgb(0, 0, 0);
-  box-shadow: 0 0 60px rgb(111, 111, 111);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.548);
 }
 
 

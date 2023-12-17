@@ -1,0 +1,18 @@
+.termsMain{
+    padding: 100px 140px;
+    background-color:  #2a303c;
+    color: white;
+    height: 100%
+}
+.termsHeader{
+    background: linear-gradient(to bottom right, rgb(163, 163, 255), pink);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+
+
+.spaceBelow{
+    margin-bottom: 20px;
+}

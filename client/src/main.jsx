@@ -6,6 +6,7 @@ import Home from './pages/Home/Home.jsx';
 import App from './App.jsx'
 import Success from "./pages/success/Success.jsx";
 import Purchase from './pages/Purchase/Purchase.jsx'
+import Terms from './pages/Terms/Terms.jsx';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: '/successfulPurchase',
         element: <Success />
+      }, 
+      {
+        path: '/terms',
+        element: <Terms />
       }, 
     ]
   },

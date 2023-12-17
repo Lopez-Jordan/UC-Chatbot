@@ -9,8 +9,7 @@ export default function Purchase() {
                 <h1 className='buyCredits'>Buy Credits!</h1>
                 <p className='quote'>
                     <FaQuoteLeft className='quoteIcon'/>
-                    Investing in yourself is the best investment you will ever make.
-                    It will not only improve your life, it will improve the life of all those around you <FaQuoteRight className='quoteIcon' />   - Jim Rohn
+                    An investment in yourself pays the best interest. Chase your dreams relentlessly, for the dividends of passion and persistence yield the highest returns <FaQuoteRight className='quoteIcon' />   - Jim Rohn
                 </p>
                 <div className='cards'>
                     <div id="card1">
@@ -18,7 +17,6 @@ export default function Purchase() {
                         <h2 className='money'>$5</h2>
                         <p className='buyPara'>Have each of your PIQ essays reviewed and graded atleast once</p>
                         <button className='buyButton'>Buy 4 Credits</button>
-
                     </div>
                     <div id="card2">
                         <h4 className='title'>Professional</h4>

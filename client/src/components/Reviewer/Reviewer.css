@@ -28,7 +28,7 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: rgb(80, 89, 107);
+    background-color: white;
     border-radius: 10px; 
     box-shadow: 0px 0px 10px black;
 }
@@ -41,9 +41,8 @@
 }
 .numContainer > h3{
     margin-top: 6px;
-    letter-spacing: 0.5px;
     font-size: 20px;
-    color: white;
+    color: #2a303c;
     font-weight: 400;
     padding: 5px;
     border-radius: 5px;
@@ -52,7 +51,7 @@
     display: inline-block;
     width: 24px; /* Adjust the width */
     height: 24px; /* Adjust the height */
-    color: white;
+    color: #2a303c;
     border-radius: 50%;
     text-align: center;
     line-height: 26px; /* Should match the height for vertical centering */
@@ -87,15 +86,15 @@
     margin: 10px 0px 20px 0px;
     border-radius: 10px;
     background-color: transparent;
-    border: 1px solid rgb(157, 157, 157);
-    color: white;
+    border: 1.5px solid #2a303c;
+    color: #2a303c;
 }
 #essay:focus{
     outline: none;
-    border: 1px solid rgb(163, 163, 255);
+    border: 2px solid #2a303c;
 }
 #essay::placeholder{
-    color: rgb(218, 218, 218);
+    color: #727a89;
 }
 
 
@@ -103,17 +102,18 @@
 select{
     width: 84%;
     margin: 10px 0px 20px 0px;
-    border: 1px solid rgb(157, 157, 157);
+    border: 1.5px solid #2a303c;
     padding: 5px;
     color: black;
     border-radius: 10px;
     background-color: transparent;
-    color: rgb(218, 218, 218);
+    color: #727a89;
 }
 select:focus{
     outline: none;
-    border: 1px solid rgb(163, 163, 255);
+    border: 2px solid #2a303c;
 }
+
 
 
 #getFeedback{
@@ -127,7 +127,7 @@ select:focus{
     font-weight: 400;
     background-color: transparent;
     color: rgb(0, 199, 0);
-    border: 1px solid rgb(0, 221, 0);
+    border: 1.5px solid rgb(0, 221, 0);
     box-shadow: 0 0 6px rgba(0, 169, 0, 0.607);
     font-weight: 500;
     letter-spacing: 1px;

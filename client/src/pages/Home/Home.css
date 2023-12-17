@@ -2,10 +2,10 @@
     height: 100vh;
     display: flex;
     background-color: white;
-    background: linear-gradient(to bottom right, #042c9b, #d675cd); 
-    background-size: cover; /* Adjust as needed */
-    background-position: center center; /* Adjust as needed */
-    background-repeat: no-repeat; /* Adjust as needed */
+    background: linear-gradient(to bottom right, #153387, #d675cd); 
+    background-size: cover;
+    background-position: center center; 
+    background-repeat: no-repeat;
 }
 
 .half1 {
