@@ -70,3 +70,41 @@ export function formatConvHistory (messages) {
         }
     }).join('\n')
 } 
+
+export async function Stripe1 (num){
+    let res = await fetch("/api/create-checkout-session", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            items: [{ id: 1, quantity: 1}],
+            credits: num
+        })
+    });
+    if (res.ok){
+        res = await res.json();
+        window.location = res.url;
+    } else {
+        alert("something went wrong");
+    }
+}
+
+export async function Stripe2 (num){
+    let res = await fetch("/api/create-checkout-session", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            items: [{ id: 2, quantity: 1}],
+            credits: num
+        })
+    });
+    if (res.ok){
+        res = await res.json();
+        window.location = res.url;
+    } else {
+        alert("something went wrong");
+    }
+}

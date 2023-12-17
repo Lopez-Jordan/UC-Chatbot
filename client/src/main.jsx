@@ -10,6 +10,7 @@ import Terms from './pages/Terms/Terms.jsx';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
         element: <Purchase />
       },
       {
-        path: '/successfulPurchase',
+        path: '/successfulPurchase/:credits',
         element: <Success />
       }, 
       {

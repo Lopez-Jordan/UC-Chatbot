@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors({ origin: "http://localhost:3003"}));
 
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: false }));
@@ -73,44 +73,48 @@ app.post('/api/commentary', async (req, res) => {
 }); 
 
 
-const storeItems = new Map([
-  [1, { priceInCents: 500, name : "Basic" }],
-  [2, { priceInCents: 1000, name : "Professional" } ]
-]);
+
 
 ///////////////////////////////////////////////////////////////////////////////////////
-app.post('/api/create-checkout-session', async (req, res) => {
+const storeItems = new Map([
+  [1, { priceInCents: 500, name: "Basic (4 credits)" }],
+  [2, { priceInCents: 1000, name: "Professional (12 credits)" }],
+]);
+
+app.post("/api/create-checkout-session", async (req, res) => {
+  const credits = req.body.credits;
   try {
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      mode: 'payment',
-      metadata : {
-        user : req.body.email,
-        credits: req.body.credits
-      },
+      payment_method_types: ["card"],
+      mode: "payment",
       line_items: req.body.items.map(item => {
         const storeItem = storeItems.get(item.id)
         return {
-          price_data : {
-            currency: 'usd',
-            product_data : {
-              name : storeItem.name
+          price_data: {
+            currency: "usd",
+            product_data: {
+              name: storeItem.name,
             },
-            unit_amount : storeItem.priceInCents,
-          },  
-          quantity: item.quantity
+            unit_amount: storeItem.priceInCents,
+          },
+          quantity: item.quantity,
         }
       }),
-      success_url: `/successfulPurchase`,
-      cancel_url: `/purchase`
-
+      success_url: `http://localhost:3003/successfulPurchase/${credits}`,
+      cancel_url: `http://localhost:3003/purchase`,
     })
-    res.json({ url : session.url });
-  } catch (error) {
-    res.status(500).json({ error : error.message});
+    res.json({ url: session.url })
+  } catch (e) {
+    res.status(500).json({ error: e.message })
   }
 });
+
+
 ///////////////////////////////////////////////////////////////////////////////////////
+// metadata : {
+//   user : req.body.email,
+//   credits: req.body.credits
+// },
 
 app.post('/api/login', async (req, res) => {
   try {

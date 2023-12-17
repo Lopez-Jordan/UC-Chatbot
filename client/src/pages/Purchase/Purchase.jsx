@@ -1,12 +1,25 @@
 import './Purchase.css';
 import { FaExclamationCircle, FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { LogInContext } from '../../App.jsx';
+import { Stripe1, Stripe2 } from '../../../utils.js';
+
+
 
 
 export default function Purchase() {
 
+  const [userLoggedIn, setUserLoggedIn] = useContext(LogInContext);
   const navigate = useNavigate();
 
+  const handleCheckout = async (e) => {
+    if (e.target.value == 1){
+        Stripe1(4);
+    } else {
+        Stripe2(12);
+    }
+  }
 
     return (
         <>
@@ -21,13 +34,13 @@ export default function Purchase() {
                         <h4 className='title'>Basic</h4>
                         <h2 className='money'>$5</h2>
                         <p className='buyPara'>Have each of your PIQ essays reviewed and graded atleast once</p>
-                        <button className='buyButton'>Buy 4 Credits</button>
+                        <button onClick={handleCheckout} value={1} className='buyButton'>Buy 4 Credits</button>
                     </div>
                     <div id="card2">
                         <h4 className='title'>Professional</h4>
                         <h2 className='money'>$10</h2>
                         <p className='buyPara'>Have each of your 4 essays reviewed and graded multiple times</p>
-                        <button className='buyButton'>Buy 12 Credits</button>
+                        <button onClick={handleCheckout} value={2} className='buyButton'>Buy 12 Credits</button>
                     </div>
                 </div>
                 <div className='alert'>
