@@ -101,7 +101,6 @@
 
 .alert > button:hover{
     cursor: pointer;
-    color: black;
-    border-bottom: none;
-
+    color: white;
+    border-bottom: 1.5px solid white;
 }

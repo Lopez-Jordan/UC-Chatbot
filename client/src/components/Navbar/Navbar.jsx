@@ -5,7 +5,7 @@ import { useContext, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FaArrowLeft } from "react-icons/fa";
 
-export default function () {
+export default function Navbar() {
 
   const [userLoggedIn, setUserLoggedIn] = useContext(LogInContext);
   const [isPopupVisible, setPopupVisible] = useState(false);
@@ -72,21 +72,6 @@ export default function () {
     setPopupVisible(!isPopupVisible);
   };
 
-  const renderProfilePopup = () => {
-    if (isPopupVisible) {
-      return (
-        <div className="profile-popup">
-          <button onClick={handleSignOut}>Sign Out</button>
-        </div>
-      );
-    }
-    return null;
-  };
-
-  const handleBuyMore = () => {
-    navigate('/purchase');
-  }
-
   return (
     <>
       <div className="navbar">
@@ -96,15 +81,19 @@ export default function () {
               <span id="number">{userLoggedIn.credits}</span>
               {userLoggedIn.credits === 1 ? ' credit' : ' credits'}
             </p>
-            <button onClick={handleBuyMore} id='buyMore' href="/purchase">
-            Buy More
+            <button onClick={() => navigate('/purchase')} id='buyMore'>
+              Buy More
             </button>
           </div>
         ) : (
-            <div id="goBack" onClick={() => navigate('/')}>
-              <FaArrowLeft id="leftArrow" />
-              <p>go back</p>
-            </div>
+          <>
+            {currPage !== '/home' && (
+              <div id="goBack" onClick={() => navigate('/')}>
+                <FaArrowLeft id="leftArrow" />
+                <p>go back</p>
+              </div>
+            )}
+          </>
         )}
         {userLoggedIn.loggedIn ? (
           <div className="profile" onClick={togglePopup}>
@@ -113,7 +102,11 @@ export default function () {
               <p className="smallText">signed in as</p>
               <h4>{userLoggedIn.name}</h4>
             </div>
-            {renderProfilePopup()}
+            {isPopupVisible && (
+              <div className="profile-popup">
+                <button onClick={handleSignOut}>Sign Out</button>
+              </div>
+            )}
           </div>
         ) : (
           <>
@@ -127,5 +120,4 @@ export default function () {
       </div>
     </>
   );
-  
 }
