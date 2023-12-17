@@ -13,6 +13,9 @@
     -webkit-background-clip: text;
     color: transparent;
 }
+.aut{
+    font-size: 16px;;
+}
 
 .quote {
     margin: 16px 0 50px 0;

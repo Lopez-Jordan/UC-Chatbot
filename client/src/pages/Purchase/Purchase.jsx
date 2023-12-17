@@ -14,7 +14,7 @@ export default function Purchase() {
                 <h1 className='buyCredits'>Buy Credits!</h1>
                 <p className='quote'>
                     <FaQuoteLeft className='quoteIcon'/>
-                    If you're not willing to risk the usual, you will have to settle for the ordinary<FaQuoteRight className='quoteIcon' />   - Jim Rohn
+                    If you're not willing to risk the usual, you will have to settle for the ordinary<FaQuoteRight className='quoteIcon' />   <span className='aut'>- Jim Rohn</span>
                 </p>
                 <div className='cards'>
                     <div id="card1">
