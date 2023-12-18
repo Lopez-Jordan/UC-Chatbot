@@ -76,7 +76,7 @@ export default function Navbar() {
   return (
     <>
       <div className="navbar">
-        {userLoggedIn.loggedIn && currPage !== '/purchase' && currPage !== '/terms' ? (
+        {userLoggedIn.loggedIn && currPage !== '/purchase' && currPage !== '/terms' && currPage !== '/successfulPurchase/345924567890' && currPage !== '/successfulPurchase/777648035211'? (
           <div className='credits'>
             <p>
               <span id="number">{userLoggedIn.credits}</span>
