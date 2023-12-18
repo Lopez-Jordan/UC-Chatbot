@@ -1,9 +1,9 @@
 .successMain{
     height: 100vh;
     color: white;
-    padding: 60px;
+    padding: 120px 100px;
     background-color: #2a303c;;
 }
-.successMain > p{
+.successMain > h2{
     margin-top: 20px;
 }

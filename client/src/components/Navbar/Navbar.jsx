@@ -66,6 +66,7 @@ export default function Navbar() {
       credits: 0
     });
     setPopupVisible(false);
+    navigate('/');
   };
 
   const togglePopup = () => {

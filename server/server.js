@@ -100,7 +100,7 @@ app.post("/api/create-checkout-session", async (req, res) => {
           quantity: item.quantity,
         }
       }),
-      success_url: `http://localhost:3003/successfulPurchase/${credits}/4235632`,
+      success_url: `http://localhost:3003/successfulPurchase/${credits}`,
       cancel_url: `http://localhost:3003/purchase`,
     })
     res.json({ url: session.url })
@@ -138,8 +138,22 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
+
+
+
+
+
+
+
+
+
+
+
 app.put('/api/addCredits', async (req, res) => {
   try {
+
+    console.log(req.body);
+
     const existingUser = await User.findOne({
       where : {
         email: req.body.email
@@ -159,6 +173,23 @@ app.put('/api/addCredits', async (req, res) => {
     console.error('Error updating credits:', error);
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

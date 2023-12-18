@@ -71,7 +71,7 @@ export function formatConvHistory (messages) {
     }).join('\n')
 } 
 
-export async function Stripe1 (num){
+export async function Stripe1 (){
     let res = await fetch("/api/create-checkout-session", {
         method: "POST",
         headers: {
@@ -79,7 +79,7 @@ export async function Stripe1 (num){
         },
         body: JSON.stringify({
             items: [{ id: 1, quantity: 1}],
-            credits: num
+            credits: 345924567890
         })
     });
     if (res.ok){
@@ -90,7 +90,7 @@ export async function Stripe1 (num){
     }
 }
 
-export async function Stripe2 (num){
+export async function Stripe2 (){
     let res = await fetch("/api/create-checkout-session", {
         method: "POST",
         headers: {
@@ -98,7 +98,7 @@ export async function Stripe2 (num){
         },
         body: JSON.stringify({
             items: [{ id: 2, quantity: 1}],
-            credits: num
+            credits: 777648035211
         })
     });
     if (res.ok){

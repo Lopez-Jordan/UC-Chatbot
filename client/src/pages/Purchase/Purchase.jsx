@@ -15,9 +15,9 @@ export default function Purchase() {
 
   const handleCheckout = async (e) => {
     if (e.target.value == 1){
-        Stripe1(4);
+        Stripe1();
     } else {
-        Stripe2(12);
+        Stripe2();
     }
   }
 
