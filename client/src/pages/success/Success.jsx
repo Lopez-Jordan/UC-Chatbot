@@ -32,8 +32,17 @@ export default function Success () {
 
       if (updateUserCredits.ok){
         alert("successful update");
-
         localStorage.setItem('UserLoggedIn', JSON.stringify(userLoggedIn));
+
+        const addedValsNew = (credits === '345924567890' ? 4 : 12) + userLoggedIn.credits;
+
+        setUserLoggedIn({
+          loggedIn: userLoggedIn.loggedIn,
+          name: userLoggedIn.name,
+          pic: userLoggedIn.pic,
+          email: userLoggedIn.email,
+          credits: addedValsNew
+        });
         navigate('/');
       } else {
         alert("something went wrong updating the user credits on the server ://")
@@ -45,7 +54,6 @@ export default function Success () {
     } catch (error) {
       console.error(error.message);
     }
-    console.log(`Param Credits: ${credits}... local storage credits: ${userLoggedIn.credits}`);
   }
 
 
