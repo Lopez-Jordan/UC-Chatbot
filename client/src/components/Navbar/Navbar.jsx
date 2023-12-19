@@ -76,7 +76,7 @@ export default function Navbar() {
   return (
     <>
       <div className="navbar">
-        {userLoggedIn.loggedIn && currPage !== '/purchase' && currPage !== '/terms' && currPage !== '/successfulPurchase/345924567890' && currPage !== '/successfulPurchase/777648035211'? (
+        {userLoggedIn.loggedIn && currPage !== '/purchase' && currPage !== '/terms' && currPage !== '/successfulPurchase/345924567890' && currPage !== '/successfulPurchase/777648035211' ? (
           <div className='credits'>
             <p>
               <span id="number">{userLoggedIn.credits}</span>
@@ -88,7 +88,7 @@ export default function Navbar() {
           </div>
         ) : (
           <>
-            {(currPage == '/purchase' || currPage == '/terms')  && (
+            {(currPage === '/purchase' || currPage === '/terms')  && (
               <div id="goBack" onClick={() => navigate('/')}>
                 <FaArrowLeft id="leftArrow" />
                 <p>back</p>
@@ -97,7 +97,7 @@ export default function Navbar() {
             <div></div>
           </>
         )}
-        {userLoggedIn.loggedIn ? (
+        {(userLoggedIn.loggedIn && currPage !== '/successfulPurchase/345924567890' && currPage !== '/successfulPurchase/777648035211' )? (
           <div className="profile" onClick={togglePopup}>
             <img id="profileImage" src={userLoggedIn.pic} alt="" />
             <div className="infoContainer">
@@ -112,11 +112,17 @@ export default function Navbar() {
           </div>
         ) : (
           <>
+          {(currPage === '/successfulPurchase/345924567890' || currPage === '/successfulPurchase/777648035211') ? (
             <div></div>
-            <button className="signIn" onClick={() => login()}>
-              <img id="google" src='/google.png' alt="Google Logo"></img>
-              Sign In
-            </button>
+          ) : (
+            <>
+              <div></div>
+              <button className="signIn" onClick={() => login()}>
+                <img id="google" src='/google.png' alt="Google Logo"></img>
+                Sign In
+              </button>
+            </>
+          )}
           </>
         )}
       </div>

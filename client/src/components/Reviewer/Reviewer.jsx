@@ -88,16 +88,14 @@ export default function Reviewer() {
     <div className='main2'>
       <div className='topHalf'>
         <h1 id='perfect'>Elevate your UC essays</h1>
-        <p className='metrics'>Gain personalized metrics and insights into how YOUR essay is evaluated through the <span style={{fontSize: '24px'}}>👀</span> of UC Admission Officers</p>
+        <p className='metrics'>Gain personalized metrics and insights into how YOUR essay is evaluated through the <span style={{ fontSize: '24px' }}>👀</span> of UC Admission Officers</p>
         <div style={{ display: "Flex", justifyContent: "center" }}>
         </div>
       </div>
       <div className='bottomHalf'>
         <div className='formContainer'>
           <form name='reviewForm' className='reviewForm' onSubmit={handleFormSubmit}>
-            <div className='numContainer'><span className='numSpan'>1</span>
-              <h3>Select your prompt</h3>
-            </div>
+            <h3>1. Select your prompt</h3>
             <div style={{ display: "Flex", justifyContent: "center" }}>
               <select
                 onChange={(e) => setPrompt(e.target.value)}
@@ -113,9 +111,7 @@ export default function Reviewer() {
                 <option value="8">Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admissions to the University of California?</option>
               </select>
             </div>
-            <div className='numContainer'><span className='numSpan'>2</span>
-              <h3>Paste your essay</h3>
-            </div>
+            <h3>2. Paste your essay</h3>
             <div style={{ display: "Flex", justifyContent: "center" }}>
               <textarea
                 id='essay'
@@ -124,9 +120,9 @@ export default function Reviewer() {
                 placeholder="Paste your essay here (max 350 words)"
               ></textarea>
             </div>
-            <div className='numContainer'><span className='numSpan'>3</span>
-              <h3>Recieve custom feedback</h3>
-            </div>
+
+            <h3>3. Recieve custom feedback</h3>
+
             <div style={{ display: "Flex", justifyContent: "center" }}>
               {(loading && (commentary.length == 0)) ? (
                 <div className="loading-spinner"></div>

@@ -78,9 +78,15 @@ export default function Success () {
   return (
     <>
       <section className="successMain">
-        <p>Success!</p>
-        <h2> {credits === '345924567890' ? 4 : 12} credits have been added to your account!</h2>
-        <button onClick={handleHome}>Go Home</button>
+        <p className='emojis'>
+          <p>🥳</p>
+          <p>🎉</p>
+          <p>🥂</p>
+        </p>
+        <h1>Thank You!</h1>
+        <p className='thankYouPara'>I'm a young developer who built this technology to help ambitious students like yourself pursue their educational dreams. By using
+        this Essay Reviewer, you now have a huge edge over other applicants--something I wish I had when I applied back in 2019.</p>
+        <button onClick={handleHome}>Activate {credits === '345924567890' ? 4 : 12} Credits</button>
       </section>
     </>
   );
