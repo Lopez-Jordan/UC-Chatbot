@@ -1,5 +1,5 @@
 .successMain{
-    height: 100vh;
+    height: 110vh;
     background-color: #2a303c;
     color: white;
     display: flex;
@@ -20,7 +20,7 @@
 .successMain > h1 {
     font-size: 40px;
     margin-bottom: 20px;
-    background: linear-gradient(to bottom right, #91aeff, #fbff00);
+    background: linear-gradient(to bottom right, #82a4ff, #fbff00d6);
 
     -webkit-background-clip: text;
     color: transparent;
@@ -32,6 +32,7 @@
     font-size: 18px;
     margin-bottom: 40px;
     text-align: center;
+    letter-spacing: 0.25px;
 
 }
 
@@ -39,7 +40,7 @@
     background-color: white;
     color: #2a303c;
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;

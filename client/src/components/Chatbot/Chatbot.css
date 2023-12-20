@@ -1,13 +1,14 @@
 .main {
-  height: 70vh;
+  height: 75vh;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   background-color: rgb(0, 0, 0);
-  box-shadow: 0 0 80px rgb(28, 28, 28);
+  box-shadow: 0 0 40px rgb(28, 28, 28);
   width: 500px;
   margin-top: 5%;
+  z-index: 9;
 }
 
 
@@ -109,18 +110,18 @@
 #submitButton {
   border: none;
   outline: none;
-  background-color: #f8fc00;
+  background-color: #1295D8;
   color: white;
   padding: 6px;
   border-radius: 10px;
   cursor: pointer;
-  color: black;
+  color: white;
   margin: 0 8px;
 }
 
 #submitButton:hover {
-  background-color: #1295D8;
-  color: white;
+  background-color: #f8fc00;
+  color: black;
 }
 
 #inputText:focus {
@@ -180,16 +181,41 @@
   }
 }
 
+
+/* /////////////////////////////////////////////////////// */
+
+@media (max-width: 1100px) {
+  .main {
+    width: 450px;
+    box-shadow: 0 0 50px rgb(28, 28, 28);
+
+  }
+    
+}
+
+
 @media (max-width: 1010px) {
   .main {
-    width: 400px;
+    width: 425px;
+    box-shadow: 0 0 50px rgb(28, 28, 28);
+
   }
   
 }
 
 @media (max-width: 800px) {
   .main {
-    width: 500px;
-    height: 50vh;
+    width: 100%;
+    height: 55vh;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    width: 100%;
+    height: 55vh;
+    margin-top: 0%;
+
   }
 }

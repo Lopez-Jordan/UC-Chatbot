@@ -7,10 +7,10 @@ export default function Home() {
   
   return (
     <>
-      <section className="page1">
+      <section className="mainPage">
         <div className='filler'>
           <div className='page1inside'>
-            <div>
+            <div className='half1'>
               <div className="content1">
                 <h2 id='message'>ask anything to a...</h2>
                 <h1 id='mainHeading'>UC Admission Officer</h1>

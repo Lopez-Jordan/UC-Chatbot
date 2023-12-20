@@ -71,7 +71,7 @@ export default function Success() {
           <p>🥂</p>
         </p>
         <h1>Thank You!</h1>
-        <p className='thankYouPara'>Your support allows me to build the technology that helps ambitious students like you pursue their educational dreams. </p>
+        <p className='thankYouPara'>Your support allows me to build the technology that helps ambitious students like you pursue their educational dreams. If you like this product, please tell your friends or write me an <a style={{color: "white", borderBottom: '1.25px solid yellow', textDecoration: 'none'}} href="mailto:jordanlopezemail@gmail.com">email</a> telling me how much you love it!</p>
 
         <button onClick={handleHome}>Activate {credits === '345924567890' ? 4 : 12} Credits</button>
       </section>

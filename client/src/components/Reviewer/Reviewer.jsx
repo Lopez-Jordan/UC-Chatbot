@@ -89,63 +89,59 @@ export default function Reviewer() {
       <div className='topHalf'>
         <h1 id='perfect'>Enhance Your UC Essays</h1>
         <p className='metrics'>Gain personalized metrics and insights into how YOUR essay is evaluated through the <span style={{ fontSize: '24px' }}>👀</span> of UC Admission Officers</p>
-        <div style={{ display: "Flex", justifyContent: "center" }}>
+        <div style={{ display: "flex", justifyContent: "center" }}>
         </div>
       </div>
       <div className='bottomHalf'>
-        <div className='formContainer'>
-          <form name='reviewForm' className='reviewForm' onSubmit={handleFormSubmit}>
-            <h3>1. Select your prompt</h3>
-            <div style={{ display: "Flex", justifyContent: "center" }}>
-              <select
-                onChange={(e) => setPrompt(e.target.value)}
-                value={prompt}
-              >
-                <option value="1">Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.</option>
-                <option value="2">Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.</option>
-                <option value="3">What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?</option>
-                <option value="4">Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.</option>
-                <option value="5">Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement? </option>
-                <option value="6">Think about an academic subject that inspires you. Describe how you have furthered this interest inside and/or outside of the classroom. </option>
-                <option value="7">What have you done to make your school or your community a better place?</option>
-                <option value="8">Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admissions to the University of California?</option>
-              </select>
-            </div>
-            <h3>2. Paste your essay</h3>
-            <div style={{ display: "Flex", justifyContent: "center" }}>
-              <textarea
-                id='essay'
-                onChange={(e) => setInputEssay(e.target.value)}
-                value={inputEssay}
-                placeholder="Paste your essay here (max 350 words)"
-              ></textarea>
-            </div>
-
-            <h3>3. Recieve custom feedback</h3>
-
-            <div style={{ display: "Flex", justifyContent: "center" }}>
-              {(loading && (commentary.length == 0)) ? (
-                <div className="loading-spinner"></div>
-              ) : (
-                <button disabled={!inputEssay.length || loading} style={{ opacity: !inputEssay.length || loading ? 0.5 : 1 }} id="getFeedback" type='submit'>Submit</button>
-              )}
-            </div>
-          </form>
-          {(isModalOpen) &&
-            <Modal setIsModalOpen={setIsModalOpen} setCommentary={setCommentary} commentary={commentary} JSONscoreArr={JSONscoreArr} />
-          }
-        </div>
+        <form name='reviewForm' className='reviewForm' onSubmit={handleFormSubmit}>
+          <h3>1. Select your prompt</h3>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <select
+              onChange={(e) => setPrompt(e.target.value)}
+              value={prompt}
+            >
+              <option value="1">Describe an example of your leadership experience in which you have positively influenced others, helped resolve disputes or contributed to group efforts over time.</option>
+              <option value="2">Every person has a creative side, and it can be expressed in many ways: problem solving, original and innovative thinking, and artistically, to name a few. Describe how you express your creative side.</option>
+              <option value="3">What would you say is your greatest talent or skill? How have you developed and demonstrated that talent over time?</option>
+              <option value="4">Describe how you have taken advantage of a significant educational opportunity or worked to overcome an educational barrier you have faced.</option>
+              <option value="5">Describe the most significant challenge you have faced and the steps you have taken to overcome this challenge. How has this challenge affected your academic achievement? </option>
+              <option value="6">Think about an academic subject that inspires you. Describe how you have furthered this interest inside and/or outside of the classroom. </option>
+              <option value="7">What have you done to make your school or your community a better place?</option>
+              <option value="8">Beyond what has already been shared in your application, what do you believe makes you a strong candidate for admissions to the University of California?</option>
+            </select>
+          </div>
+          <h3>2. Paste your essay</h3>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <textarea
+              id='essay'
+              onChange={(e) => setInputEssay(e.target.value)}
+              value={inputEssay}
+              placeholder="Paste your essay here (max 350 words)"
+            ></textarea>
+          </div>
+          <h3>3. Recieve custom feedback</h3>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            {(loading && (commentary.length == 0)) ? (
+              <div className="loading-spinner"></div>
+            ) : (
+              <button disabled={!inputEssay.length || loading} style={{ opacity: !inputEssay.length || loading ? 0.5 : 1 }} id="getFeedback" type='submit'>Submit</button>
+            )}
+          </div>
+        </form>
+        {(isModalOpen) &&
+          <Modal setIsModalOpen={setIsModalOpen} setCommentary={setCommentary} commentary={commentary} JSONscoreArr={JSONscoreArr} />
+        }
         <div className='reasons'>
-          <div style={{ marginTop: "20%" }} className='reasonsCheck'>
+          <div style={{ marginTop: "10%" }} className='reasonsCheck'>
             <p className='check'>🎯</p>
             <p className='checkPara'>Scored on range of criteria that is <span className='bold'>specific to UC's</span></p>
           </div>
           <div className='reasonsCheck'>
-          <p className='check'>🔍</p>
+            <p className='check'>🔍</p>
             <p className='checkPara'>Find out what UC admission officers <span className='bold'>are and aren't looking for</span></p>
           </div>
           <div className='reasonsCheck'>
-          <p className='check'>📈</p>
+            <p className='check'>📈</p>
             <p className='checkPara'><span className='bold'>Meaningful suggestions</span> on what to improve based on our admission insights</p>
           </div>
         </div>

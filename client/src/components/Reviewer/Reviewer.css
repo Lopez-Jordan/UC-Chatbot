@@ -1,5 +1,5 @@
 .main2{
-    height: 100%;
+    height: 110%;
     background-color: #2a303c;
     padding: 40px 110px;
     display: flex;
@@ -7,7 +7,7 @@
     align-items: center;
 }
 .topHalf{
-    width: 80%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,24 +15,17 @@
 }
 .bottomHalf {
     display: flex;
-    justify-content: space-around;
 }
 
-.formContainer {
-    background-color: black;
-    border-radius: 10px;
-    width: 40%;
-}
 
 .reviewForm{
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(220, 223, 227);
     border-radius: 10px; 
-    box-shadow: 0px 0px 10px black;
+    width: 500px;
 }
-
 
 h3{
     margin-top: 6px;
@@ -44,25 +37,10 @@ h3{
     margin-bottom: 10px;
 
 }
-.numSpan{
-    display: inline-block;
-    width: 24px; /* Adjust the width */
-    height: 24px; /* Adjust the height */
-    color: #2a303c;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 26px; /* Should match the height for vertical centering */
-    background-color: transparent;
-    font-weight: 400; /* Adjust the font-weight */
-    font-size: 20px; /* Adjust the font-size */
-    position: relative;
-    top: 2px;
 
-}
 #perfect{
     font-size: 36px;
     background: linear-gradient(to bottom right, #6d94ff, #fcff46d2);
-
     -webkit-background-clip: text;
     color: transparent;
 }
@@ -74,7 +52,7 @@ h3{
     font-weight: 500;
     line-height: 28px;
     font-size: 20px;
-    width: 80%;
+    width: 100%;
 }
 #essay{
     height: 160px;
@@ -94,8 +72,6 @@ h3{
     color: #727a89;
 }
 
-
-
 select{
     width: 84%;
     margin: 10px 0px 20px 0px;
@@ -110,8 +86,6 @@ select:focus{
     outline: none;
     border: 2px solid #2a303c;
 }
-
-
 
 #getFeedback{
     font-size: 14px;
@@ -133,8 +107,7 @@ select:focus{
     box-shadow: none;
 }
 .reasons{
-    width: 500px;
-    margin-left: 20px;
+    margin-left: 8%;
 }
 .reasonsCheck{
     display: flex;
@@ -163,19 +136,46 @@ select:focus{
     border-bottom: 2px solid  #fcff57;
 }
 
-/* Add this to your existing CSS file */
   
-  .loading-spinner {
+.loading-spinner {
     border: 6px solid rgb(88, 88, 88);
     border-top: 6px solid rgb(123, 123, 255);
     border-radius: 50%;
     width: 20px;
     height: 20px;
     animation: spin 1s linear infinite;
-  }
-  
-  @keyframes spin {
+}
+
+@keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-  }
-  
+}
+
+
+
+@media (max-width: 1010px) {
+    .topHalf{
+        width: 120%;
+        text-align: center;
+    }
+    .bottomHalf {
+        flex-direction: column;
+        align-items: center;
+    }   
+    .reviewForm{
+        width: 60%;
+        height: 50%;
+    }
+    .reasons{
+        width: 90%;
+        margin-left: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    .reasonsCheck{
+        display: flex;
+        align-items: center;
+        margin-top: 8%;
+        justify-content: center;
+    }
+}
