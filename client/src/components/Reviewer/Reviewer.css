@@ -1,5 +1,5 @@
 .main2{
-    height: 90vh;
+    height: 100%;
     background-color: #2a303c;
     padding: 40px 110px;
     display: flex;
@@ -38,7 +38,7 @@ h3{
     margin-top: 6px;
     font-size: 20px;
     color: #2a303c;
-    font-weight: 400;
+    font-weight: 500;
     padding: 5px;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -61,7 +61,8 @@ h3{
 }
 #perfect{
     font-size: 36px;
-    background: linear-gradient(to bottom right, rgb(163, 163, 255), pink);
+    background: linear-gradient(to bottom right, #6d94ff, #fcff46d2);
+
     -webkit-background-clip: text;
     color: transparent;
 }
@@ -142,9 +143,7 @@ select:focus{
     margin-top: 8%;
 }
 .check{
-    width: 50px;
-    height: 50px;
-    color: green;
+    font-size: 40px;
     margin-right: 20px;
 }
 
@@ -161,14 +160,14 @@ select:focus{
     font-size: 21px;
     font-weight: 500;
     padding-bottom: 1px;
-    border-bottom: 2px solid  rgb(255, 163, 179);
+    border-bottom: 2px solid  #fcff57;
 }
 
 /* Add this to your existing CSS file */
   
   .loading-spinner {
-    border: 6px solid white;
-    border-top: 6px solid rgb(163, 163, 255);
+    border: 6px solid rgb(88, 88, 88);
+    border-top: 6px solid rgb(123, 123, 255);
     border-radius: 50%;
     width: 20px;
     height: 20px;

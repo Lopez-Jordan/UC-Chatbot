@@ -9,7 +9,7 @@
 
 .buyCredits {
     font-size: 36px;
-    background: linear-gradient(to bottom right, rgb(163, 163, 255), pink);
+    background: linear-gradient(to bottom right, #6890ff, #fdff6f);
     -webkit-background-clip: text;
     color: transparent;
 }
@@ -24,7 +24,7 @@
     font-weight: 500;
     line-height: 24px;
     font-size: 20px;
-    width: 70%;
+    width: 60%;
     margin-bottom: 20px;
 }
 .quoteIcon{
@@ -47,22 +47,26 @@
     padding: 30px;
     text-align: center;
     margin: 0 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .title {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .money {
-    font-size: 46px;
+    font-size: 42px;
     font-weight: 700;
     color: #2a303c;
     margin-bottom: 20px;
 }
 .buyPara{
-    font-size: 18px;
+    font-size: 14px;
     margin-bottom: 20px;
 }
 
@@ -70,7 +74,7 @@
     background-color: #2a303c;
     color: white;
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;

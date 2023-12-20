@@ -6,7 +6,6 @@
   overflow: hidden;
   background-color: rgb(0, 0, 0);
   box-shadow: 0 0 80px rgb(28, 28, 28);
-  position: relative;
   width: 500px;
   margin-top: 5%;
 }
@@ -110,7 +109,7 @@
 #submitButton {
   border: none;
   outline: none;
-  background-color: #ffb7dc;
+  background-color: #f8fc00;
   color: white;
   padding: 6px;
   border-radius: 10px;
@@ -181,3 +180,16 @@
   }
 }
 
+@media (max-width: 1010px) {
+  .main {
+    width: 400px;
+  }
+  
+}
+
+@media (max-width: 800px) {
+  .main {
+    width: 500px;
+    height: 50vh;
+  }
+}

@@ -87,7 +87,7 @@ export default function Reviewer() {
   return (
     <div className='main2'>
       <div className='topHalf'>
-        <h1 id='perfect'>Elevate your UC essays</h1>
+        <h1 id='perfect'>Enhance Your UC Essays</h1>
         <p className='metrics'>Gain personalized metrics and insights into how YOUR essay is evaluated through the <span style={{ fontSize: '24px' }}>👀</span> of UC Admission Officers</p>
         <div style={{ display: "Flex", justifyContent: "center" }}>
         </div>
@@ -137,15 +137,15 @@ export default function Reviewer() {
         </div>
         <div className='reasons'>
           <div style={{ marginTop: "20%" }} className='reasonsCheck'>
-            <FaCheck className='check' />
+            <p className='check'>🎯</p>
             <p className='checkPara'>Scored on range of criteria that is <span className='bold'>specific to UC's</span></p>
           </div>
           <div className='reasonsCheck'>
-            <FaCheck className='check' />
+          <p className='check'>🔍</p>
             <p className='checkPara'>Find out what UC admission officers <span className='bold'>are and aren't looking for</span></p>
           </div>
           <div className='reasonsCheck'>
-            <FaCheck className='check' />
+          <p className='check'>📈</p>
             <p className='checkPara'><span className='bold'>Meaningful suggestions</span> on what to improve based on our admission insights</p>
           </div>
         </div>

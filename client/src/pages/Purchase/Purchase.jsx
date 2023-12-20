@@ -27,19 +27,19 @@ export default function Purchase() {
                 <h1 className='buyCredits'>Buy Credits!</h1>
                 <p className='quote'>
                     <FaQuoteLeft className='quoteIcon'/>
-                    If you're not willing to risk the usual, you will have to settle for the ordinary<FaQuoteRight className='quoteIcon' />   <span className='aut'>- Jim Rohn</span>
+                    Investing in yourself is the best investment you will ever make. It will not only improve your life, it will improve the lives of all those around you<FaQuoteRight className='quoteIcon' />   <span className='aut'>- Robin Sharma</span>
                 </p>
                 <div className='cards'>
                     <div id="card1">
                         <h4 className='title'>Basic</h4>
-                        <h2 className='money'>$5</h2>
-                        <p className='buyPara'>Have each of your PIQ essays reviewed and graded atleast once</p>
-                        <button onClick={handleCheckout} value={1} className='buyButton'>Buy 4 Credits</button>
+                        <h2 className='money'>🔮 $5 🔮</h2>
+                        <p className='buyPara'>Have all 4 of your essays reviewed and graded atleast once so you know what to improve, keep, and polish.</p>
+                        <button style={{marginTop: '10px'}} onClick={handleCheckout} value={1} className='buyButton'>Buy 4 Credits</button>
                     </div>
                     <div id="card2">
                         <h4 className='title'>Professional</h4>
-                        <h2 className='money'>$10</h2>
-                        <p className='buyPara'>Have each of your 4 essays reviewed and graded multiple times</p>
+                        <h2 className='money'>💎 $10 💎</h2>
+                        <p className='buyPara'>Have all 4 of your essays reviewed and graded multiple times so you can sleep well at night knowing UC admission officers are reading amazing works of art.</p>
                         <button onClick={handleCheckout} value={2} className='buyButton'>Buy 12 Credits</button>
                     </div>
                 </div>

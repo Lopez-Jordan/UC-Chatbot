@@ -5,7 +5,8 @@
     height: 100%
 }
 .termsHeader{
-    background: linear-gradient(to bottom right, rgb(163, 163, 255), pink);
+    background: linear-gradient(to bottom right, #91aeff, #fbff00);
+
     -webkit-background-clip: text;
     color: transparent;
 }

@@ -71,9 +71,7 @@ export default function Success() {
           <p>🥂</p>
         </p>
         <h1>Thank You!</h1>
-        <p className='thankYouPara'>
-          I'm a young developer who built this technology to help ambitious students like yourself pursue their educational dreams. By using my product, you now have a huge edge over other applicants -- something I wish existed when I applied back in 2019.
-        </p>
+        <p className='thankYouPara'>Your support allows me to build the technology that helps ambitious students like you pursue their educational dreams. </p>
 
         <button onClick={handleHome}>Activate {credits === '345924567890' ? 4 : 12} Credits</button>
       </section>
