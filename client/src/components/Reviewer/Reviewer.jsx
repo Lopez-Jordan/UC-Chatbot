@@ -146,6 +146,13 @@ export default function Reviewer() {
           </div>
         </div>
       </div>
+      <section className='footer'>
+        <a className='footerButton' style={{color: "white", borderBottom: '1px solid white', textDecoration: 'none', padding: "none"}} href="mailto:univcaliforniaai@gmail.com">UnivCaliforniaAI@gmail.com</a>
+        <button className='footerButton' onClick={() => navigate('/terms')}>Terms and Conditions</button>
+        <button className='footerButton' onClick={() => navigate('/privacy')}>Privacy Policy</button>
+
+
+      </section>
     </div>
   );
 }

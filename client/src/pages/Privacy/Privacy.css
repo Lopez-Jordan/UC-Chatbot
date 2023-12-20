@@ -1,0 +1,22 @@
+.termsMain{
+    padding: 100px 140px;
+    background-color:  #2a303c;
+    color: white;
+    height: 100%
+}
+.termsHeader{
+    background: linear-gradient(to bottom right, #91aeff, #fbff00);
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.bolder{
+    font-weight: 600;
+    font-style: 20px;
+
+}
+
+
+.spaceBelow{
+    margin-bottom: 20px;
+}

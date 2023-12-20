@@ -1,7 +1,7 @@
 .main2{
     height: 110%;
     background-color: #2a303c;
-    padding: 40px 110px;
+    padding: 40px 110px 0px 110px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -144,6 +144,32 @@ select:focus{
     width: 20px;
     height: 20px;
     animation: spin 1s linear infinite;
+}
+
+.footer{
+    width: fit-content;
+    height: 10vh;
+    background-color: #404a5f;
+    margin-top: 5%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.footerButton{
+    outline: none;
+    padding: 6px;
+    font-size: 16px;
+    transition: background-color 0.5s ease;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 0 30px;
+}
+.footerButton:hover{
+    background-color: rgb(166, 166, 166);
+
 }
 
 @keyframes spin {
