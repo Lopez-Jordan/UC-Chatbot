@@ -82,7 +82,7 @@ export default function Navbar() {
               <span id="number">{userLoggedIn.credits}</span>
               {userLoggedIn.credits === 1 ? ' credit' : ' credits'}
             </p>
-            <button onClick={() => navigate('/purchase')} id='buyMore'>
+            <button id='buyMore' onClick={() => navigate('/purchase')}>
               Buy More
             </button>
           </div>

@@ -1,39 +1,32 @@
 import './Success.css';
-import {  useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { LogInContext } from '../../App.jsx';
 
-
-
-export default function Success () { 
-
+export default function Success() {
   const { credits } = useParams();
   const navigate = useNavigate();
   const [userLoggedIn, setUserLoggedIn] = useContext(LogInContext);
 
-
   const handleHome = async () => {
     try {
+      const addedVals = (credits === '345924567890' ? 4 : 12);
 
-      const addedVals = (credits === '345924567890' ? 4 : 12) + userLoggedIn.credits;
-      
       const bodyPayload = JSON.stringify({
         email: userLoggedIn.email,
-        credits: addedVals
-      })
+        credits: addedVals,
+      });
 
       const updateUserCredits = await fetch('/api/addCredits', {
-        method: "PUT",
+        method: 'PUT',
         headers: {
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json',
         },
-        body: bodyPayload
-      })
+        body: bodyPayload,
+      });
 
-      if (updateUserCredits.ok){
-        alert("successful update");
+      if (updateUserCredits.ok) {
         localStorage.setItem('UserLoggedIn', JSON.stringify(userLoggedIn));
-
         const addedValsNew = (credits === '345924567890' ? 4 : 12) + userLoggedIn.credits;
 
         setUserLoggedIn({
@@ -41,21 +34,18 @@ export default function Success () {
           name: userLoggedIn.name,
           pic: userLoggedIn.pic,
           email: userLoggedIn.email,
-          credits: addedValsNew
+          credits: addedValsNew,
         });
-        navigate('/');
+
+        // Use replace instead of navigate
+        navigate('/', { replace: true });
       } else {
-        alert("something went wrong updating the user credits on the server ://")
+        alert("Something went wrong updating the user credits on the server ://");
       }
-
-
-
-
     } catch (error) {
       console.error(error.message);
     }
-  }
-
+  };
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem('UserLoggedIn'));
@@ -64,16 +54,13 @@ export default function Success () {
     } else {
       setUserLoggedIn({
         loggedIn: false,
-        name: "",
-        pic: "",
-        email: "",
-        credits: 0
+        name: '',
+        pic: '',
+        email: '',
+        credits: 0,
       });
     }
-    console.log(storedUser);
-    console.log(userLoggedIn);
-  
-  },[])
+  }, []);
 
   return (
     <>
@@ -84,8 +71,10 @@ export default function Success () {
           <p>🥂</p>
         </p>
         <h1>Thank You!</h1>
-        <p className='thankYouPara'>I'm a young developer who built this technology to help ambitious students like yourself pursue their educational dreams. By using
-        this Essay Reviewer, you now have a huge edge over other applicants--something I wish I had when I applied back in 2019.</p>
+        <p className='thankYouPara'>
+          I'm a young developer who built this technology to help ambitious students like yourself pursue their educational dreams. By using my product, you now have a huge edge over other applicants -- something I wish existed when I applied back in 2019.
+        </p>
+
         <button onClick={handleHome}>Activate {credits === '345924567890' ? 4 : 12} Credits</button>
       </section>
     </>

@@ -11,7 +11,7 @@
     margin-top: 26%;
     font-size: 30px;
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .emojis > p{
     margin: 0 14px;
@@ -20,6 +20,9 @@
 .successMain > h1 {
     font-size: 40px;
     margin-bottom: 20px;
+    background: linear-gradient(to bottom right, rgb(163, 163, 255), pink);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 
