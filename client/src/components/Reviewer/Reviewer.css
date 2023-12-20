@@ -98,8 +98,8 @@ select:focus{
     font-weight: 400;
     background-color: transparent;
     color: rgb(0, 199, 0);
-    border: 1.5px solid rgb(0, 221, 0);
-    box-shadow: 0 0 6px rgba(0, 169, 0, 0.607);
+    border: 1.75px solid rgb(0, 218, 0);
+    box-shadow: 0 0 10px rgba(0, 201, 0, 0.754);
     font-weight: 500;
     letter-spacing: 1px;
 }
