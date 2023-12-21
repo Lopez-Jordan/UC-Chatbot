@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import './Reviewer.css';
 import { ObjToArr } from '../../../utils.js';
 import Modal from './Modal.jsx';
-import { FaCheck } from "react-icons/fa";
 import { LogInContext } from '../../App.jsx';
 import { useNavigate } from 'react-router-dom';
 
@@ -147,7 +146,7 @@ export default function Reviewer() {
         </div>
       </div>
       <section className='footer'>
-        <a className='footerButton' style={{color: "white", borderBottom: '1px solid white', textDecoration: 'none', padding: "none"}} href="mailto:univcaliforniaai@gmail.com">UnivCaliforniaAI@gmail.com</a>
+        <a className='footerButton' href="mailto:univcaliforniaai@gmail.com">UnivCaliforniaAI@gmail.com</a>
         <button className='footerButton' onClick={() => navigate('/terms')}>Terms and Conditions</button>
         <button className='footerButton' onClick={() => navigate('/privacy')}>Privacy Policy</button>
 

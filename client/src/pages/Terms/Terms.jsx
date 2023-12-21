@@ -13,6 +13,7 @@ export default function Terms () {
             <p className='spaceBelow'>By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.</p>
             <p className='spaceBelow bolder'>Refund Policy</p>
             <p className='spaceBelow'>By using this site and buying credits, you agree to our refund policy, and will not seek to ask for refunds if your are unhappy with the results of your ai generated Essay Commentary. You understand the limitations of text generated answers from Open AI's GPT Large Language Models. When buying credits, you accept the risk that some answers aren't perfect.</p>
+            <p className='spaceBelow bolder'>In the case where credits are not applied after payment, email: univcaliforniaai@gmail.com stating the email associated with the account you used to purchase the credits and how many credits were purchased. You also agree that while this service can be used through the site, it can also be used through email images/screenshots in which credits can be directly applied.</p>
             <p className='spaceBelow bolder'>Links to Other Websites</p>
             <p className='spaceBelow'>Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.</p>
             <p className='spaceBelow'>The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.</p>
@@ -31,7 +32,7 @@ export default function Terms () {
             <p className='spaceBelow'>Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.</p>
             <p className='spaceBelow bolder'>Governing Law</p>
             <p className='spaceBelow'>The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.</p>
-            <p className='spaceBelow boolder'>Disputes Resolution</p>
+            <p className='spaceBelow bolder'>Disputes Resolution</p>
             <p className='spaceBelow'>If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.</p>
             <p className='spaceBelow bolder'>For European Union (EU) Users</p>
             <p className='spaceBelow'>If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.</p>

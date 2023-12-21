@@ -6,7 +6,6 @@
 }
 .termsHeader{
     background: linear-gradient(to bottom right, #91aeff, #fbff00);
-
     -webkit-background-clip: text;
     color: transparent;
 }
