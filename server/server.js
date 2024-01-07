@@ -70,10 +70,7 @@ app.post('/api/commentary', async (req, res) => {
   } catch (error) {
     console.error(error);
   }
-}); 
-
-
-
+});
 
 ///////////////////////////////////////////////////////////////////////////////////////
 const storeItems = new Map([
@@ -100,8 +97,8 @@ app.post("/api/create-checkout-session", async (req, res) => {
           quantity: item.quantity,
         }
       }),
-      success_url: `http://localhost:3003/successfulPurchase/${credits}`,
-      cancel_url: `http://localhost:3003/purchase`,
+      success_url: `https://infinite-thicket-94821-c40c39ef6cfc.herokuapp.com/successfulPurchase/${credits}`,
+      cancel_url: `https://infinite-thicket-94821-c40c39ef6cfc.herokuapp.com/purchase`,
     })
     res.status(200).json({ url: session.url })
   } catch (e) {
