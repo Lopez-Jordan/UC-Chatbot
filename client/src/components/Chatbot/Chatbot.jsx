@@ -104,7 +104,6 @@ export default function Chatbot() {
           </div>
         ))}
       </div>
-
       <form onSubmit={handleSubmit} className="input-container">
         <textarea
           onChange={handleInputChange}

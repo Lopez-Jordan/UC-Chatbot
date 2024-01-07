@@ -106,6 +106,9 @@
   line-height: 22px;
   padding: 10px 0 10px 10px;
 }
+#inputText:focus {
+  border: 2px solid #1295D8;
+}
 
 #submitButton {
   border: none;
@@ -124,9 +127,6 @@
   color: black;
 }
 
-#inputText:focus {
-  border: 2.5px solid rgb(179, 179, 255);
-}
 
 .char-counter {
   font-size: 14px;
