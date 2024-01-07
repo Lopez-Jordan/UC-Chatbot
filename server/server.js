@@ -12,7 +12,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors({ origin: "https://infinite-thicket-94821-c40c39ef6cfc.herokuapp.com/"}));
+app.use(cors({ origin: "http://localhost:3003"}));
 
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: false }));
@@ -100,8 +100,8 @@ app.post("/api/create-checkout-session", async (req, res) => {
           quantity: item.quantity,
         }
       }),
-      success_url: `https://infinite-thicket-94821-c40c39ef6cfc.herokuapp.com/successfulPurchase/${credits}`,
-      cancel_url: `https://infinite-thicket-94821-c40c39ef6cfc.herokuapp.com/purchase`,
+      success_url: `http://localhost:3003/successfulPurchase/${credits}`,
+      cancel_url: `http://localhost:3003/purchase`,
     })
     res.status(200).json({ url: session.url })
   } catch (e) {
