@@ -6,11 +6,8 @@ import { LogInContext } from '../../App.jsx';
 import { Stripe1, Stripe2 } from '../../../utils.js';
 
 
-
-
 export default function Purchase() {
 
-  const [userLoggedIn, setUserLoggedIn] = useContext(LogInContext);
   const navigate = useNavigate();
 
   const handleCheckout = async (e) => {

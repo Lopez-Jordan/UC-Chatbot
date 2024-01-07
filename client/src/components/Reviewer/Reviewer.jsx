@@ -149,8 +149,6 @@ export default function Reviewer() {
         <a className='footerButton' href="mailto:univcaliforniaai@gmail.com">UnivCaliforniaAI@gmail.com</a>
         <button className='footerButton' onClick={() => navigate('/terms')}>Terms and Conditions</button>
         <button className='footerButton' onClick={() => navigate('/privacy')}>Privacy Policy</button>
-
-
       </section>
     </div>
   );
