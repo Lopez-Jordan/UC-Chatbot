@@ -8,7 +8,6 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-
 const openAIApiKey = process.env.OPENAI_API_KEY;
 
 const llm = new ChatOpenAI({ 
