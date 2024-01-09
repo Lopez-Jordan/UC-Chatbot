@@ -36,7 +36,7 @@ export default function Purchase() {
                     <div id="card2">
                         <h4 className='title'>Professional</h4>
                         <h2 className='money'>💎 $10 💎</h2>
-                        <p className='buyPara'>Have all 4 of your essays reviewed and graded multiple times so you can sleep well at night knowing UC admission officers are reading amazing works of art.</p>
+                        <p className='buyPara'>Have all 4 of your essays reviewed and graded multiple times so you can sleep well at night knowing UC admission officers are reading amazing works of literature.</p>
                         <button onClick={handleCheckout} value={2} className='buyButton'>Buy 12 Credits</button>
                     </div>
                 </div>
