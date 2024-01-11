@@ -1,6 +1,6 @@
 ![License](https://img.shields.io/badge/license-MIT-brightgreen)
 
-# University of California Chatbot and Essay Reviewer
+# UC Chatbot and Essay Reviewer
 
 [explore the site here!](https://infinite-thicket-94821-c40c39ef6cfc.herokuapp.com/)
 
