@@ -17,10 +17,10 @@ Along with the chatbot, I created an "UC application Essay Reviewer" which allow
 
 ## Usage
 
-- For the GPT powered chatbobt
+<h4>For the GPT powered chatbobt</h4>
 Simply type directly into the chatbot form to begin asking questions!
 <br>
-- For the Essay Reviewer
+<h4>For the Essay Reviewer</h4>
 Sign in to your Google authorized account and follow the form directions *
 <br>
 <h5>* if you run out of credits, click the "buy more" link</h5>
