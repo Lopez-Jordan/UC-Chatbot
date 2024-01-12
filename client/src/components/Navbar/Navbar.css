@@ -74,11 +74,14 @@
     justify-content: end;
     width: fit-content;
     padding: 10px;
-    margin-right: 40px;
+    margin-right: 16px;
 }
 
 .profile:hover{
     cursor: pointer;
+}
+.termsButton{
+    color: white;
 }
 
 #profileImage {

@@ -8,7 +8,8 @@ export default function Terms () {
             <p className='spaceBelow'>Last Updated: December 16, 2023</p>
             <p className='spaceBelow'>Please read these terms and conditions carefully before using Our Service.</p>
             <p className='spaceBelow bolder'>Acknowledgment</p>
-            <p className='spaceBelow' style={{fontWeight: "bolder"}}>This app is in NO way affiliated with the official University of California</p>
+            <p className='spaceBelow'>The Admission Officer chatbot may provide false or incorrect information, it is always best to verify any information with up to date, Official University of California Websites or speak with legitimate UC admission officers</p>
+            <p className='spaceBelow' style={{fontWeight: "bolder", color: "yellow"}}>This app is in NO way affiliated with the official University of California</p>
             <p className='spaceBelow'>These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.</p>
             <p className='spaceBelow'>Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.</p>
             <p className='spaceBelow'>By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.</p>

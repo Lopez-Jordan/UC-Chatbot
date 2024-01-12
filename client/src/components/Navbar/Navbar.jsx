@@ -74,30 +74,32 @@ export default function Navbar() {
   };
 
   return (
-    <>
-      <div className="navbar">
-        {userLoggedIn.loggedIn && currPage !== '/purchase' && currPage !== '/terms' && currPage !== '/successfulPurchase/345924567890' && currPage !== '/successfulPurchase/777648035211' ? (
-          <div className='credits'>
-            <p>
-              <span id="number">{userLoggedIn.credits}</span>
-              {userLoggedIn.credits === 1 ? ' credit' : ' credits'}
-            </p>
-            <button id='buyMore' onClick={() => navigate('/purchase')}>
-              Buy More
-            </button>
-          </div>
-        ) : (
-          <>
-            {(currPage === '/purchase' || currPage === '/terms')  && (
-              <div id="goBack" onClick={() => navigate('/')}>
-                <FaArrowLeft id="leftArrow" />
-                <p>back</p>
-              </div>
-            )}
-            <div></div>
-          </>
-        )}
-        {(userLoggedIn.loggedIn && currPage !== '/successfulPurchase/345924567890' && currPage !== '/successfulPurchase/777648035211' )? (
+    <div className="navbar">
+      {userLoggedIn.loggedIn && !['/purchase', '/terms', '/successfulPurchase/345924567890', '/successfulPurchase/777648035211'].includes(currPage) ? (
+        <div className='credits'>
+          <p>
+            <span id="number">{userLoggedIn.credits}</span>
+            {userLoggedIn.credits === 1 ? ' credit' : ' credits'}
+          </p>
+          <button id='buyMore' onClick={() => navigate('/purchase')}>
+            Buy More
+          </button>
+        </div>
+      ) : (
+        <>
+          {(currPage === '/purchase' || currPage === '/terms') && (
+            <div id="goBack" onClick={() => navigate('/')}>
+              <FaArrowLeft id="leftArrow" />
+              <p>back</p>
+            </div>
+          )}
+          <div></div>
+        </>
+      )}
+  
+      {userLoggedIn.loggedIn && !['/successfulPurchase/345924567890', '/successfulPurchase/777648035211'].includes(currPage) && (
+        <>
+        <div style={{display: "flex", alignItems: "center", marginRight: '40px'}}>
           <div className="profile" onClick={togglePopup}>
             <img id="profileImage" src={userLoggedIn.pic} alt="" />
             <div className="infoContainer">
@@ -109,23 +111,29 @@ export default function Navbar() {
                 <button onClick={handleSignOut}>Sign Out</button>
               </div>
             )}
+            
           </div>
-        ) : (
-          <>
-          {(currPage === '/successfulPurchase/345924567890' || currPage === '/successfulPurchase/777648035211') ? (
-            <div></div>
-          ) : (
-            <>
-              <div></div>
-              <button className="signIn" onClick={() => login()}>
-                <img id="google" src='/google.png' alt="Google Logo"></img>
-                Sign In
-              </button>
-            </>
-          )}
-          </>
-        )}
-      </div>
-    </>
+          <a className='termsButton' href="/terms">Terms of Use</a>
+        </div>
+        </>
+        
+      )}
+  
+      {!userLoggedIn.loggedIn && !['/successfulPurchase/345924567890', '/successfulPurchase/777648035211'].includes(currPage) ? (
+        <>
+          <div></div>
+          <div style={{display: "flex", width: "300px", marginRight: '40px', alignItems: 'center'}}>
+            <button className="signIn" onClick={() => login()}>
+              <img id="google" src='/google.png' alt="Google Logo"></img>
+              Sign In
+            </button>
+            <a className='termsButton' href="/terms">Terms of Use</a>
+          </div>
+        </>
+      ) : 
+      <>
+      </> }
+    </div>
   );
+  
 }
