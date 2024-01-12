@@ -41,3 +41,10 @@ Sign in to your Google authorized account and follow the form directions *
 - OpenAI (API to power the "Essay Reviewer" and functionality of chatbot)
 - Stripe (integrated payment system)
 - Google OAuth 2.0 (to allow users to sign in to their authorized Google Account)
+
+
+
+## Questions
+For questions about the project, you can reach me via:
+- GitHub: [Lopez-Jordan](https://github.com/Lopez-Jordan)
+- Email: jordanlopezemail@gmail.com
