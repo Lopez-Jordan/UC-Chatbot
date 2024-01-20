@@ -77,8 +77,8 @@ app.post('/api/commentary', async (req, res) => {
 
 ///////////////////////////////////////////////////////////////////////////////////////
 const storeItems = new Map([
-  [1, { priceInCents: 500, name: "Basic (4 credits)" }],
-  [2, { priceInCents: 1000, name: "Professional (12 credits)" }],
+  [1, { priceInCents: 999, name: "Basic (4 credits)" }],
+  [2, { priceInCents: 1999, name: "Professional (12 credits)" }],
 ]);
 
 app.post("/api/create-checkout-session", async (req, res) => {
@@ -103,11 +103,19 @@ app.post("/api/create-checkout-session", async (req, res) => {
       success_url: `https://infinite-thicket-94821-c40c39ef6cfc.herokuapp.com/successfulPurchase/${credits}`,
       cancel_url: `https://infinite-thicket-94821-c40c39ef6cfc.herokuapp.com/purchase`,
     })
-    res.status(200).json({ url: session.url })
+    res.status(200).json({ url: session.url });
   } catch (e) {
-    res.status(500).json({ error: e.message })
+    res.status(500).json({ error: e.message });
   }
 });
+
+// http://localhost:3003/successfulPurchase/${credits}
+// http://localhost:3003/purchase
+// OR
+// https://infinite-thicket-94821-c40c39ef6cfc.herokuapp.com/successfulPurchase/${credits}
+// https://infinite-thicket-94821-c40c39ef6cfc.herokuapp.com/purchase
+
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////

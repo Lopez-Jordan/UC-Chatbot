@@ -44,7 +44,7 @@ async function getCommentary (essayPrompt, inputEssay, JSONscore){
       },
       { role: "user", content: `
       
-      You are helpful and very essay reviewer given an essay and its corresponding already scored categories:
+      You are helpful and very essay reviewer given an essay and its corresponding scored categories:
 
         1: Essay strictly focuses on impact of individual on community/self through the unique experience/perspective of writer (score: ${JSONscore.Impact})
         2: Essay is written in first person point of view and uses "I" and "my" words etc. (score: ${JSONscore.Self})
@@ -55,7 +55,7 @@ async function getCommentary (essayPrompt, inputEssay, JSONscore){
           Essay Prompt: ${essayPrompt}
           Essay: ${inputEssay}
 
-          write me a very critical, 600 word cohesive review (with examples from the essay) for each scored category. Also provide examples on where to improve if necessary.
+          write me a very critical, 600 word cohesive review (with examples from the essay) for each scored category and focus the commentary more on the lower scored categories. Also provide examples on where to improve if necessary.
 
           just the review with specific examples:
          ` },

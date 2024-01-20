@@ -128,7 +128,7 @@ export default function Reviewer() {
           </div>
         </form>
         {(isModalOpen) &&
-          <Modal setIsModalOpen={setIsModalOpen} setCommentary={setCommentary} commentary={commentary} JSONscoreArr={JSONscoreArr} />
+          <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} setCommentary={setCommentary} commentary={commentary} JSONscoreArr={JSONscoreArr} />
         }
         <div className='reasons'>
           <div style={{ marginTop: "10%" }} className='reasonsCheck'>

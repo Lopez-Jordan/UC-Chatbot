@@ -58,13 +58,18 @@
     font-weight: 600;
     margin-bottom: 18px;
 }
-
+.moneySpan{
+    font-size: 16px;
+    position: relative;
+    top: -18px;
+}
 .money {
     font-size: 42px;
     font-weight: 700;
     color: #2a303c;
     margin-bottom: 20px;
 }
+
 .buyPara{
     font-size: 14px;
     margin-bottom: 20px;
