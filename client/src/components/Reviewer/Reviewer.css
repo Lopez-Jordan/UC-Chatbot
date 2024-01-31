@@ -35,7 +35,6 @@ h3{
     padding: 5px;
     border-radius: 5px;
     margin-bottom: 10px;
-
 }
 
 #perfect{
@@ -80,7 +79,7 @@ select{
     color: black;
     border-radius: 10px;
     background-color: transparent;
-    color: #727a89;
+    color: #2a303c;
 }
 select:focus{
     outline: none;
