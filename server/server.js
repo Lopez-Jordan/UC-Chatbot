@@ -100,8 +100,8 @@ app.post("/api/create-checkout-session", async (req, res) => {
           quantity: item.quantity,
         }
       }),
-      success_url: `https://infinite-thicket-94821-c40c39ef6cfc.herokuapp.com/successfulPurchase/${credits}`,
-      cancel_url: `https://infinite-thicket-94821-c40c39ef6cfc.herokuapp.com/purchase`,
+      success_url: `https://www.ucadmissionsai.com/successfulPurchase/${credits}`,
+      cancel_url: `https://www.ucadmissionsai.com/purchase`,
     })
     res.status(200).json({ url: session.url });
   } catch (e) {
@@ -114,6 +114,9 @@ app.post("/api/create-checkout-session", async (req, res) => {
 // OR
 // https://infinite-thicket-94821-c40c39ef6cfc.herokuapp.com/successfulPurchase/${credits}
 // https://infinite-thicket-94821-c40c39ef6cfc.herokuapp.com/purchase
+// OR
+// https://www.ucadmissionsai.com/successfulPurchase/${credits}
+// https://www.ucadmissionsai.com/purchase
 
 
 

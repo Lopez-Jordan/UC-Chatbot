@@ -81,7 +81,7 @@ export default function Navbar() {
             <span id="number">{userLoggedIn.credits}</span>
             {userLoggedIn.credits === 1 ? ' credit' : ' credits'}
           </p>
-          <button id='buyMore' onClick={() => navigate('/purchase')}>
+          <button className='buyMore' onClick={() => navigate('/purchase')}>
             Buy More
           </button>
         </div>
@@ -99,22 +99,23 @@ export default function Navbar() {
   
       {userLoggedIn.loggedIn && !['/successfulPurchase/345924567890', '/successfulPurchase/777648035211'].includes(currPage) && (
         <>
-        <div style={{display: "flex", alignItems: "center", marginRight: '40px'}}>
-          <div className="profile" onClick={togglePopup}>
-            <img id="profileImage" src={userLoggedIn.pic} alt="" />
-            <div className="infoContainer">
-              <p className="smallText">signed in as</p>
-              <h4>{userLoggedIn.name}</h4>
-            </div>
-            {isPopupVisible && (
-              <div className="profile-popup">
-                <button onClick={handleSignOut}>Sign Out</button>
+          <div style={{ display: "flex", alignItems: "center", marginRight: '40px' }}>
+            <div className="profile" onClick={togglePopup}>
+              <img id="profileImage" src={userLoggedIn.pic} alt="" />
+              <div className="infoContainer">
+                <p className="smallText">signed in as</p>
+                <h4>{userLoggedIn.name}</h4>
               </div>
-            )}
-            
+              {isPopupVisible && (
+                <div className="profile-popup">
+                  <button onClick={handleSignOut}>Sign Out</button>
+                </div>
+              )}
+            </div>
+            <button className='buyMoreNav' onClick={() => navigate('/reviews')}>
+              Read our Reviews!
+            </button>
           </div>
-          <a className='termsButton' href="/terms">Terms of Use</a>
-        </div>
         </>
         
       )}
@@ -126,8 +127,10 @@ export default function Navbar() {
               <img id="google" src='/google.png' alt="Google Logo"></img>
               Sign In
             </button>
-            <a className='termsButton' href="/reviews">Read our Reviews!</a>
-            <a className='termsButton' href="/terms">Terms of Use</a>
+            <button className='buyMoreNav' onClick={() => navigate('/reviews')}>
+              Read our Reviews!
+            </button>
+
           </div>
         </>
       ) : 
