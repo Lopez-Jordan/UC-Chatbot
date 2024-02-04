@@ -9,6 +9,7 @@ import Purchase from './pages/Purchase/Purchase.jsx'
 import Terms from './pages/Terms/Terms.jsx';
 import Privacy from "./pages/Privacy/Privacy.jsx";
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import Review from './pages/Review/Review.jsx';
 
 
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: '/privacy',
         element: <Privacy />
+      }, 
+      {
+        path: '/reviews',
+        element: <Review />
       }, 
     ]
   },

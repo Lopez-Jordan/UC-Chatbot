@@ -143,10 +143,6 @@ export default function Reviewer() {
             <p className='check'>📈</p>
             <p className='checkPara'><span className='bold'>Meaningful suggestions</span> on what to improve based on our admission insights</p>
           </div>
-          <div className='reasonsCheck'>
-            <p className='check'>💯</p>
-            <p className='checkPara'>Get <span className='bold'>your</span> essay into the A range </p>
-          </div>
         </div>
       </div>
       <section className='footer'>

@@ -121,12 +121,12 @@ export default function Navbar() {
   
       {!userLoggedIn.loggedIn && !['/successfulPurchase/345924567890', '/successfulPurchase/777648035211'].includes(currPage) ? (
         <>
-          <div></div>
           <div style={{display: "flex", width: "300px", marginRight: '40px', alignItems: 'center'}}>
             <button className="signIn" onClick={() => login()}>
               <img id="google" src='/google.png' alt="Google Logo"></img>
               Sign In
             </button>
+            <a className='termsButton' href="/reviews">Read our Reviews!</a>
             <a className='termsButton' href="/terms">Terms of Use</a>
           </div>
         </>
