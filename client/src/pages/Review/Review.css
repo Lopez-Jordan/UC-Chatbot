@@ -1,9 +1,9 @@
 .mainReview{
     display: flex;
     flex-direction: column;
-    padding: 8%;
+    padding: 8% 12%;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
 }
 
 #checkOut{
@@ -11,4 +11,11 @@
     background: linear-gradient(to bottom right, #4677ff, #fcff46c0);
     -webkit-background-clip: text;
     color: transparent;
+}
+
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    justify-content: center;
 }

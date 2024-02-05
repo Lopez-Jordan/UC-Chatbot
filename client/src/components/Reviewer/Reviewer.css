@@ -45,7 +45,7 @@ h3{
 }
 
 .metrics{
-    margin: 16px 0 50px 0;
+    margin: 16px 0 70px 0;
     color: white;
     text-align: center;
     font-weight: 500;
@@ -57,7 +57,7 @@ h3{
     height: 160px;
     width: 80%;
     padding: 10px;
-    margin: 10px 0px 20px 0px;
+    margin: 10px 0px 6px 0px;
     border-radius: 10px;
     background-color: transparent;
     border: 1.5px solid #2a303c;
@@ -69,6 +69,13 @@ h3{
 }
 #essay::placeholder{
     color: #727a89;
+}
+.totalWords{
+    position: relative;
+    top: 0;
+    left: 148px;
+    font-size: 14px;
+    color: #2a303cda;
 }
 
 select{
@@ -149,7 +156,7 @@ select:focus{
     width: fit-content;
     height: 6vh;
     background-color: #404a5f;
-    margin-top: 5%;
+    margin-top: 12%;
     color: white;
     display: flex;
     align-items: center;

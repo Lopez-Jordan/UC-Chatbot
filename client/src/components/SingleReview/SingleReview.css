@@ -1,0 +1,41 @@
+.cardReview{
+    width: 300px;
+    height: 200px;
+    border: 2px solid white;
+    margin: 16px;
+    color: white;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.116);
+}
+.userContent{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.reviewName, .reviewUserName{
+    margin: 0;
+    padding: 0;
+}
+.reviewName{
+    color: white;
+    font-size: 18px;
+    font-weight: bolder;
+    margin-bottom: 2px;
+}
+.reviewUserName{
+    color: rgb(213, 213, 213);
+    font-size: 16px;
+}
+.reviewPara{
+    font-size: 16px;
+    line-height: 20px;
+}
+.reviewStars{
+    margin-bottom: 12px;
+}
+
+.userImage{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}

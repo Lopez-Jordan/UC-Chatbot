@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Chatbot.css';
 import { formatConvHistory } from '../../../utils.js';
 
-const MAX_CHARACTERS = 200;
+
 
 export default function Chatbot() {
   const [userMessage, setUserMessage] = useState("");
@@ -10,7 +10,7 @@ export default function Chatbot() {
   const [isChatbotThinking, setIsChatbotThinking] = useState(false);
 
   const handleInputChange = (e) => {
-    if (e.target.value.length <= MAX_CHARACTERS) {
+    if (e.target.value.length <= 200) {
       setUserMessage(e.target.value);
     }
   };
@@ -113,7 +113,7 @@ export default function Chatbot() {
           value={userMessage}
         />
         <div style={{ height: '100%' }}>
-          <div className="char-counter">{MAX_CHARACTERS - userMessage.length}</div>
+          <div className="char-counter">{200 - userMessage.length}</div>
           <button
             disabled={!userMessage.length || isChatbotThinking}
             type="submit"

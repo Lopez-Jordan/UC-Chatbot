@@ -75,7 +75,7 @@ export default function Navbar() {
 
   return (
     <div className="navbar">
-      {userLoggedIn.loggedIn && !['/purchase', '/terms', '/successfulPurchase/345924567890', '/successfulPurchase/777648035211'].includes(currPage) ? (
+      {userLoggedIn.loggedIn && !['/purchase', '/terms', '/successfulPurchase/345924567890', '/successfulPurchase/777648035211',].includes(currPage) ? (
         <div className='credits'>
           <p>
             <span id="number">{userLoggedIn.credits}</span>
@@ -88,8 +88,8 @@ export default function Navbar() {
       ) : (
         <>
           {(currPage === '/purchase' || currPage === '/terms') && (
-            <div id="goBack" onClick={() => navigate('/')}>
-              <FaArrowLeft id="leftArrow" />
+            <div className="goBack" onClick={() => navigate('/')}>
+              <FaArrowLeft className="leftArrow" />
               <p>back</p>
             </div>
           )}
@@ -97,7 +97,7 @@ export default function Navbar() {
         </>
       )}
   
-      {userLoggedIn.loggedIn && !['/successfulPurchase/345924567890', '/successfulPurchase/777648035211'].includes(currPage) && (
+      {userLoggedIn.loggedIn && !['/successfulPurchase/345924567890', '/successfulPurchase/777648035211',].includes(currPage) && (
         <>
           <div style={{ display: "flex", alignItems: "center", marginRight: '40px' }}>
             <div className="profile" onClick={togglePopup}>
@@ -130,7 +130,6 @@ export default function Navbar() {
             <button className='buyMoreNav' onClick={() => navigate('/reviews')}>
               read our reviews!
             </button>
-
           </div>
         </>
       ) : 

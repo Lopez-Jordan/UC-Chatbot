@@ -5,6 +5,7 @@ import Modal from './Modal.jsx';
 import { LogInContext } from '../../App.jsx';
 import { useNavigate } from 'react-router-dom';
 
+
 export default function Reviewer() {
 
   const [userLoggedIn, setUserLoggedIn] = useContext(LogInContext);
@@ -83,6 +84,22 @@ export default function Reviewer() {
     setPrompt("");
   };
 
+  const wordCounter = (text) => {
+        text = text.trim();
+        var words = text.split(/\s+/);
+        words = words.filter(function(word) {
+            return word.length > 0;
+        });
+        return words.length;
+  }
+
+  const handleInputChange = (e) => {
+    let numWords = wordCounter(e.target.value);
+    if (numWords <= 350) {
+      setInputEssay(e.target.value)
+    }
+  }
+
   return (
     <div className='main2'>
       <div className='topHalf'>
@@ -110,15 +127,19 @@ export default function Reviewer() {
             </select>
           </div>
           <h3>2. Paste your essay</h3>
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ display: "flex", justifyContent: "center", flexDirection: 'column', alignItems: 'center' }}>
             <textarea
               id='essay'
-              onChange={(e) => setInputEssay(e.target.value)}
+              onChange={handleInputChange}
               value={inputEssay}
               placeholder="Paste your essay here (max 350 words)"
             ></textarea>
+            <div className='totalWords' style={{ display: inputEssay.length === 0 ? 'none' : 'block' }}>
+              {inputEssay.length !== 0 && `${wordCounter(inputEssay)} words`}
+            </div>
+
           </div>
-          <h3>3. Recieve custom feedback</h3>
+          <h3 style={{marginTop: '12px'}}>3. Recieve custom feedback</h3>
           <div style={{ display: "flex", justifyContent: "center" }}>
             {(loading && (commentary.length == 0)) ? (
               <div className="loading-spinner"></div>
@@ -131,7 +152,7 @@ export default function Reviewer() {
           <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} setCommentary={setCommentary} commentary={commentary} JSONscoreArr={JSONscoreArr} />
         }
         <div className='reasons'>
-          <div style={{ marginTop: "10%" }} className='reasonsCheck'>
+          <div style={{ marginTop: "14%" }} className='reasonsCheck'>
             <p className='check'>🔍</p>
             <p className='checkPara'>Find out what UC admission officers <span className='bold'>are and aren't looking for.</span></p>
           </div>

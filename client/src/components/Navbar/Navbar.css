@@ -145,7 +145,7 @@
     background-color: rgb(67, 67, 67);
 }
 
-#goBack{
+.goBack{
     color: white;
     background-color: black;
     border: none;
@@ -157,10 +157,10 @@
     align-items: center;
     margin: 10px;
 }
-#leftArrow{
+.leftArrow{
     margin-right: 10px;
 }
-#goBack:hover{
+.goBack:hover{
     cursor: pointer;
     background-color: #2a303c;
 }
