@@ -132,16 +132,16 @@ export default function Reviewer() {
         }
         <div className='reasons'>
           <div style={{ marginTop: "10%" }} className='reasonsCheck'>
-            <p className='check'>🎯</p>
-            <p className='checkPara'>Your essay scored on criteria <span className='bold'>specific to UC</span></p>
-          </div>
-          <div className='reasonsCheck'>
             <p className='check'>🔍</p>
-            <p className='checkPara'>Find out what UC admission officers <span className='bold'>are and aren't looking for</span></p>
+            <p className='checkPara'>Find out what UC admission officers <span className='bold'>are and aren't looking for.</span></p>
           </div>
           <div className='reasonsCheck'>
             <p className='check'>📈</p>
-            <p className='checkPara'><span className='bold'>Meaningful suggestions</span> on what to improve based on our admission insights</p>
+            <p className='checkPara'><span className='bold'>Recieve meaningful suggestions</span> on what to improve based on our admission insights.</p>
+          </div>
+          <div className='reasonsCheck'>
+            <p className='check'>💸</p>
+            <p className='checkPara'><span className='bold'>Save hundreds</span> using our technology -- trained on evaluating UC application essays.</p>
           </div>
         </div>
       </div>

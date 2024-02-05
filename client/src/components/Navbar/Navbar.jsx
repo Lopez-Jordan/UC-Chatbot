@@ -113,7 +113,7 @@ export default function Navbar() {
               )}
             </div>
             <button className='buyMoreNav' onClick={() => navigate('/reviews')}>
-              Read our Reviews!
+              read our reviews!
             </button>
           </div>
         </>
@@ -128,7 +128,7 @@ export default function Navbar() {
               Sign In
             </button>
             <button className='buyMoreNav' onClick={() => navigate('/reviews')}>
-              Read our Reviews!
+              read our reviews!
             </button>
 
           </div>

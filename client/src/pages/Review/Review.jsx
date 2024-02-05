@@ -1,7 +1,11 @@
+import './Review.css';
+
 export default function Review () {
     return (
         <>
-            <h1>reviews go here</h1>
+            <div className='mainReview'>
+                <h1 id='checkOut'>Check out what our students are saying!</h1>
+            </div>
         </>
     );
 }

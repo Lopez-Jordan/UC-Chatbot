@@ -1,0 +1,14 @@
+.mainReview{
+    display: flex;
+    flex-direction: column;
+    padding: 8%;
+    align-items: center;
+    height: 100vh;
+}
+
+#checkOut{
+    font-size: 36px;
+    background: linear-gradient(to bottom right, #4677ff, #fcff46c0);
+    -webkit-background-clip: text;
+    color: transparent;
+}
