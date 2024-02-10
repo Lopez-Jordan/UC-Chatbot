@@ -10,6 +10,7 @@ export default function Navbar() {
   const [userLoggedIn, setUserLoggedIn] = useContext(LogInContext);
   const [isPopupVisible, setPopupVisible] = useState(false);
   const currPage = useLocation().pathname;
+
   const navigate = useNavigate();
 
   const login = useGoogleLogin({
@@ -25,7 +26,7 @@ export default function Navbar() {
 
           const currUserRes = await fetch('/api/login', {
             method: "POST",
-            headers: { 'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               email: resUserData.email,
             })
@@ -33,7 +34,7 @@ export default function Navbar() {
 
           const currUser = await currUserRes.json();
 
-          if (currUser){
+          if (currUser) {
             setUserLoggedIn({
               loggedIn: true,
               name: `${resUserData.name}`,
@@ -75,7 +76,7 @@ export default function Navbar() {
 
   return (
     <div className="navbar">
-      {userLoggedIn.loggedIn && !['/purchase', '/terms', '/successfulPurchase/345924567890', '/successfulPurchase/777648035211',].includes(currPage) ? (
+      {userLoggedIn.loggedIn && !['/purchase', '/terms', '/successfulPurchase/345924567890', '/successfulPurchase/777648035211', '/reviews', '/privacy'].includes(currPage) ? (
         <div className='credits'>
           <p>
             <span id="number">{userLoggedIn.credits}</span>
@@ -87,7 +88,7 @@ export default function Navbar() {
         </div>
       ) : (
         <>
-          {(currPage === '/purchase' || currPage === '/terms') && (
+          {(currPage === '/purchase' || currPage === '/terms' || currPage === '/reviews' || currPage === '/privacy') && (
             <div className="goBack" onClick={() => navigate('/')}>
               <FaArrowLeft className="leftArrow" />
               <p>back</p>
@@ -96,7 +97,6 @@ export default function Navbar() {
           <div></div>
         </>
       )}
-  
       {userLoggedIn.loggedIn && !['/successfulPurchase/345924567890', '/successfulPurchase/777648035211',].includes(currPage) && (
         <>
           <div style={{ display: "flex", alignItems: "center", marginRight: '40px' }}>
@@ -112,30 +112,29 @@ export default function Navbar() {
                 </div>
               )}
             </div>
+            {/* READ OUR REVIEWS */}
             <button className='buyMoreNav' onClick={() => navigate('/reviews')}>
-              read our reviews!
+              {currPage !== '/reviews' ? 'Read Our Reviews' : ''}
             </button>
           </div>
         </>
-        
       )}
-  
       {!userLoggedIn.loggedIn && !['/successfulPurchase/345924567890', '/successfulPurchase/777648035211'].includes(currPage) ? (
         <>
-          <div style={{display: "flex", width: "300px", marginRight: '40px', alignItems: 'center'}}>
+          <div style={{ display: "flex", width: "300px", marginRight: '40px', alignItems: 'center' }}>
             <button className="signIn" onClick={() => login()}>
               <img id="google" src='/google.png' alt="Google Logo"></img>
               Sign In
             </button>
             <button className='buyMoreNav' onClick={() => navigate('/reviews')}>
-              read our reviews!
+              {currPage !== '/reviews' ? 'Read Our Reviews' : ''}
             </button>
           </div>
         </>
-      ) : 
-      <>
-      </> }
+      ) :
+        <>
+        </>}
     </div>
   );
-  
+
 }

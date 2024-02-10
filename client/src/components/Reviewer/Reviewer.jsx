@@ -103,7 +103,7 @@ export default function Reviewer() {
   return (
     <div className='main2'>
       <div className='topHalf'>
-        <h1 id='perfect'>Enhance Your UC Essays</h1>
+        <h1 id='perfect'>AI Meets UC Application Essays</h1>
         <p className='metrics'>Gain personalized metrics and insights into how YOUR essay is evaluated through the <span style={{ fontSize: '24px' }}>👀</span> of UC Admission Officers</p>
         <div style={{ display: "flex", justifyContent: "center" }}>
         </div>
