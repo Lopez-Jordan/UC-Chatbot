@@ -55,7 +55,7 @@ async function getCommentary (essayPrompt, inputEssay, JSONscore){
           Essay Prompt: ${essayPrompt}
           Essay: ${inputEssay}
 
-          write me a 700 word review highlighting what I can fix and why, with examples. Focus more on the lower scored categories.
+          write me a 500 word review highlighting what I can fix and why, with examples. Focus more on the lower scored categories.
 
           your review:
          ` },
