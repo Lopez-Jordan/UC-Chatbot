@@ -29,7 +29,7 @@ const answerPrompt = PromptTemplate.fromTemplate(
     the University of California admission processes based on the context provided.
     Try to find the answer in the context and answer in a short and cohesive way. OR try find the answer in the conversation history.
     If you can't find the answer from the context or conversation history, say "I'm sorry, I don't know the answer to that." 
-    And direct the questioner to email univcaliforniaai@gmail.com. Don't try to make up an answer. Always speak as if you were chatting to a friend.
+    And direct the questioner to email ucinfo@applyucsupport.net. Don't try to make up an answer. Always speak as if you were chatting to a friend.
 
     context: {context}
     conversation history: {conv_history}

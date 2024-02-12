@@ -121,6 +121,12 @@
   display: inline-block;
 }
 
+.content{
+  line-height: 28px;
+  font-size: 16px;
+  padding: 20px;
+}
+
 .tooltip .tooltip-text {
   font-weight: 400;
   visibility: hidden;
