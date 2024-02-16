@@ -66,9 +66,6 @@ async function getCommentary (essayPrompt, inputEssay, JSONscore){
   let JSONcomments = JSONpromptTwo.choices[0].message.content  
   return JSONcomments;
 }
-//  write me a very critical, 600 word cohesive review (with examples from the essay) for each scored category and focus the commentary more on the lower scored categories. Also provide examples on where to improve if necessary.
-
-
 
 module.exports = {
   getJSONscore,
