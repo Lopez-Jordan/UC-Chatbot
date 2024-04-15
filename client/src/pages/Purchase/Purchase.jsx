@@ -26,13 +26,13 @@ export default function Purchase() {
                 <div className='cards'>
                     <div id="card1">
                         <h4 className='title'>Basic</h4>
-                        <h2 className='money'>🔮 $9<span className='moneySpan'> 99</span> 🔮</h2>
+                        <h2 className='money'>🔮 $9<span className='moneySpan'> .99</span> 🔮</h2>
                         <p className='buyPara'>Have all 4 of your essays reviewed and graded atleast once so you know what to improve, keep, and polish.</p>
                         <button style={{ marginTop: '10px' }} onClick={handleCheckout} value={1} className='buyButton'>Buy 4 Credits</button>
                     </div>
                     <div id="card2">
                         <h4 className='title'>Professional</h4>
-                        <h2 className='money'>💎 $19<span className='moneySpan'> 99</span> 💎</h2>
+                        <h2 className='money'>💎 $19<span className='moneySpan'> .99</span> 💎</h2>
                         <p className='buyPara'>Have all 4 of your essays reviewed and graded multiple times so you can sleep well at night knowing UC admission officers are reading amazing works of literature.</p>
                         <button onClick={handleCheckout} value={2} className='buyButton'>Buy 12 Credits</button>
                     </div>
