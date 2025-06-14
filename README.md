@@ -2,7 +2,7 @@
 
 # UC Chatbot and Essay Reviewer
 
-[explore the site here!](https://ucadmissionsai.com/)
+[explore the site here!](https://www.ucadmissionsai.com/)
 
 ## Description
 
