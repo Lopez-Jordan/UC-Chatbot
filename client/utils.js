@@ -3,7 +3,6 @@ export function ObjToArr(obj) {
 }
 
 export function formatNicely(text) {
-
     const commentaries = text.split(/\d+\./).filter(Boolean);
     const formattedCommentaries = commentaries.map(commentary => {
         const lines = commentary.trim().split('\n');

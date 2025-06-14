@@ -16,6 +16,7 @@ export default function App() {
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem('UserLoggedIn'));
+
     if (storedUser && storedUser.loggedIn) {
       setUserLoggedIn(storedUser);
     } else {

@@ -119,8 +119,6 @@ app.post("/api/create-checkout-session", async (req, res) => {
 // https://www.ucadmissionsai.com/purchase
 
 
-
-
 ///////////////////////////////////////////////////////////////////////////////////////
 // metadata : {
 //   user : req.body.email,
