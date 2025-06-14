@@ -2,7 +2,7 @@
 
 # UC Chatbot and Essay Reviewer
 
-[explore the site here!](https://infinite-thicket-94821-c40c39ef6cfc.herokuapp.com/)
+[explore the site here!](https://ucadmissionsai.com/)
 
 ## Description
 
@@ -37,7 +37,7 @@ Sign in to your Google authorized account and follow the form directions *
 
 ## External Libraries
 
-- Langchain.js (Toolkit to create chatbot technology)
+- Langchain.js (To Enable Retrieval Augmented Generation (RAG))
 - OpenAI (API to power the "Essay Reviewer" and functionality of chatbot)
 - Stripe (integrated payment system)
 - Google OAuth 2.0 (to allow users to sign in to their authorized Google Account)
